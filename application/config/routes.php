@@ -6,6 +6,7 @@ $route['404_override'] = '';
 /*************************************************** USERS INTRERFACE ***********************************************/
 
 $route['']					= "users_interface/index";
+$route['trade']				= "users_interface/trade";
 
 $route['login']				= "users_interface/login";
 $route['logoff']			= "users_interface/logoff";

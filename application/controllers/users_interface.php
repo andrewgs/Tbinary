@@ -51,36 +51,35 @@ class Users_interface extends MY_Controller{
 		$this->load->view("users_interface/pages",$pagevar);
 	}
 	
-	public function news(){
-	
-		$from = intval($this->uri->segment(3));
+	public function trade(){
+		
 		$pagevar = array(
-			'title'			=> 'СРО НП «Энергоаудит» в Ростове, Элисте, Краснодаре, Сочи: энергетический паспорт, энергетическое обследование',
-			'description'	=> 'СРО ЮФО – некоммерческая саморегулируемая организация в Ростове на Дону, которая предлагает оформить энергетический паспорт.',
-			'keywords'		=> 'сро юфо, вступить в, стоимость энергопаспорта, ростов на дону, энергосбережение, ставрополь, энергетический паспорт, краснодар, программа энергосбережения, сочи, обследования, астрахань, обязательное энергетическое обследование, пятигорск, энергоаудит, элиста, нп обинж энерго, майкоп, энергопаспорт, гильдия энергоаудиторов, волгоград, махачкала',
+			'title'			=> 'Tbinary trading platform',
+			'description'	=> 'Tbinary trading platform',
 			'baseurl' 		=> base_url(),
-			'allnews'		=> $this->mdnews->read_limit_records(5,$from,'news','id','DESC'),
-			'news' 			=> NULL,
-			'pages'			=> array(),
+			'client'		=> array(),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr')
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
-		$pagevar['pages'] = $this->pagination('news',3,$this->mdnews->count_all_records('news'),5);
+		if($this->loginstatus):
+			$pagevar['user'] = $this->mdusers->read_record($this->user['uid'],'users');
+		endif;
 		
-		for($i=0;$i<count($pagevar['allnews']);$i++):
-			$pagevar['allnews'][$i]['date'] = $this->operation_dot_date($pagevar['allnews'][$i]['date']);
-		endfor;
-		
-		$this->load->view("users_interface/news",$pagevar);
+		$this->load->view("users_interface/trade",$pagevar);
 	}
+	
 	
 	public function logoff(){
 		
 		$this->session->sess_destroy();
-		redirect('');
+		if(isset($_SERVER['HTTP_REFERER'])):
+			redirect($_SERVER['HTTP_REFERER']);
+		else:
+			redirect('');
+		endif;
 	}
 	
 	public function login(){
@@ -100,13 +99,14 @@ class Users_interface extends MY_Controller{
 			if($user):
 				$statusval['status'] = TRUE;
 				$statusval['message'] = '';
-				$session_data = array('logon'=>md5($user['login']),'userid'=>$user['id']);
-				$this->session->set_userdata($session_data);
+				$this->session->set_userdata(array('logon'=>md5($user['login']),'userid'=>$user['id']));
+				$statusval['newlink'] = 'Welcome, '.$user['first_name'].' '.$user['last_name'].'<br/>';
 				if($user['id']):
-					$statusval['newlink'] = '<a id="action-cabinet" href="'.base_url().'cabinet/orders">Личный кабинет</a>';
+					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'cabinet/orders">Personal cabinet</a>';
 				else:
-					$statusval['newlink'] = '<a id="action-cabinet" href="'.base_url().'admin-panel/actions/orders">Личный кабинет</a>';
+					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'admin-panel/actions/orders">Personal cabinet</a>';
 				endif;
+				$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'logoff">Log off</a>';
 			endif;
 		endif;
 		echo json_encode($statusval);

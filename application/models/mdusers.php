@@ -15,6 +15,7 @@ class Mdusers extends MY_Model{
 	var $day_phone		= '';
 	var $home_phone		= '';
 	var $password		= '';
+	var $trade_password = '';
 	var $signdate		= '';
 	var $active			= 1;
 
@@ -36,6 +37,7 @@ class Mdusers extends MY_Model{
 		$this->day_phone 	= $data['day_phone'];
 		$this->home_phone 	= $data['home_phone'];
 		$this->password		= md5($data['password']);
+		$this->trade_password= md5($data['trade_password']);
 		$this->signdate 	= date("Y-m-d");
 		
 		$this->db->insert('users',$this);
@@ -46,7 +48,6 @@ class Mdusers extends MY_Model{
 
 		$this->db->set('first_name',$data['first_name']);
 		$this->db->set('last_name',$data['last_name']);
-		$this->db->set('email',$data['email']);
 		$this->db->set('address1',$data['address1']);
 		$this->db->set('address2',$data['address2']);
 		$this->db->set('city',$data['city']);
@@ -55,7 +56,6 @@ class Mdusers extends MY_Model{
 		$this->db->set('country',$data['country']);
 		$this->db->set('day_phone',$data['day_phone']);
 		$this->db->set('home_phone',$data['home_phone']);
-		$this->db->set('password',md5($data['password']));
 		$this->db->where('id',$id);
 		$this->db->update('users');
 		return $this->db->affected_rows();
@@ -63,7 +63,7 @@ class Mdusers extends MY_Model{
 	
 	function auth_user($login,$password){
 		
-		$this->db->select('id,email AS login');
+		$this->db->select('id,email AS login,first_name,last_name');
 		$this->db->where('email',$login);
 		$this->db->where('password',md5($password));
 		$this->db->where('active',1);

@@ -13,11 +13,20 @@
 		<div id="main">
 			<p class="slogan">Join the most <em>advanced, trusted and reliable</em> trading platform</p>
 			<div class="row">
-				<div id="container" class="span18"></div>
+				<div id="container" class="span18"> </div>
 				<div class="span6">
-					<?php $this->load->view("forms/formregister");?>
+					<ul class="switcher">
+						<li><a class="switcher__active" href="#real-signup"><span>Real Trade</span></a></li>
+						<li><a href="#demo-signup"><span>Demo Trade</span></a></li>
+					</ul>
+					<div class="signup-form" id="real-signup">
+						<?php $this->load->view("forms/formrealregister");?>
+					</div>
+					<div class="signup-form" id="demo-signup">
+						<?php $this->load->view("forms/formdemoregister");?>
+					</div>
 				</div>
-			</div>
+			</div><!-- /charts and sign up forms -->
 			<div class="row">
 				<div class="span18">
 					<div class="ticker">
@@ -196,19 +205,23 @@
 	<?php $this->load->view("users_interface/includes/footer");?>
 	<?php $this->load->view("users_interface/includes/copyright");?>
 	<?php $this->load->view("users_interface/includes/scripts");?>
+	<script src="<?=$baseurl;?>js/main.js"></script>
 	<script type="text/javascript">
-		$(function(){
-			$("#signup-btn_").click(function(event){
-				event.preventDefault();
-				$.post('http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22',{
-					act: 'send',
-					office: 'main'
-				}, function(data){
-					console.log(data);
-				});
-			});
-			$("#signup_iframe").load(function(){console.log($("#signup_iframe").contents());});
+	$(function(){
+		$("#signup-btn").click(function(e){
+			e.preventDefault();
+			$.ajax({type: 'POST',url: 'http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22',
+				cache: false,data:{act: 'send',office: 'main'},
+				dataType: 'xml',crossDomain: true}).done(function(data){alert(data);});
 		});
+		$("#signup_iframe").load(function(){console.log($("#signup_iframe").contents());});
+		$("ul.switcher li a").click(function(e){e.preventDefault();
+			$("ul.switcher li a").removeClass('switcher__active');
+			$(this).addClass('switcher__active');$("div.signup-form:visible").hide();
+			var elem_id = $(this).attr('href');
+			$(elem_id).show();
+		});
+	});
 	</script>
 </body>
 </html>

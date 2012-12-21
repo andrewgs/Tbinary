@@ -42,7 +42,7 @@ function backpath(path){window.location=path;}
 		if(!err){
 			var postdata = myserialize($("#login-form .FieldSend"));
 			$.post(baseurl+"login",{'postdata':postdata},function(data){
-				if(data.status){$("#login-form").remove();$("#login-form").replaceWith(data.newlink);
+				if(data.status){$("#login-form").remove();$("#login-block").html(data.newlink);
 				}else{$("#login-form .FieldSend").val('');$("#login-form em").html(data.message).show();}},"json");
 		}
 	});

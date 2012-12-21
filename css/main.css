@@ -1,0 +1,113 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html, body { background: url('../img/bg.jpg') repeat; }
+body { font: 12px/19px Arial, Helvetica, sans-serif; color: #494949; }
+ul { list-style: none; margin: 0; padding: 0; color: #0a120a; }
+input[type="text"], input[type="password"] { border-radius: 2px; border: 1px solid #c1c1c1; box-shadow: none; color: #999; font-size: 12px; background: #fcfcfc; }
+.btn-action { border-radius: 2px; font: 20px/40px "din-condensed-web", sans-serif; color: #fff; background: #ca1f1a; border: 1px solid #9a8080; text-transform: uppercase; box-shadow: inset 0px 1px 0px #fd8480; height: 42px; width: 236px;  padding: 0; text-shadow: none; }
+.btn-action:hover { background: #b8201b; color: #fff; }
+.invest { background: #b0c900; color: #4B5010; box-shadow: inset 0px 1px 0px #D4E26F; width: 68px; border: 1px #798F37 solid; font-size: 18px; text-shadow: 0 1px 0 #fff; }
+.invest:hover { background: #a6bd01; color: #4B5010; }
+.invest.disabled { background: #cfdbb7; }
+
+#content { margin: 2em 0 4em; }
+#content h1, 
+#content h2, 
+#content h3 { color: #494949; color: #444; }
+#content h1 { font: 29px/34px "din-condensed-web", sans-serif; text-transform: uppercase; }
+#content h2 { font: 24px/28px "din-condensed-web", sans-serif; }
+#content h3 { font: 20px/25px "din-condensed-web", sans-serif; }
+
+#sidebar ul { list-style: none; margin: 10px 0 0; padding: 0;}
+#sidebar ul li a { color: #0a120a; font: 13px/21px arial, sans-serif; text-transform: uppercase; display: block; margin-bottom: 0.75em; border-bottom: 1px solid #f4f0e5; padding-left: 0.5em; }
+#sidebar ul li.active a { border-bottom: 1px solid #c4221d; }
+#sidebar ul li a:hover { text-decoration: none; border-bottom: 1px solid #c4221d; }
+
+h2.main { font: 29px/34px "din-condensed-web", sans-serif; margin: 0 0 1em 7px; padding-bottom: 0.5em; display: block; border-bottom: 1px dashed #999; text-align: center; }
+h3.main { font: 25px/29px "din-condensed-web", sans-serif; margin: 0 0 10px 7px; }
+ol li { margin-bottom: 0.4em; color: #333; font-size: 13px; }
+
+header { border-bottom: 1px dashed #aeaeae;  padding: 2em 0 0; }
+#logo { display: block; width: 170px; height: 49px; background: url('../img/logo.png') no-repeat; text-indent: -9999px; margin: 10px 0 0; }
+#login-form { position: relative; margin-bottom: 10px; }
+#login-form a { color: #c0c0c0; display: block; position: absolute; right: -18px; bottom: 45px; }
+#login-form a:hover { color: #999; text-decoration: none; }
+#login-form .btn-action { position: absolute; bottom: 5px; right: 10px; height: 30px; width: 72px; font: 15px/22px "din-condensed-web", sans-serif; }
+#login-form input { margin-bottom: 5px;  }
+
+#main-nav { margin: 40px 0 0; }
+#main-nav li { float: left; text-transform: uppercase; margin-right: 1.75em; font-size: 13px; }
+#main-nav li a { text-decoration: none; color: #444; padding-bottom: 0.5em; display: inline-block; }
+#main-nav li a:hover { border-bottom: 2px solid #ccc; }
+p.slogan { color: #444; font: bold 30px/42px "din-condensed-web", arial, sans-serif; text-transform: uppercase; margin: 25px 0 22px; }
+	p.slogan em { font-style: normal; color: #c4221d; }
+
+.switcher { list-style: none; font-size: 15px; width: 100%; display: inline-block; margin-bottom: 14px; text-transform: uppercase; font-family: "din-condensed-web", sans-serif; color: #494949; }
+.switcher li { display: inline; }
+.switcher a { text-decoration: none; position: relative; top: 1px; color: #c4221d; float: left; padding: 8px 15px 14px 8px; border-bottom: 1px solid #ccc; }
+.switcher .switcher__active { color: #333; border-left: 1px solid #ccc; border-right: 1px solid #ccc; border-bottom: 0; outline: 0; }
+.switcher li:first-child a { padding-left: 0; border-left: none; }
+.switcher span, .map-head span { border-bottom: 1px dotted #204E8A; }
+.switcher__active span { border-bottom: 0; }
+
+#signup-form { margin: 0 0 10px; }
+#signup-form input { padding: 9px 14px; margin-bottom: 13px; }
+#signup-form select { height: 43px; width: 236px; border-radius: 2px; font-size: 12px; padding: 0 0 0 12px; color: #999; }
+#signup-form label { color: #888; font-size: 12px; display: inline-block; position: relative; top: -3px; left: 4px; }
+
+.ticker { border: 1px solid #ccc; border-radius: 2px; width: 710px; margin: 0 0 7px; padding: 8px 0 0;
+	background: #faf6f5;
+	background: -moz-linear-gradient(top, #faf6f5 0%, #e2e2e2 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#faf6f5), color-stop(100%,#e2e2e2));
+	background: -webkit-linear-gradient(top, #faf6f5 0%,#e2e2e2 100%);
+	background: -o-linear-gradient(top, #faf6f5 0%,#e2e2e2 100%);
+	background: -ms-linear-gradient(top, #faf6f5 0%,#e2e2e2 100%);
+	background: linear-gradient(top, #faf6f5 0%,#e2e2e2 100%);
+
+}
+.ticker select { width: 90px; height: 25px; border-radius: 1px; padding: 0 0 0 3px; margin: 3.25em 0 0 1em; font-size: 12px; }
+.ticker input { width: 50px; padding: 2px; display: block; margin: 0; }
+.btn-above, .btn-below { border-radius: 3px; color: #444; text-transform: uppercase; font: 16px/24px "din-condensed-web", sans-serif; width: 80px; height: 24px; }
+.btn-above { border: 3px solid #8ccd0f; }
+.leverage { color: #333; font-size: 16px; font-weight: bold; width: 115px; text-align: center; margin: 7px 0; }
+.leverage span { font-size: 30px; }
+.leverage span.up { color: #5cb004; }
+.payouts { margin-top: 0.8em; }
+.payout { padding: 3px 6px; background: #ffba0f; border-radius: 3px; display: inline-block; font-weight: bold; font-size: 12px; margin: 10px 0 1px; color: #373764; }
+.payout.disabled { background: #8282b4; }
+	.payout span { display: block; font-size: 28px; margin: 0.125em 0 0.25em; }
+.win-payout, .min-payout { color: #5cb004; font-size: 26px; font-weight: bold; display: block; margin: 0.4em; padding-left: 0.1em; }
+.min-payout { font-size: 14px; padding-left: 1.5em; }
+.ticker .timer { display: block; margin: 1em 0 0.4em 0.75em; }
+
+.gray-bg { background: #DCD9D3; border: 1px solid #d0d0d0; border-style: solid none; padding: 1.75em 0 1.5em; margin: 2em 0 3em; }
+.gray-bg strong { font-size: 1.1em; line-height: 0.75em; }
+
+#try-now { border-bottom: 1px solid #e7e6e6; height: 76px; margin-bottom: 1.5em; }
+#try-now .caption { font: 36px "din-condensed-web", sans-serif; color: #494949; line-height: 1em; margin-bottom: 0; }
+
+footer { border: 1px solid #e7e6e6; border-style: solid none; margin: 1em 0 0; padding: 0.85em 0 2em; }
+footer h4 { font: bold 11px/16px Arial, Helvetica, sans-serif; color: #666; margin: 1em 0 0; }
+footer ul { list-style: none; margin: 0; padding: 0; }
+footer ul li a { color: #888; font: 11px/19px Arial, Helvetica, sans-serif; }
+footer ul li a:hover { color: #444; text-decoration: none; }
+
+#copy { height: 55px; line-height: 55px; color: #bebebe; font-size: 12px; }
+#copy a { color: #999; }
+
+.highcharts-container { padding: 5px 0 0; }
+input.highcharts-range-selector { margin: 0; }
+
+#trade-wrapper { width: 96%; height: 600px; overflow: hidden; margin: 0 2%; display: block; background: #fff; padding: 5px; border-radius: 2px; border: 1px solid #eee; box-shadow: 0 0 7px #e0e0e0; }
+
+
+
+
+
+
+
+
+

@@ -3,31 +3,30 @@
 <?php $this->load->view("admin_interface/includes/head");?>
 <body>
 	<?php $this->load->view("admin_interface/includes/header");?>
+	
 	<div class="container">
 		<div class="row">
-			<div class="span9">
-				<ul class="breadcrumb" style="height:30px;">
-					<li class="active">
-						<?=anchor($this->uri->uri_string(),"Пользователи");?>
-					</li>
-					<li style="float:right;">
-						<?=anchor('admin-panel/actions/users/add','<nobr><i class="icon-plus icon-white"></i> Добавить</nobr>',array('class'=>'btn btn-info'));?>
-					</li>
-				</ul>
+			<div class="span19">
 				<?php $this->load->view("alert_messages/alert-error");?>
 				<?php $this->load->view("alert_messages/alert-success");?>
+				<div class="navbar">
+					<div class="navbar-inner">
+						<a class="brand none" href="">Users list</a>
+					</div>
+				</div>
+			<?php if($users):?>
 				<table class="table table-striped table-bordered">
 					<thead>
 						<tr>
-							<th class="w650">Данные</th>
-							<th class="w50">&nbsp;</th>
+							<th>&nbsp;</th>
+							<th>&nbsp;</th>
 						</tr>
 					</thead>
 					<tbody>
 					<?php for($i=0;$i<count($users);$i++):?>
 						<tr class="align-center">
 							<td>
-								Организация: <?=$users[$i]['organization'];?><br/>
+								<?=$users[$i]['first_name'].' '.$users[$i]['last_name'];?><br/>
 								Адрес: <?=$users[$i]['address'];?><br/>
 								Email: <?=$users[$i]['email'];?><br/>
 								Телефон: <?=$users[$i]['phones'];?><br/>
@@ -50,6 +49,7 @@
 				<?php if($pages): ?>
 					<?=$pages;?>
 				<?php endif;?>
+			<?php endif;?>
 			</div>
 		<?php $this->load->view("admin_interface/includes/rightbar");?>
 		<?php $this->load->view("admin_interface/modal/delete-user");?>

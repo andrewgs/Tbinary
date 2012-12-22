@@ -15,59 +15,14 @@ $route['logoff']			= "users_interface/logoff";
 
 $route['cabinet/profile']			= "clients_interface/profile";
 
-$route['cabinet/orders']			= "clients_interface/available_orders";
-$route['cabinet/orders/from']		= "clients_interface/available_orders";
-$route['cabinet/orders/from/:num']	= "clients_interface/available_orders";
-
 /*************************************************** ADMINS INTRERFACE ***********************************************/
 
-$route['admin-panel/actions/orders']				= "admin_interface/available_orders";
-$route['admin-panel/actions/orders/from']			= "admin_interface/available_orders";
-$route['admin-panel/actions/orders/from/:num']		= "admin_interface/available_orders";
+$route['admin-panel/actions/users-list']				= "admin_interface/users_list";
+$route['admin-panel/actions/users-list/from']			= "admin_interface/users_list";
+$route['admin-panel/actions/users-list/from/:num']		= "admin_interface/users_list";
 
-$route['admin-panel/actions/orders/delete/id/:num']	= "admin_interface/delete_order";
-$route['admin-panel/actions/orders/closed/id/:num']	= "admin_interface/closed_order";
+$route['admin-panel/actions/pages']						= "admin_interface/pages_lang";
+$route['admin-panel/actions/pages/lang/:num/new-page']	= "admin_interface/lang_new_page";
+$route['admin-panel/actions/pages/lang/:num/page/:num']	= "admin_interface/lang_edit_page";
 
-$route['admin-panel/actions/forum']					= "admin_interface/forum";
-$route['admin-panel/actions/forum/from']			= "admin_interface/forum";
-$route['admin-panel/actions/forum/from/:num']		= "admin_interface/forum";
-
-$route['admin-panel/actions/forum/save-text']		= "admin_interface/save_forum_text";
-
-$route['admin-panel/actions/forum/delete-question/id/:num']	= "admin_interface/delete_question";
-$route['admin-panel/actions/forum/delete-answer/id/:num']	= "admin_interface/delete_answer";
-
-$route['admin-panel/actions/news']					= "admin_interface/news";
-$route['admin-panel/actions/news/from']				= "admin_interface/news";
-$route['admin-panel/actions/news/from/:num']		= "admin_interface/news";
-
-$route['admin-panel/actions/news/add']				= "admin_interface/add_new";
-$route['admin-panel/actions/news/edit/id/:num'] 	= "admin_interface/edit_news";
-$route['admin-panel/actions/news/delete/id/:num'] 	= "admin_interface/delete_news";
-
-$route['admin-panel/actions/users']					= "admin_interface/actions_users";
-$route['admin-panel/actions/users/from']			= "admin_interface/actions_users";
-$route['admin-panel/actions/users/from/:num']		= "admin_interface/actions_users";
-
-$route['admin-panel/actions/users/add']				= "admin_interface/user_add";
-$route['admin-panel/actions/users/edit/id/:num']	= "admin_interface/user_edit";
-$route['admin-panel/actions/users/delete/id/:num']	= "admin_interface/user_delete";
-
-$route['admin-panel/actions/profile']				= "admin_interface/actions_profile";
-
-$route['admin-panel/actions/register/all-list']		= "admin_interface/full_register_list";
-
-$route['admin-panel/actions/register']				= "admin_interface/register";
-$route['admin-panel/actions/register/from']			= "admin_interface/register";
-$route['admin-panel/actions/register/from/:num']	= "admin_interface/register";
-
-$route['admin-panel/actions/register/add']				= "admin_interface/add_register";
-$route['admin-panel/actions/register/edit/id/:num']		= "admin_interface/edit_register";
-$route['admin-panel/actions/register/search']			= "admin_interface/search_register";
-$route['admin-panel/actions/register/delete/id/:num']	= "admin_interface/delete_register";
-
-$route['admin-panel/actions/register/import-csv']		= "admin_interface/import_csv";
-
-
-$route['admin-panel/actions/register/print/id/:num/covering-letter']	= "admin_interface/print_covering_letter";
-$route['admin-panel/actions/register/print/id/:num/sample-notice']	= "admin_interface/print_sample_notice";
+$route['admin-panel/actions/profile']					= "admin_interface/actions_profile";

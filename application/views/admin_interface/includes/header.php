@@ -1,10 +1,8 @@
 <header>
 	<div class="container">
 		<div class="row">
-			<div class="span12">
-				<h1 class="admin-header">
-					<span class="small">Панель администрирования</span>
-				</h1>
+			<div class="span18">
+				<h1>Administration panel</h1>
 			</div>
 		</div>
 	</div>

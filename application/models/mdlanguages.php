@@ -2,9 +2,10 @@
 
 class Mdlanguages extends MY_Model{
 	
-	var $id				= 0;
-	var $name			= '';
-	var $active 		= '';
+	var $id		= 0;
+	var $name	= '';
+	var $active = 1;
+	var $base 	= 1;
 	
 	function __construct(){
 		parent::__construct();
@@ -12,10 +13,10 @@ class Mdlanguages extends MY_Model{
 	
 	function insert_record($data){
 
-		$this->name 	= $data['name'];
-		$this->active 	= $data['active'];
+		$this->name = $data['name'];
+		$this->base = $data['base'];
 		
-		$this->db->insert('languages',$this);
+		$this->db->insert('​​languages',$this);
 		return $this->db->insert_id();
 	}
 	
@@ -23,7 +24,7 @@ class Mdlanguages extends MY_Model{
 
 		$this->db->set('name',$data['name']);
 		$this->db->where('id',$id);
-		$this->db->update('languages');
+		$this->db->update('​​languages');
 		return $this->db->affected_rows();
 	}
 }

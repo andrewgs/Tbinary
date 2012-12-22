@@ -34,6 +34,12 @@ function backpath(path){window.location=path;}
 	$(".negative").keypress(function(e){if(e.which!=8 && e.which!=46 && e.which!=0 && e.which!=45 && (e.which<48 || e.which>57)){return false;}});
 	$(".none").click(function(event){event.preventDefault();});
 	
+	$(".sendForm").click(function(event){
+		var parentFrom = $(this).parents("form");
+		var err = false; $(parentFrom).find(".control-group").removeClass('error');$(parentFrom).find(".help-inline").hide();
+		$(parentFrom).find(".input-valid").each(function(i,element){if($(this).val()==''){$(this).parents(".control-group").addClass('error');$(this).tooltip('show');err = true;}});if(err){event.preventDefault();$("html, body").animate({scrollTop:'0'},"slow");}
+	});
+	
 	$("#login-btn").click(function(event){
 		var err = false;$("#login-form em").hide();
 		event.preventDefault();

@@ -16,7 +16,7 @@
 		<?php $this->load->view("forms/frmlogin");?>
 	<?php else:?>
 		<?php if($this->user['admin']):?>
-		Welcome, <?=$this->user['name'];?><br/><?=anchor('admin-panel/actions/orders','Personal cabinet',array('id'=>'action-cabinet'));?>
+		Welcome, <?=$this->user['name'];?><br/><?=anchor('admin-panel/actions/users-list','Personal cabinet',array('id'=>'action-cabinet'));?>
 		<?php else:?>
 		Welcome, <?=$this->user['name'];?><br/><?=anchor('cabinet/orders','Personal cabinet',array('id'=>'action-cabinet'));?>
 		<?php endif;?>

@@ -71,7 +71,6 @@ class Users_interface extends MY_Controller{
 		$this->load->view("users_interface/trade",$pagevar);
 	}
 	
-	
 	public function logoff(){
 		
 		$this->session->sess_destroy();
@@ -104,7 +103,7 @@ class Users_interface extends MY_Controller{
 				if($user['id']):
 					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'cabinet/orders">Personal cabinet</a>';
 				else:
-					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'admin-panel/actions/orders">Personal cabinet</a>';
+					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">Personal cabinet</a>';
 				endif;
 				$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'logoff">Log off</a>';
 			endif;

@@ -35,7 +35,7 @@ class MY_Controller extends CI_Controller{
 		endif;
 	}
 	
-	function pagination($url,$uri_segment,$total_rows,$per_page){
+	public function pagination($url,$uri_segment,$total_rows,$per_page){
 		
 		$config['base_url'] 		= base_url()."$url/from/";
 		$config['uri_segment'] 		= $uri_segment;
@@ -65,7 +65,7 @@ class MY_Controller extends CI_Controller{
 		return $this->pagination->create_links();
 	}
 	
-	function send_mail($to,$from_mail,$from_name,$subject,$text){
+	public function send_mail($to,$from_mail,$from_name,$subject,$text){
 		
 		$this->email->clear(TRUE);
 		$config['smtp_host'] = 'localhost';
@@ -86,7 +86,7 @@ class MY_Controller extends CI_Controller{
 		endif;
 	}
 	
-	function viewimage(){
+	public function viewimage(){
 		
 		$section = $this->uri->segment(1);
 		$id = $this->uri->segment(3);
@@ -197,6 +197,31 @@ class MY_Controller extends CI_Controller{
 		$string = str_replace($rus,$eng,$string);
 		if(!empty($string)):
 			$string = preg_replace('/[^a-z0-9,-]/','',strtolower($string));
+			$string = preg_replace('/[-]+/','-',$string);
+			$string = preg_replace('/[\.\?\!\)\(\,\:\;]/','',$string);
+			return $string;
+		else:
+			return FALSE;
+		endif;
+	}
+
+	public function english_symbol($string){
+		
+		if(!empty($string)):
+			$string = preg_replace('/[ ]+/','-',strtolower($string));
+			$string = preg_replace('/[^a-z,-]/','',$string);
+			$string = preg_replace('/[-]+/','-',$string);
+			return $string;
+		else:
+			return FALSE;
+		endif;
+	}
+	
+	public function valid_url_symbol($string){
+		
+		if(!empty($string)):
+			$string = preg_replace('/[ ]+/','-',strtolower($string));
+			$string = preg_replace('/[^a-z0-9,-\/\?\&\$\#\@]/','',strtolower($string));
 			$string = preg_replace('/[-]+/','-',$string);
 			$string = preg_replace('/[\.\?\!\)\(\,\:\;]/','',$string);
 			return $string;

@@ -9,7 +9,7 @@ class Users_interface extends MY_Controller{
 		parent::__construct();
 		
 		if($this->loginstatus):
-			$this->mdusers->read_field($this->user['uid'],'users','language');
+			$this->language = $this->mdusers->read_field($this->user['uid'],'users','language');
 		else:
 			$this->language = $this->session->userdata('current_language');
 		endif;
@@ -39,7 +39,7 @@ class Users_interface extends MY_Controller{
 	
 	public function index(){
 		
-		$page_data = $this->mdpages->read_fields_url('','*');
+		$page_data = $this->mdpages->read_fields_url('','*',$this->language);
 		
 		$pagevar = array(
 			'title'			=> $page_data['title'],
@@ -83,9 +83,12 @@ class Users_interface extends MY_Controller{
 	
 	public function trade(){
 		
+		$page_data = $this->mdpages->read_fields_url('','*',$this->language);
+		
 		$pagevar = array(
-			'title'			=> 'Tbinary trading platform',
-			'description'	=> 'Tbinary trading platform',
+			'title'			=> $page_data['title'],
+			'description'	=> $page_data['description'],
+			'content'		=> $page_data['content'],
 			'baseurl' 		=> base_url(),
 			'languages'		=> $this->mdlanguages->read_records('languages'),
 			'client'		=> array(),
@@ -130,13 +133,13 @@ class Users_interface extends MY_Controller{
 				$statusval['status'] = TRUE;
 				$statusval['message'] = '';
 				$this->session->set_userdata(array('logon'=>md5($user['login']),'userid'=>$user['id']));
-				$statusval['newlink'] = 'Welcome, '.$user['first_name'].' '.$user['last_name'].'<br/>';
+				$statusval['newlink'] = 'Hello, <strong>'.$user['first_name'].' '.$user['last_name'].'</strong><br/>';
 				if($user['id']):
-					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'cabinet/orders">Personal cabinet</a>';
+					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'cabinet/orders">My Account</a>';
 				else:
-					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">Personal cabinet</a>';
+					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">My Account</a>';
 				endif;
-				$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'logoff">Log off</a>';
+				$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'logoff">Logout</a>';
 			endif;
 		endif;
 		echo json_encode($statusval);

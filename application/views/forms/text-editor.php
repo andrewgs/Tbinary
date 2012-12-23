@@ -3,7 +3,7 @@
 		<legend><?=$form_legend.' '.strtoupper($langs[$this->uri->segment(5)-1]['name']);?></legend>
 		<ul id="ProductTab" class="nav nav-tabs">
 			<li class="active"><a href="#main" data-toggle="tab">Main</a></li>
-			<li><a href="#category" data-toggle="tab">Catogory</a></li>
+			<li><a href="#category" data-toggle="tab">Categories</a></li>
 		</ul>
 		<div id="ProductTabContent" class="tab-content">
 			<div class="tab-pane fade in active" id="main">

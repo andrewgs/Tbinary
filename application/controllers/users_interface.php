@@ -9,7 +9,7 @@ class Users_interface extends MY_Controller{
 		parent::__construct();
 		
 		if($this->loginstatus):
-			$this->mdusers->read_field($this->user['uid'],'users','language');
+			$this->language = $this->mdusers->read_field($this->user['uid'],'users','language');
 		else:
 			$this->language = $this->session->userdata('current_language');
 		endif;
@@ -39,7 +39,7 @@ class Users_interface extends MY_Controller{
 	
 	public function index(){
 		
-		$page_data = $this->mdpages->read_fields_url('','*');
+		$page_data = $this->mdpages->read_fields_url('','*',$this->language);
 		
 		$pagevar = array(
 			'title'			=> $page_data['title'],
@@ -83,12 +83,16 @@ class Users_interface extends MY_Controller{
 	
 	public function trade(){
 		
+		$page_data = $this->mdpages->read_fields_url('trade','*',$this->language);
+		
 		$pagevar = array(
-			'title'			=> 'Tbinary trading platform',
-			'description'	=> 'Tbinary trading platform',
+			'title'			=> $page_data['title'],
+			'description'	=> $page_data['description'],
+			'content'		=> $page_data['content'],
 			'baseurl' 		=> base_url(),
 			'languages'		=> $this->mdlanguages->read_records('languages'),
 			'client'		=> array(),
+			'footer'		=> array('category'=>$this->mdcategory->read_records($this->language),'pages'=>$this->mdpages->read_records('id,title,link,url,category',$this->language)),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr')
 		);
@@ -96,7 +100,8 @@ class Users_interface extends MY_Controller{
 		$this->session->unset_userdata('msgr');
 		
 		if($this->loginstatus):
-			$pagevar['user'] = $this->mdusers->read_record($this->user['uid'],'users');
+			$pagevar['client'] = $this->mdusers->read_record($this->user['uid'],'users');
+			$pagevar['client']['password'] = $this->encrypt->decode($pagevar['client']['trade_password']);
 		endif;
 		
 		$this->load->view("users_interface/trade",$pagevar);
@@ -132,11 +137,62 @@ class Users_interface extends MY_Controller{
 				$this->session->set_userdata(array('logon'=>md5($user['login']),'userid'=>$user['id']));
 				$statusval['newlink'] = 'Welcome, '.$user['first_name'].' '.$user['last_name'].'<br/>';
 				if($user['id']):
-					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'cabinet/orders">Personal cabinet</a>';
+//					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'cabinet/orders"> Personal cabinet</a>';
+					$statusval['newlink'] .= '<a id="action-cabinet" class="none" href="'.base_url().'#"> Personal cabinet</a>';
 				else:
 					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">Personal cabinet</a>';
 				endif;
 				$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'logoff">Log off</a>';
+			endif;
+		endif;
+		echo json_encode($statusval);
+	}
+
+	public function registering(){
+		
+		$statusval = array('status'=>FALSE,'message'=>'Logon failure','newlink'=>'');
+		$data = trim($this->input->post('postdata'));
+		if(!$data):
+			show_404();
+		endif;
+		$data = preg_split("/&/",$data);
+		for($i=0;$i<count($data);$i++):
+			$dataid = preg_split("/=/",$data[$i]);
+			$dataval[$dataid[0]] = $dataid[1];
+		endfor;
+		if($dataval):
+			/*$postdata = http_build_query(array('answerType'=>$dataval['answerType'],'act'=>$dataval['act'],'office'=>$dataval['office'],
+						'fname'=>$dataval['fname'],'lname'=>$dataval['lname'],'email'=>$dataval['email'],'country'=>$dataval['country'],
+						'phone' => $dataval['phone']));
+			$opts = array('http' =>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded','content'=>$postdata));
+			$context  = stream_context_create($opts);
+			if($dataval['demo']):
+				$result = file_get_contents('http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22&demo=1',false,$context);
+			else:
+				$result = file_get_contents('http:vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22',false,$context);
+			endif;
+			header('Content-type: text/xml');
+			echo($result);*/
+			//обработка XML-документа
+			$dataval['zip_code'] = 'none';
+			$dataval['state'] = 'none';
+			$dataval['city'] = 'none';
+			$dataval['address1'] = 'none';
+			$dataval['address2'] = 'none';
+			$dataval['password'] = $this->randomPassword(12);
+			$xml = TRUE;
+			if($xml):
+				$user_id = $this->mdusers->insert_record($dataval);
+				if($user_id):
+					$statusval['status'] = TRUE;
+					$statusval['message'] = '';
+					$this->session->set_userdata(array('logon'=>md5($dataval['email']),'userid'=>$user_id));
+					$statusval['newlink'] = 'Welcome, '.$dataval['fname'].' '.$dataval['lname'].'<br/>';
+//					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'cabinet/orders"> Personal cabinet</a>';
+					$statusval['newlink'] .= '<a id="action-cabinet" class="none" href="'.base_url().'#"> Personal cabinet</a>';
+					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'logoff">Log off</a>';
+					$this->mdusers->update_field($user_id,'language',$this->language,'users');
+				endif;
 			endif;
 		endif;
 		echo json_encode($statusval);

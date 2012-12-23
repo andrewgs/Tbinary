@@ -15,6 +15,7 @@ class Mdusers extends MY_Model{
 	var $day_phone		= '';
 	var $home_phone		= '';
 	var $password		= '';
+	var $coach			= '';
 	var $trade_password = '';
 	var $signdate		= '';
 	var $active			= 1;
@@ -26,8 +27,8 @@ class Mdusers extends MY_Model{
 	
 	function insert_record($data){
 
-		$this->first_name 	= $data['first_name'];
-		$this->last_name 	= $data['last_name'];
+		$this->first_name 	= $data['fname'];
+		$this->last_name 	= $data['lname'];
 		$this->email 		= $data['email'];
 		$this->address1		= $data['address1'];
 		$this->address2		= $data['address2'];
@@ -35,10 +36,11 @@ class Mdusers extends MY_Model{
 		$this->state 		= $data['state'];
 		$this->zip_code 	= $data['zip_code'];
 		$this->country 		= $data['country'];
-		$this->day_phone 	= $data['day_phone'];
-		$this->home_phone 	= $data['home_phone'];
+		$this->day_phone 	= $data['phone'];
+		$this->home_phone 	= $data['phone'];
+		$this->coach 		= $data['coach'];
 		$this->password		= md5($data['password']);
-		$this->trade_password= md5($data['trade_password']);
+		$this->trade_password= $this->encrypt->encode($data['password']);
 		$this->signdate 	= date("Y-m-d");
 		
 		$this->db->insert('users',$this);

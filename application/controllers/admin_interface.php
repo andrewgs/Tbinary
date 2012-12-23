@@ -238,6 +238,7 @@ class Admin_interface extends MY_Controller{
 		$pagevar['pages'] = $this->pagination('admin-panel/actions//users-list',5,$this->mdusers->count_clients(),10);
 		
 		for($i=0;$i<count($pagevar['users']);$i++):
+			$pagevar['users'][$i]['password'] = $this->encrypt->decode($pagevar['users'][$i]['trade_password']);
 			$pagevar['users'][$i]['signdate'] = $this->operation_dot_date($pagevar['users'][$i]['signdate']);
 		endfor;
 		

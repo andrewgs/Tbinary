@@ -27,11 +27,11 @@
 						<tr class="align-center">
 							<td>
 								<?=$users[$i]['first_name'].' '.$users[$i]['last_name'];?><br/>
-								Адрес: <?=$users[$i]['address'];?><br/>
+								Адрес: <?=$users[$i]['address1'];?><br/>
 								Email: <?=$users[$i]['email'];?><br/>
-								Телефон: <?=$users[$i]['phones'];?><br/>
+								Телефоны: <?=$users[$i]['day_phone'];?> <?=$users[$i]['home_phone'];?><br/>
 								<?php if($users[$i]['id'] != $userinfo['uid']):?>
-								Логин: <strong><?=$users[$i]['login'];?></strong> Пароль: <strong><?=$users[$i]['password'];?></strong>
+								Логин: <strong><?=$users[$i]['email'];?></strong> Пароль: <strong><?=$users[$i]['password'];?></strong>
 								<?php endif;?>
 							</td>
 							<td>

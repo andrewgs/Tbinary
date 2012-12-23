@@ -16,7 +16,7 @@
 					<hr/>
 					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/new-page','<i class="icon-plus-sign"></i> New page');?></li>
 					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/categories','<i class=" icon-th-list"></i> Categories',array('tabindex'=>'-1'));?></li>
-					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/properties','<i class=" icon-cog"></i> Properties',array('tabindex'=>'-1'));?></li>
+					<!--<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/properties','<i class=" icon-cog"></i> Properties',array('tabindex'=>'-1'));?></li>-->
 				</ul>
 			</li>
 		<?php endfor;?>

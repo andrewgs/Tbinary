@@ -41,15 +41,36 @@ function backpath(path){window.location=path;}
 	});
 	
 	$("#login-btn").click(function(event){
-		var err = false;$("#login-form em").hide();
-		event.preventDefault();
-		$("#login-form .valid-required").each(function(i,element){if($(this).val()==''){$("#login-form em").html('Fields is empty<br/>').show();err = true;}});
-		if(!err && !isValidEmailAddress($("#login-email").val())){$("#login-form em").html('Not valid email address<br/>').show();$("#login-form .FieldSend").val('');err = true;}
+		var err = false;event.preventDefault();
+		$("#login-form .valid-required").each(function(i,element){if($(this).val()==''){$(this).tooltip('show');err = true;}});
+		if(!err && !isValidEmailAddress($("#login-email").val())){$("#login-email").attr('data-original-title','Not valid email address').tooltip('show');err = true;}
 		if(!err){
 			var postdata = myserialize($("#login-form .FieldSend"));
 			$.post(baseurl+"login",{'postdata':postdata},function(data){
 				if(data.status){$("#login-form").remove();$("#login-block").html(data.newlink);
 				}else{$("#login-form .FieldSend").val('');$("#login-form em").html(data.message).show();}},"json");
+		}
+	});
+	$(".signup-btn").click(function(event){
+		var err = false;event.preventDefault();
+		var account = $(this).attr('data-account');
+		var email = $("#signup-email-"+account).val();
+		$("."+account+" .valid-required").each(function(i,element){if($(this).val()==''){$(this).tooltip('show');err = true;}});
+		if(!err && !isValidEmailAddress(email)){$("#signup-email-"+account).attr('data-original-title','Not valid email address').tooltip('show');err = true;}
+		if(!err){
+			var postdata = myserialize($("."+account+" .FieldSend"));
+			var coach = 0;
+			if($("#coach-"+account+":checked").length == 1){coach = 1;}
+			postdata = postdata+"&coach="+coach;
+			if(account == 'demo'){postdata = postdata+"&demo=1"}else{postdata = postdata+"&demo=0"}
+			$.post(baseurl+"registering",{'postdata':postdata},
+				function(data){
+					if(data.status){
+						$("#login-form").remove();
+						$("#login-block").html(data.newlink);
+					}
+				},
+			"json");
 		}
 	});
 })(window.jQuery);

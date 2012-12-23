@@ -17,7 +17,7 @@
 	</div>
 	<div class="modal-footer">
 		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-		<button class="btn btn-success sendForm" type="submit" name="inscategory" value="send">Add language</button>
+		<button class="btn btn-success sendForm" type="submit" name="inscategory" value="send">Add category</button>
 	</div>
 </div>
 <?= form_close(); ?>

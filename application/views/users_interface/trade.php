@@ -19,19 +19,12 @@
 		<?php if($this->user['admin']):?>
 		<iframe id="trade-wrapper" src="http://demo.sysfx.com:8100/trade/trade5-4.jsp?entry=test.21"></iframe>
 		<?php else:?>
-		<iframe id="trade-wrapper" src="http://demo.sysfx.com:8100/trade/trade5-4.jsp?entry=test.21&login=<?=$client['email'];?>t&password=<?=$client['trade_password'];?>"></iframe>
+		<iframe id="trade-wrapper" src="http://demo.sysfx.com:8100/trade/trade5-4.jsp?entry=test.21&login=<?=$client['email'];?>&password=<?=$client['password'];?>"></iframe>
 		<?php endif;?>
 	<?php endif;?>
-		
-		
 	</div>
 	<?php $this->load->view("users_interface/includes/footer");?>
 	<?php $this->load->view("users_interface/includes/copyright");?>
 	<?php $this->load->view("users_interface/includes/scripts");?>
-	<script type="text/javascript">
-	$(function(){
-		
-	});
-	</script>
 </body>
 </html>

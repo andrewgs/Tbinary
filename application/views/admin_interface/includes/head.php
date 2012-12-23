@@ -4,4 +4,5 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link href="<?=$baseurl;?>css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?=$baseurl;?>css/administration.css" rel="stylesheet">
 </head>

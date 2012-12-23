@@ -16,7 +16,7 @@ class Mdlanguages extends MY_Model{
 		$this->name = $data['name'];
 		$this->base = $data['base'];
 		
-		$this->db->insert('​​languages',$this);
+		$this->db->insert('languages',$this);
 		return $this->db->insert_id();
 	}
 	
@@ -24,7 +24,16 @@ class Mdlanguages extends MY_Model{
 
 		$this->db->set('name',$data['name']);
 		$this->db->where('id',$id);
-		$this->db->update('​​languages');
+		$this->db->update('languages');
 		return $this->db->affected_rows();
+	}
+
+	function base_language(){
+	
+		$this->db->where('base',TRUE);
+		$query = $this->db->get('languages',1);
+		$data = $query->result_array();
+		if($data) return $data[0]['id'];
+		return FALSE;
 	}
 }

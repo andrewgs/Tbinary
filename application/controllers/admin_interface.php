@@ -28,7 +28,7 @@ class Admin_interface extends MY_Controller{
 		
 		$pagevar = array(
 					'baseurl' 		=> base_url(),
-					'langs'			=> $this->mdlanguages->read_records('​​languages'),
+					'langs'			=> $this->mdlanguages->read_records('languages'),
 					'langs_pages'	=> $this->mdpages->read_fields('id,language,link,manage'),
 					'page'			=> FALSE,
 					'redactor'		=> FALSE,
@@ -48,20 +48,34 @@ class Admin_interface extends MY_Controller{
 			else:
 				$insert = $this->input->post();
 				$insert['base'] = 0;
-				$cntleng = $this->mdlanguages->count_all_records('​​languages');
+				$cntleng = $this->mdlanguages->count_all_records('languages');
 				if(!$cntleng):
 					$insert['base'] = 1;
 				endif;
 				$insert['name'] = $this->english_symbol($insert['name']);
 				if($insert['name']):
-					$result = $this->mdlanguages->insert_record($insert);
-					if($result):
-						$this->mdpages->insert_record(array('language'=>$result,'title'=>'Home page','description'=>'','link'=>'home','content'=>'','url'=>''),0);
-						$this->mdpages->insert_record(array('language'=>$result,'title'=>'Trade page','description'=>'','link'=>'trade','content'=>'','url'=>'trade'),0);
-						$this->mdpages->insert_record(array('language'=>$result,'title'=>'FAQ page','description'=>'','link'=>'faq','content'=>'','url'=>'faq'),0);
-						$this->mdpages->insert_record(array('language'=>$result,'title'=>'Deposit page','description'=>'','link'=>'deposit','content'=>'','url'=>'deposit'),0);
-						$this->mdpages->insert_record(array('language'=>$result,'title'=>'Contact us page','description'=>'','link'=>'contact us','content'=>'','url'=>'contact-us'),0);
-						$this->session->set_userdata('msgs','Language added!');
+					$count_pages = $this->mdpages->count_all_records('languages');
+					$lang_id = $this->mdlanguages->insert_record($insert);
+					if($count_pages):
+						$base_language = $this->mdlanguages->base_language();
+						if($base_language):
+							$category = $this->mdcategory->read_records($base_language);
+							for($i=0;$i<count($category);$i++):
+								$category_id = $this->mdcategory->insert_record(array('language'=>$lang_id,'title'=>$category[$i]['title']));
+								$pages = $this->mdpages->category_records($category[$i]['id'],$base_language);
+								for($j=0;$j<count($pages);$j++):
+									$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>$pages[$j]['title'],'description'=>$pages[$j]['description'],'link'=>$pages[$j]['link'],'content'=>$pages[$j]['content'],'url'=>$pages[$j]['url'],'category'=>$category_id),$pages[$j]['manage']);
+								endfor;
+							endfor;
+						endif;
+						$this->session->set_userdata('msgs','New language added!');
+					else:
+						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'Home page','description'=>'','link'=>'home','content'=>'','url'=>'','category'=>0),0);
+						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'Trade page','description'=>'','link'=>'trade','content'=>'','url'=>'trade','category'=>0),0);
+						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'FAQ page','description'=>'','link'=>'faq','content'=>'','url'=>'faq','category'=>0),0);
+						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'Deposit page','description'=>'','link'=>'deposit','content'=>'','url'=>'deposit','category'=>0),0);
+						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'Contact us page','description'=>'','link'=>'contact us','content'=>'','url'=>'contact-us','category'=>0),0);
+						$this->session->set_userdata('msgs','Base language added!');
 					endif;
 				endif;
 				redirect($this->uri->uri_string());
@@ -75,11 +89,12 @@ class Admin_interface extends MY_Controller{
 		
 		$pagevar = array(
 					'baseurl' 		=> base_url(),
-					'langs'			=> $this->mdlanguages->read_records('​​languages'),
+					'langs'			=> $this->mdlanguages->read_records('languages'),
 					'langs_pages'	=> $this->mdpages->read_fields('id,language,link,manage'),
-					'page'			=> array('title'=>'','description'=>'','link'=>'','url'=>'','content'=>''),
+					'page'			=> array('title'=>'','description'=>'','link'=>'','url'=>'','content'=>'','category'=>0),
 					'redactor'		=> TRUE,
 					'form_legend'	=> 'The form of creating a new page. Lenguage: ',
+					'category'		=> $this->mdcategory->read_records($this->uri->segment(5)),
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
 			);
@@ -115,13 +130,18 @@ class Admin_interface extends MY_Controller{
 	
 	public function lang_edit_page(){
 		
+		if(!$this->mdpages->page_on_language($this->uri->segment(5),$this->uri->segment(7))):
+			redirect('admin-panel/actions/pages');
+		endif;
+		
 		$pagevar = array(
 					'baseurl' 		=> base_url(),
-					'langs'			=> $this->mdlanguages->read_records('​​languages'),
+					'langs'			=> $this->mdlanguages->read_records('languages'),
 					'langs_pages'	=> $this->mdpages->read_fields('id,language,link,manage'),
 					'page'			=> $this->mdpages->read_record($this->uri->segment(7),'pages'),
 					'redactor'		=> TRUE,
 					'form_legend'	=> 'The form of editing page. Lenguage: ',
+					'category'		=> $this->mdcategory->read_records($this->uri->segment(5)),
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
 			);
@@ -135,6 +155,7 @@ class Admin_interface extends MY_Controller{
 			$this->form_validation->set_rules('link',' ','required|trim');
 			$this->form_validation->set_rules('url',' ','trim');
 			$this->form_validation->set_rules('content',' ','trim');
+			$this->form_validation->set_rules('category',' ','trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Error. Incorrectly filled in the required fields!');
 				redirect($this->uri->uri_string());
@@ -155,7 +176,43 @@ class Admin_interface extends MY_Controller{
 		$this->load->view("admin_interface/pages",$pagevar);
 	}
 	
-	/******************************************* users **********************************************************/
+	/******************************************* categories ******************************************************/
+	
+	public function lang_categories(){
+		
+		$pagevar = array(
+					'baseurl' 		=> base_url(),
+					'langs'			=> $this->mdlanguages->read_records('languages'),
+					'langs_pages'	=> $this->mdpages->read_fields('id,language,link,manage'),
+					'category'		=> $this->mdcategory->read_records($this->uri->segment(5)),
+					'form_legend'	=> 'Category list pages. Lenguage: ',
+					'msgs'			=> $this->session->userdata('msgs'),
+					'msgr'			=> $this->session->userdata('msgr')
+			);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('inscategory')):
+			unset($_POST['inscategory']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Error. Incorrectly filled in the required fields!');
+				redirect($this->uri->uri_string());
+			else:
+				$insert = $this->input->post();
+				$insert['language'] = $this->uri->segment(5);
+				$result = $this->mdcategory->insert_record($insert);
+				if($result):
+					$this->session->set_userdata('msgs','Category <strong>'.$insert['title'].'</strong> added!');
+				endif;
+				redirect($this->uri->uri_string());
+			endif;
+		endif;
+		
+		$this->load->view("admin_interface/categories",$pagevar);
+	}
+	
+	/********************************************* users ********************************************************/
 	
 	public function users_list(){
 		

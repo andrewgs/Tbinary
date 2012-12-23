@@ -2,14 +2,15 @@
 
 class Mdpages extends MY_Model{
 	
-	var $id   			= 0;
-	var $language		= '';
-	var $title 			= '';
-	var $description 	= '';
-	var $link 			= '';
-	var $content		= '';
-	var $url			= '';
-	var $manage			= 1;
+	var $id   		= 0;
+	var $language	= '';
+	var $title 		= '';
+	var $description= '';
+	var $link 		= '';
+	var $content	= '';
+	var $url		= '';
+	var $manage		= 1;
+	var $category	= 1;
 	
 	function __construct(){
 		parent::__construct();
@@ -24,6 +25,7 @@ class Mdpages extends MY_Model{
 		$this->content 		= $data['content'];
 		$this->url 			= $data['url'];
 		$this->manage 		= $manage;
+		$this->category 	= $data['category'];
 		
 		$this->db->insert('pages',$this);
 		return $this->db->insert_id();
@@ -36,6 +38,7 @@ class Mdpages extends MY_Model{
 		$this->db->set('link',$data['link']);
 		$this->db->set('content',$data['content']);
 		$this->db->set('url',$data['url']);
+		$this->db->set('category',$data['category']);
 		$this->db->where('language',$data['language']);
 		$this->db->where('id',$id);
 		
@@ -59,6 +62,36 @@ class Mdpages extends MY_Model{
 		$query = $this->db->get('pages');
 		$data = $query->result_array();
 		if($data) return $data;
+		return FALSE;
+	}
+
+	function read_records($fields,$language){
+			
+		$this->db->select($fields);
+		$this->db->where('language',$language);
+		$query = $this->db->get('pages');
+		$data = $query->result_array();
+		if($data) return $data;
+		return FALSE;
+	}
+	
+	function category_records($category,$language){
+			
+		$this->db->where('category',$category);
+		$this->db->where('language',$language);
+		$query = $this->db->get('pages');
+		$data = $query->result_array();
+		if($data) return $data;
+		return FALSE;
+	}
+
+	function page_on_language($language,$page){
+			
+		$this->db->where('id',$page);
+		$this->db->where('language',$language);
+		$query = $this->db->get('pages',1);
+		$data = $query->result_array();
+		if($data) return TRUE;
 		return FALSE;
 	}
 }

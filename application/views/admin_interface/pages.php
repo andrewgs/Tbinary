@@ -22,5 +22,10 @@
 	<?php if($redactor):?>
 	<script src="<?=$baseurl;?>ckeditor/ckeditor.js"></script>
 	<?php endif;?>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#CategoryPage").val(<?=$page['category'];?>);
+		});
+	</script>
 </body>
 </html>

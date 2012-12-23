@@ -52,7 +52,7 @@
 			<?php endif;?>
 			</div>
 		<?php $this->load->view("admin_interface/includes/rightbar");?>
-		<?php $this->load->view("admin_interface/modal/delete-user");?>
+		<?php $this->load->view("admin_interface/modal/user-delete");?>
 		</div>
 	</div>
 	<?php $this->load->view("admin_interface/includes/scripts");?>

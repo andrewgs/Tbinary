@@ -25,4 +25,6 @@ $route['admin-panel/actions/pages']						= "admin_interface/pages_lang";
 $route['admin-panel/actions/pages/lang/:num/new-page']	= "admin_interface/lang_new_page";
 $route['admin-panel/actions/pages/lang/:num/page/:num']	= "admin_interface/lang_edit_page";
 
+$route['admin-panel/actions/pages/lang/:num/categories']= "admin_interface/lang_categories";
+
 $route['admin-panel/actions/profile']					= "admin_interface/actions_profile";

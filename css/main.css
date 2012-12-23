@@ -30,13 +30,17 @@ h2.main { font: 29px/34px "din-condensed-web", sans-serif; margin: 0 0 1em 7px; 
 h3.main { font: 25px/29px "din-condensed-web", sans-serif; margin: 0 0 10px 7px; }
 ol li { margin-bottom: 0.4em; color: #333; font-size: 13px; }
 
-header { border-bottom: 1px dashed #aeaeae;  padding: 2em 0 0; }
+header { border-bottom: 1px dashed #aeaeae;  padding: 2em 0 0; height: 80px; position: relative; }
 #logo { display: block; width: 170px; height: 49px; background: url('../img/logo.png') no-repeat; text-indent: -9999px; margin: 10px 0 0; }
 #login-form { position: relative; margin-bottom: 10px; }
-#login-form a { color: #c0c0c0; display: block; position: absolute; right: -18px; bottom: 45px; }
+#login-form a { color: #c0c0c0; display: block; position: absolute; right: -30px; bottom: 45px; }
 #login-form a:hover { color: #999; text-decoration: none; }
-#login-form .btn-action { position: absolute; bottom: 5px; right: 10px; height: 30px; width: 72px; font: 15px/22px "din-condensed-web", sans-serif; }
-#login-form input { margin-bottom: 5px;  }
+#login-form .btn-action { position: absolute; bottom: 5px; right: 0px; height: 30px; width: 72px; font: 15px/22px "din-condensed-web", sans-serif; }
+#login-form input { margin-bottom: 5px; width: 175px; }
+.auth-data { padding: 2em 0 0; text-align: right; }
+	.action-cabinet { color: #C4221D; display: inline-block; margin: 0.25em 0 0 0.5em; }
+	.action-cabinet:hover { color: #C4221D; text-decoration: none; border-bottom: 1px solid;  }
+#login-block { margin: 0.25em 0 0; }
 
 #main-nav { margin: 40px 0 0; }
 #main-nav li { float: left; text-transform: uppercase; margin-right: 1.75em; font-size: 13px; }
@@ -106,6 +110,6 @@ input.highcharts-range-selector { margin: 0; }
 
 #ChangeLang{
 	position: absolute;
-	top: 30px;
-	right: 30px;
+	top: 3px;
+	right: 0;
 }

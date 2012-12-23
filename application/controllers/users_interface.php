@@ -83,7 +83,11 @@ class Users_interface extends MY_Controller{
 	
 	public function trade(){
 		
+<<<<<<< HEAD
 		$page_data = $this->mdpages->read_fields_url('trade','*',$this->language);
+=======
+		$page_data = $this->mdpages->read_fields_url('','*',$this->language);
+>>>>>>> 67e6ddfa85cd3202d802f7f358e865563742bf14
 		
 		$pagevar = array(
 			'title'			=> $page_data['title'],
@@ -135,14 +139,18 @@ class Users_interface extends MY_Controller{
 				$statusval['status'] = TRUE;
 				$statusval['message'] = '';
 				$this->session->set_userdata(array('logon'=>md5($user['login']),'userid'=>$user['id']));
-				$statusval['newlink'] = 'Welcome, '.$user['first_name'].' '.$user['last_name'].'<br/>';
+				$statusval['newlink'] = 'Hello, <strong>'.$user['first_name'].' '.$user['last_name'].'</strong><br/>';
 				if($user['id']):
+<<<<<<< HEAD
 //					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'cabinet/orders"> Personal cabinet</a>';
 					$statusval['newlink'] .= '<a id="action-cabinet" class="none" href="'.base_url().'#"> Personal cabinet</a>';
+=======
+					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'cabinet/orders">My Account</a>';
+>>>>>>> 67e6ddfa85cd3202d802f7f358e865563742bf14
 				else:
-					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">Personal cabinet</a>';
+					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">My Account</a>';
 				endif;
-				$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'logoff">Log off</a>';
+				$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'logoff">Logout</a>';
 			endif;
 		endif;
 		echo json_encode($statusval);

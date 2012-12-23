@@ -83,11 +83,7 @@ class Users_interface extends MY_Controller{
 	
 	public function trade(){
 		
-<<<<<<< HEAD
 		$page_data = $this->mdpages->read_fields_url('trade','*',$this->language);
-=======
-		$page_data = $this->mdpages->read_fields_url('','*',$this->language);
->>>>>>> 67e6ddfa85cd3202d802f7f358e865563742bf14
 		
 		$pagevar = array(
 			'title'			=> $page_data['title'],

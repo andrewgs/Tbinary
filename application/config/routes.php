@@ -3,17 +3,9 @@
 $route['default_controller'] = "users_interface";
 $route['404_override'] = '';
 
-/*************************************************** USERS INTRERFACE ***********************************************/
-
-$route['']					= "users_interface/index";
-$route['trade']				= "users_interface/trade";
-
-$route['login']				= "users_interface/login";
-$route['logoff']			= "users_interface/logoff";
-
 /************************************************** CLIENT INTRERFACE ***********************************************/
 
-$route['cabinet/profile']			= "clients_interface/profile";
+$route['cabinet/profile']	= "clients_interface/profile";
 
 /*************************************************** ADMINS INTRERFACE ***********************************************/
 
@@ -28,3 +20,15 @@ $route['admin-panel/actions/pages/lang/:num/page/:num']	= "admin_interface/lang_
 $route['admin-panel/actions/pages/lang/:num/categories']= "admin_interface/lang_categories";
 
 $route['admin-panel/actions/profile']					= "admin_interface/actions_profile";
+
+/*************************************************** USERS INTRERFACE ***********************************************/
+
+$route['']							= "users_interface/index";
+$route['trade']						= "users_interface/trade";
+
+$route['login']						= "users_interface/login";
+$route['logoff']					= "users_interface/logoff";
+
+$route['change-site-language/:any'] = "users_interface/change_language";
+
+$route[':any']						= "users_interface/pages";

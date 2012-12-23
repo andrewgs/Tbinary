@@ -28,7 +28,10 @@
 				<div class="control-group">
 					<label for="url" class="control-label">Page URL: </label>
 					<div class="controls">
-						<input type="text" class="span14" name="url" value="<?=$page['url'];?>">
+						<input type="text" class="span14" name="url" <?=(!$page['manage'])?'readonly="readonly"':'';?> value="<?=$page['url'];?>">
+						<?php if(!$page['manage']):?>
+							<span class="label label-important">Important. For the current page field does not change!</span>
+						<?php endif; ?>
 					</div>
 				</div>
 				<div class="control-group">
@@ -39,12 +42,15 @@
 				<div class="control-group">
 					<label for="image" class="control-label">Category: </label>
 					<div class="controls">
-						<select id="CategoryPage" name="category" class="span9">
+						<select id="CategoryPage" name="category" class="span9" <?=(!$page['manage'])?'disabled="disabled"':'';?>>
 							<option value="0">No category</option>
 						<?php for($i=0;$i<count($category);$i++):?>
 							<option value="<?=$category[$i]['id'];?>"><?=$category[$i]['title'];?></option>
 						<?php endfor;?>
 						</select>
+						<?php if(!$page['manage']):?>
+							<span class="label label-important">Important. For the current page field does not change!</span>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>

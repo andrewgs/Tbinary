@@ -59,6 +59,10 @@ class Admin_interface extends MY_Controller{
 					if($count_pages):
 						$base_language = $this->mdlanguages->base_language();
 						if($base_language):
+							$pages = $this->mdpages->category_records(0,$base_language);
+							for($i=0;$i<count($pages);$i++):
+								$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>$pages[$i]['title'],'description'=>$pages[$i]['description'],'link'=>$pages[$i]['link'],'content'=>$pages[$i]['content'],'url'=>$pages[$i]['url'],'category'=>0),$pages[$i]['manage']);
+							endfor;
 							$category = $this->mdcategory->read_records($base_language);
 							for($i=0;$i<count($category);$i++):
 								$category_id = $this->mdcategory->insert_record(array('language'=>$lang_id,'title'=>$category[$i]['title']));
@@ -91,9 +95,9 @@ class Admin_interface extends MY_Controller{
 					'baseurl' 		=> base_url(),
 					'langs'			=> $this->mdlanguages->read_records('languages'),
 					'langs_pages'	=> $this->mdpages->read_fields('id,language,link,manage'),
-					'page'			=> array('title'=>'','description'=>'','link'=>'','url'=>'','content'=>'','category'=>0),
+					'page'			=> array('title'=>'','description'=>'','link'=>'','url'=>'','content'=>'','category'=>0,'manage'=>1),
 					'redactor'		=> TRUE,
-					'form_legend'	=> 'The form of creating a new page. Lenguage: ',
+					'form_legend'	=> 'The form of creating a new page. Language: ',
 					'category'		=> $this->mdcategory->read_records($this->uri->segment(5)),
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
@@ -140,7 +144,7 @@ class Admin_interface extends MY_Controller{
 					'langs_pages'	=> $this->mdpages->read_fields('id,language,link,manage'),
 					'page'			=> $this->mdpages->read_record($this->uri->segment(7),'pages'),
 					'redactor'		=> TRUE,
-					'form_legend'	=> 'The form of editing page. Lenguage: ',
+					'form_legend'	=> 'The form of editing page. Language: ',
 					'category'		=> $this->mdcategory->read_records($this->uri->segment(5)),
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
@@ -164,6 +168,9 @@ class Admin_interface extends MY_Controller{
 				if(!empty($update['url'])):
 					$update['url'] = $this->valid_url_symbol($update['url']);
 				endif;
+				if(!isset($update['category'])):
+					$update['category'] = 0;
+				endif;
 				$update['language'] = $this->uri->segment(5);
 				$result = $this->mdpages->update_record($this->uri->segment(7),$update);
 				if($result):
@@ -185,7 +192,7 @@ class Admin_interface extends MY_Controller{
 					'langs'			=> $this->mdlanguages->read_records('languages'),
 					'langs_pages'	=> $this->mdpages->read_fields('id,language,link,manage'),
 					'category'		=> $this->mdcategory->read_records($this->uri->segment(5)),
-					'form_legend'	=> 'Category list pages. Lenguage: ',
+					'form_legend'	=> 'Category list pages. Language: ',
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
 			);

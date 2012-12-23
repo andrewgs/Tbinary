@@ -18,6 +18,7 @@ class Mdusers extends MY_Model{
 	var $trade_password = '';
 	var $signdate		= '';
 	var $active			= 1;
+	var $language		= 1;
 
 	function __construct(){
 		parent::__construct();

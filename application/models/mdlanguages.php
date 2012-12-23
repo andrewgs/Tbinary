@@ -27,7 +27,17 @@ class Mdlanguages extends MY_Model{
 		$this->db->update('languages');
 		return $this->db->affected_rows();
 	}
-
+	
+	function language_exist($string){
+		
+		$this->db->select('id,name');
+		$this->db->where('name',$string);
+		$query = $this->db->get('languages',1);
+		$data = $query->result_array();
+		if(count($data)) return $data[0];
+		return FALSE;
+	}
+	
 	function base_language(){
 	
 		$this->db->where('base',TRUE);

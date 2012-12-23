@@ -46,10 +46,11 @@ class Mdpages extends MY_Model{
 		return $this->db->affected_rows();
 	}
 	
-	function read_fields_url($url,$fields){
+	function read_fields_url($url,$fields,$language){
 			
 		$this->db->select($fields);
 		$this->db->where('url',$url);
+		$this->db->where('language',$language);
 		$query = $this->db->get('pages',1);
 		$data = $query->result_array();
 		if(isset($data[0])) return $data[0];

@@ -47,8 +47,8 @@ function backpath(path){window.location=path;}
 		if(!err){
 			var postdata = myserialize($("#login-form .FieldSend"));
 			$.post(baseurl+"login",{'postdata':postdata},function(data){
-				if(data.status){$("#login-form").remove();$("#login-block").html(data.newlink);$("#login-block").parents('div:first').addClass('auth-data');
-				}else{$("#login-form .FieldSend").val('');$("#login-form em").html(data.message).show();}},"json");
+				if(data.status){$("#login-form").remove();$("#login-block").html(data.newlink);$("#login-block").parents('div:first').addClass('auth-data');}
+				else{$("#login-email").attr('data-original-title','Logon failure').tooltip('show');}},"json");
 		}
 	});
 	$(".signup-btn").click(function(event){
@@ -66,8 +66,8 @@ function backpath(path){window.location=path;}
 			$.post(baseurl+"registering",{'postdata':postdata},
 				function(data){
 					if(data.status){
-						$("#login-form").remove();
-						$("#login-block").html(data.newlink);
+						$("#login-form").remove();$("#login-block").html(data.newlink);$("#login-block").parents('div:first').addClass('auth-data');
+						$(".FieldSend").val('');
 					}
 				},
 			"json");

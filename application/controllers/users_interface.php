@@ -63,7 +63,6 @@ class Users_interface extends MY_Controller{
 		if(!$page_data):
 			show_404();
 		endif;
-		
 		$pagevar = array(
 			'title'				=> $page_data['title'],
 			'description'		=> $page_data['description'],
@@ -137,12 +136,7 @@ class Users_interface extends MY_Controller{
 				$this->session->set_userdata(array('logon'=>md5($user['login']),'userid'=>$user['id']));
 				$statusval['newlink'] = 'Hello, <strong>'.$user['first_name'].' '.$user['last_name'].'</strong><br/>';
 				if($user['id']):
-<<<<<<< HEAD
-//					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'cabinet/orders"> Personal cabinet</a>';
-					$statusval['newlink'] .= '<a id="action-cabinet" class="none" href="'.base_url().'#"> Personal cabinet</a>';
-=======
-					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'cabinet/orders">My Account</a>';
->>>>>>> 67e6ddfa85cd3202d802f7f358e865563742bf14
+					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'#">My Account</a>';
 				else:
 					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">My Account</a>';
 				endif;
@@ -164,7 +158,7 @@ class Users_interface extends MY_Controller{
 			$dataid = preg_split("/=/",$data[$i]);
 			$dataval[$dataid[0]] = $dataid[1];
 		endfor;
-		if($dataval):
+		if($dataval && !$this->loginstatus):
 			/*$postdata = http_build_query(array('answerType'=>$dataval['answerType'],'act'=>$dataval['act'],'office'=>$dataval['office'],
 						'fname'=>$dataval['fname'],'lname'=>$dataval['lname'],'email'=>$dataval['email'],'country'=>$dataval['country'],
 						'phone' => $dataval['phone']));
@@ -191,10 +185,9 @@ class Users_interface extends MY_Controller{
 					$statusval['status'] = TRUE;
 					$statusval['message'] = '';
 					$this->session->set_userdata(array('logon'=>md5($dataval['email']),'userid'=>$user_id));
-					$statusval['newlink'] = 'Welcome, '.$dataval['fname'].' '.$dataval['lname'].'<br/>';
-//					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'cabinet/orders"> Personal cabinet</a>';
-					$statusval['newlink'] .= '<a id="action-cabinet" class="none" href="'.base_url().'#"> Personal cabinet</a>';
-					$statusval['newlink'] .= '<a id="action-cabinet" href="'.base_url().'logoff">Log off</a>';
+					$statusval['newlink'] = 'Hello, <strong>'.$dataval['fname'].' '.$dataval['lname'].'</strong><br/>';
+					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'#">My Account</a>';
+					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'logoff">Logout</a>';
 					$this->mdusers->update_field($user_id,'language',$this->language,'users');
 				endif;
 			endif;

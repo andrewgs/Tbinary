@@ -24,10 +24,10 @@
 				<?php endfor;?>
 					</ul>
 				</div>
+			<?php endif;?>
 				<div class="span18 offset1">
 					<?=$content;?>
 				</div>
-			<?php endif;?>
 ​			</div>
 		</div>
 	</div>

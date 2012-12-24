@@ -104,56 +104,64 @@ $(function() {
 		}
 	});
 	
-	$.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
-	// $.getJSON('http://vl608.sysfx.com:9902/advertisements_real_rates/content/test.5/rates/requests/dispatcher?cc1=EUR&cc2=USD&callback=?', function(data) {
-		
+	var x = (new Date()).getTime(); // current time
+	console.log(x);
+	
+	// $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
+	$.getJSON('http://vl611.sysfx.com:8000/advertisements/content/test.13/rates/json/dispatcher?cc1=EUR&cc2=USD&callback=?', function(json_data) {
+	
 		// Create the chart
 		window.chart = new Highcharts.StockChart({
 			chart : {
 				renderTo : 'container',
 				events : {
 					load : function() {
-	
-						// set up the updating of the chart each second
+						
+						// set up the updating of the chart each 5 seconds
 						var series = this.series[0];
 						setInterval(function() {
-							var x = (new Date()).getTime(), // current time
-							y = Math.round(Math.random() * 100);
-							series.addPoint([x, y], true, true);
-						}, 1000);
+							$.getJSON('http://vl611.sysfx.com:8000/advertisements/content/test.13/rates/json/dispatcher?cc1=EUR&cc2=USD&callback=?', function(json) {
+								
+								var prepared = {};
+								
+								$.each(json, function(i,n){
+									prepared[n.date] = n.ask;
+								});
+								
+								$.each(prepared, function(timestamp, ask){
+									series.addPoint([timestamp, ask], false, true);
+								});								
+								
+								window.chart.redraw();
+							});
+						}, 2000);
+
 					}
 				},
 				height: '395'
 			},
 			
-			rangeSelector: {
-				buttons: [{
-					count: 1,
-					type: 'minute',
-					text: '1M'
-				}, {
-					count: 5,
-					type: 'minute',
-					text: '5M'
-				}, {
-					type: 'all',
-					text: 'All'
-				}],
-				inputEnabled: true,
-				selected: 0
-			},
+			tooltip: {
+	            formatter: function() {
+	                var s = '<b>'+ Highcharts.dateFormat('%A, %b %e, %Y, %H:%M:%S', this.x) +'</b>';
+	
+	                $.each(this.points, function(i, point) {
+	                    s += '<br/>1 USD = '+ point.y +' EUR';
+	                });
+	            
+	                return s;
+	            }
+	        },
+	        
+			rangeSelector: false,
 			
 			//title : {
-			//	text : 'USD/JPY'
+			//	text : 'EUR/USD'
 			//},
 			
 			exporting: {
 				enabled: false
 			},
-			
-			//navigator : {
-			//	enabled : false
-			//},
 			
 			series : [{
 				name : 'USD/JPY',
@@ -161,19 +169,19 @@ $(function() {
 				//	enabled : true,
 				//	radius : 3
 				//},
-				// type: 'spline',
 				step: true,
 				shadow : true,
 				data : (function() {
-					// generate an array of random data
-					var data = [], time = (new Date()).getTime(), i;
-	
-					for( i = -999; i <= 0; i++) {
-						data.push([
-							time + i * 1000,
-							Math.round(Math.random() * 100)
-						]);
-					}
+					var prepared={}, data = [];
+				
+					$.each(json_data, function(i,n){
+						prepared[n.date] = n.ask;
+					});
+					
+					$.each(prepared, function(timestamp, ask){
+						data.push([timestamp, ask]);
+					});
+					
 					return data;
 				})()
 			}]
@@ -182,38 +190,3 @@ $(function() {
 
 });
 
-/*
-?({
-	"rates" : [{
-		"date" : "2012-12-19 22:07:45",
-		"ask" : 1.80512,
-		"bid" : 1.80498
-	}, {
-		"date" : "2012-12-19 22:07:46",
-		"ask" : 1.80511,
-		"bid" : 1.80497
-	}, {
-		"date" : "2012-12-19 22:37:57",
-		"ask" : 1.80391,
-		"bid" : 1.80377
-	}],
-	"cc1" : "EUR",
-	"cc2" : "USD"
-});
-
-?([
-	{
-		"date" : "2012-12-19 22:07:45",
-		"ask" : 1.80512,
-		"bid" : 1.80498
-	}, {
-		"date" : "2012-12-19 22:07:46",
-		"ask" : 1.80511,
-		"bid" : 1.80497
-	}, {
-		"date" : "2012-12-19 22:37:57",
-		"ask" : 1.80391,
-		"bid" : 1.80377
-	}
-]);
-*/

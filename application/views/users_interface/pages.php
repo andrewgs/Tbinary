@@ -24,8 +24,9 @@
 				<?php endfor;?>
 					</ul>
 				</div>
+				<div class="span1"> </div>
 			<?php endif;?>
-				<div class="span18 offset1">
+				<div class="span18">
 					<?=$content;?>
 				</div>
 ​			</div>

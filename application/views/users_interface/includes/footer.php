@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 		<?php for($i=0;$i<count($footer['category']);$i++):?>
-			<div class="span3 offset1">
+			<div class="span<?= ( $i==2 ) ? 5 : 4 ?>">
 				<h4><?=$footer['category'][$i]['title'];?></h4>
 				<ul>
 			<?php for($j=0;$j<count($footer['pages']);$j++):?>

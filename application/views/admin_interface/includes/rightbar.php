@@ -1,10 +1,11 @@
 <div class="span5">
 	<div class="well sidebar-nav">
 		<ul class="nav nav-pills nav-stacked">
-			<li num="users-list"><?=anchor('admin-panel/actions/users-list','Users');?></li>
-			<li num="pages"><?=anchor('admin-panel/actions/pages','Pages');?></li>
-			<li class="nav-header">Action</li>
-			<li><?=anchor('logoff','Log off');?></li>
+			<li class="nav-header">Chapters</li>
+			<li num="users-list"><?=anchor('admin-panel/actions/users-list','Accounts');?></li>
+			<li num="pages"><?=anchor('admin-panel/actions/pages','Content');?></li>
+			<li class="nav-header">Actions</li>
+			<li><?=anchor('logoff','Logout');?></li>
 		</ul>
 	</div>
 </div>

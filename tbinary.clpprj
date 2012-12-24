@@ -7340,116 +7340,120 @@
 					</treenode>
 				</treenode>
 			</treenode>
-			<treenode node="Mdusers;PHP:Class Name;S:\home\tbinary\www\application\models\mdusers.php;f0;2;1;118;;;;vpos;;vMY_Model;;c;;r;;d30,2;;b0,0;;m">
-				<treenode node="__construct;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;23;2;25;;;;vpos;;v;;r;;d23,23;;b0,0;;m">
+			<treenode node="Mdusers;PHP:Class Name;S:\home\tbinary\www\application\models\mdusers.php;f0;2;1;116;;;;vpos;;vMY_Model;;c;;r;;d30,2;;b0,0;;m">
+				<treenode node="__construct;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;25;2;27;;;;vpos;;v;;r;;d23,25;;b0,0;;m">
 				</treenode>
-				<treenode node="auth_user;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;66;2;76;;;;vpos;;v;;r;;d37,66;;b0,0;;mlogin;;ppassword;;p">
-					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;73;7;73;;;;vposarray;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="auth_user;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;64;2;74;;;;vpos;;v;;r;;d37,64;;b0,0;;mlogin;;ppassword;;p">
+					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;71;7;71;;;;vposarray;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="login;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f20;66;26;66;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="login;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f20;64;26;64;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="password;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f27;66;36;66;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="password;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f27;64;36;64;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="query;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;72;8;72;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="query;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;70;8;70;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;68;7;68;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="count_clients;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;108;2;116;;;;vpos;;v;;r;;d25,108;;b0,0;;m">
-					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;113;7;113;;;;vposarray;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="query;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;112;8;112;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;110;7;110;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;66;7;66;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="insert_record;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;27;2;47;;;;vpos;;v;;r;;d30,27;;b0,0;;mdata;;p">
-					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f24;27;29;27;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="count_clients;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;106;2;114;;;;vpos;;v;;r;;d25,106;;b0,0;;m">
+					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;111;7;111;;;;vposarray;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;29;7;29;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="query;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;110;8;110;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-				</treenode>
-				<treenode node="read_limit_clients;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;97;2;106;;;;vpos;;v;;r;;d42,97;;b0,0;;mcount;;pfrom;;p">
-					<treenode node="count;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f29;97;35;97;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;103;7;103;;;;vposarray;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="from;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f36;97;41;97;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="query;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;102;8;102;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;99;7;99;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;108;7;108;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="update_record;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;49;2;64;;;;vpos;;v;;r;;d34,49;;b0,0;;mid;;pdata;;p">
-					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f28;49;33;49;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="insert_record;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;29;2;45;;;;vpos;;v;;r;;d30,29;;b0,0;;mdata;;p">
+					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f24;29;29;29;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="id;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f24;49;27;49;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;51;7;51;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;31;7;31;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="user_exist;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;78;2;85;;;;vpos;;v;;r;;d39,78;;b0,0;;mfield;;pparameter;;p">
-					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;82;7;82;;;;vposarray;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="read_limit_clients;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;95;2;104;;;;vpos;;v;;r;;d42,95;;b0,0;;mcount;;pfrom;;p">
+					<treenode node="count;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f29;95;35;95;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="field;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f21;78;27;78;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;101;7;101;;;;vposarray;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="parameter;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f28;78;38;78;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="from;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f36;95;41;95;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="query;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;81;8;81;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="query;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;100;8;100;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;80;7;80;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="valid_password;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;87;2;95;;;;vpos;;v;;r;;d47,87;;b0,0;;mid;;pfield;;pparameter;;p">
-					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;92;7;92;;;;vposarray;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="field;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f29;87;35;87;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="id;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f25;87;28;87;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="parameter;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f36;87;46;87;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="query;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;91;8;91;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;89;7;89;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;97;7;97;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="active;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;20;12;20;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="update_record;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;47;2;62;;;;vpos;;v;;r;;d34,47;;b0,0;;mid;;pdata;;p">
+					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f28;47;33;47;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="id;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f24;47;27;47;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;49;7;49;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
 				</treenode>
-				<treenode node="address1;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;8;14;8;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="user_exist;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;76;2;83;;;;vpos;;v;;r;;d39,76;;b0,0;;mfield;;pparameter;;p">
+					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;80;7;80;;;;vposarray;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="field;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f21;76;27;76;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="parameter;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f28;76;38;76;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="query;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;79;8;79;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;78;7;78;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
 				</treenode>
-				<treenode node="address2;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;9;14;9;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="valid_password;PHP:Function Name;S:\home\tbinary\www\application\models\mdusers.php;f1;85;2;93;;;;vpos;;v;;r;;d47,85;;b0,0;;mid;;pfield;;pparameter;;p">
+					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;90;7;90;;;;vposarray;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="field;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f29;85;35;85;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="id;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f25;85;28;85;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="parameter;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f36;85;46;85;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="query;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;89;8;89;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f2;87;7;87;;;;vposCI_DB_result;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
 				</treenode>
-				<treenode node="city;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;10;10;10;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="active;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;22;12;22;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="coach;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;17;11;17;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="address1;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;9;14;9;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="country;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;13;13;13;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="address2;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;10;14;10;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="day_phone;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;14;15;14;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="city;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;11;10;11;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="email;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;7;11;7;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="coach;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;18;11;18;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="first_name;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;5;16;5;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="country;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;14;13;14;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="home_phone;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;15;16;15;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="day_phone;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;15;15;15;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="email;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;8;11;8;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="first_name;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;6;16;6;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="home_phone;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;16;16;16;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 				<treenode node="id;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;4;8;4;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="language;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;21;14;21;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="language;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;23;14;23;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="last_name;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;6;15;6;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="last_name;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;7;15;7;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="password;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;16;14;16;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="password;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;17;14;17;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="signdate;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;19;14;19;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="remote_id;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;5;15;5;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="state;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;11;11;11;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="signdate;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;21;14;21;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="trade_password;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;18;20;18;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="state;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;12;11;12;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
-				<treenode node="zip_code;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;12;14;12;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				<treenode node="trade_login;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;19;17;19;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="trade_password;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;20;20;20;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="zip_code;PHP:Var Name;S:\home\tbinary\www\application\models\mdusers.php;f5;13;14;13;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</treenode>
 			<treenode node="MY_Controller;PHP:Class Name;S:\home\tbinary\www\application\core\MY_Controller.php;f0;2;1;232;;;;vpos;;vCI_Controller;;c;;r;;d41,2;;b0,0;;m">
@@ -7810,7 +7814,7 @@
 					</treenode>
 				</treenode>
 			</treenode>
-			<treenode node="Users_interface;PHP:Class Name;S:\home\tbinary\www\application\controllers\users_interface.php;f0;2;1;196;;;;vpos;;vMY_Controller;;c;;r;;d43,2;;b0,0;;m">
+			<treenode node="Users_interface;PHP:Class Name;S:\home\tbinary\www\application\controllers\users_interface.php;f0;2;1;208;;;;vpos;;vMY_Controller;;c;;r;;d43,2;;b0,0;;m">
 				<treenode node="__construct;PHP:Function Name;S:\home\tbinary\www\application\controllers\users_interface.php;f1;6;2;18;;;;vpos;;v;;r;;d23,6;;b0,0;;m">
 					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f5;10;10;10;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
@@ -7830,42 +7834,48 @@
 					</treenode>
 					<treenode node="pagevar;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f2;43;10;43;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f15;41;20;41;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f2;12;7;12;;S:\home\tbinary\www\application\controllers\users_interface.php;f15;41;20;41;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
 				<treenode node="login;PHP:Function Name;S:\home\tbinary\www\application\controllers\users_interface.php;f8;118;2;146;;;;vpos;;v;;r;;d24,118;;b1,0;;m">
-					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f2;121;7;121;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="data;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f2;306;7;306;;S:\home\tbinary\www\application\controllers\users_interface.php;f2;121;7;121;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="dataid;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f3;127;10;127;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="dataid;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f3;312;10;312;;S:\home\tbinary\www\application\controllers\users_interface.php;f3;127;10;127;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="dataval;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f3;128;11;128;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="dataval;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f3;313;11;313;;S:\home\tbinary\www\application\controllers\users_interface.php;f3;128;11;128;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="i;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f6;126;8;126;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="i;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f6;311;8;311;;S:\home\tbinary\www\application\controllers\users_interface.php;f6;126;8;126;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="statusval;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f2;120;12;120;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="session_data;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f4;320;17;320;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f15;121;20;121;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="statusval;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f2;305;12;305;;S:\home\tbinary\www\application\controllers\users_interface.php;f2;120;12;120;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="user;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f3;131;8;131;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f15;306;20;306;;S:\home\tbinary\www\application\controllers\users_interface.php;f15;121;20;121;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="user;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f3;316;8;316;;S:\home\tbinary\www\application\controllers\users_interface.php;f3;131;8;131;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
 				<treenode node="logoff;PHP:Function Name;S:\home\tbinary\www\application\controllers\users_interface.php;f8;108;2;116;;;;vpos;;v;;r;;d25,108;;b1,0;;m">
 					<treenode node="_SERVER;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f11;111;19;111;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f2;110;7;110;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="this;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f2;299;7;299;;S:\home\tbinary\www\application\controllers\users_interface.php;f2;110;7;110;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
 				<treenode node="pages;PHP:Function Name;S:\home\tbinary\www\application\controllers\users_interface.php;f8;59;2;80;;;;vpos;;v;;r;;d38,59;;b1,0;;mpage_url;;p">
-					<treenode node="page_data;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f2;61;12;61;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="i;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f6;137;8;137;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="page_url;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f23;59;32;59;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="page_data;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f2;118;12;118;;S:\home\tbinary\www\application\controllers\users_interface.php;f2;61;12;61;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="pagevar;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f2;65;10;65;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="page_url;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f23;116;32;116;;S:\home\tbinary\www\application\controllers\users_interface.php;f23;59;32;59;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f15;61;20;61;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="pagevar;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f2;124;10;124;;S:\home\tbinary\www\application\controllers\users_interface.php;f2;65;10;65;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="this;PHP:Var Name;S:\home\sro61\www\application\controllers\users_interface.php;f15;118;20;118;;S:\home\tbinary\www\application\controllers\users_interface.php;f15;61;20;61;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="registering;PHP:Function Name;S:\home\tbinary\www\application\controllers\users_interface.php;f8;148;2;195;;;;vpos;;v;;r;;d30,148;;b1,0;;m">
+				<treenode node="registering;PHP:Function Name;S:\home\tbinary\www\application\controllers\users_interface.php;f8;148;2;207;;;;vpos;;v;;r;;d30,148;;b1,0;;m">
+					<treenode node="context;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f3;166;11;166;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
 					<treenode node="data;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f2;151;7;151;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 					<treenode node="dataid;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f3;157;10;157;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
@@ -7874,13 +7884,21 @@
 					</treenode>
 					<treenode node="i;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f6;156;8;156;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
+					<treenode node="mailtext;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f7;193;16;193;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="opts;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f3;165;8;165;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="postdata;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f3;162;12;162;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
 					<treenode node="statusval;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f2;150;12;150;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 					<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f15;151;20;151;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="user_id;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f4;182;12;182;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="user_id;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f6;180;14;180;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
-					<treenode node="xml;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f3;180;7;180;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					<treenode node="xml_document;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f3;173;16;173;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="xml_string;PHP:Var Name;S:\home\tbinary\www\application\controllers\users_interface.php;f4;168;15;168;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
 				<treenode node="trade;PHP:Function Name;S:\home\tbinary\www\application\controllers\users_interface.php;f8;82;2;106;;;;vpos;;v;;r;;d24,82;;b1,0;;m">
@@ -9004,7 +9022,7 @@
 			</treenode>
 			<treenode node="config;PHP:Var Name;S:\home\tbinary\www\application\config\migration.php;f0;10;7;10;;S:\home\tbinary\www\application\config\config.php;f0;2;7;2;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
-			<treenode node="content;PHP:Var Name;S:\home\tbinary\www\application\views\users_interface\pages.php;f8;28;16;28;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+			<treenode node="content;PHP:Var Name;S:\home\tbinary\www\application\views\users_interface\pages.php;f8;29;16;29;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
 			<treenode node="db;PHP:Var Name;S:\home\tbinary\www\application\config\database.php;f0;5;3;5;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
@@ -9024,7 +9042,7 @@
 			</treenode>
 			<treenode node="HTTP_POST_VARS;PHP:Var Name;S:\home\tbinary\www\ckeditor\samples\assets\posteddata.php;f15;30;30;30;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
-			<treenode node="i;PHP:Var Name;S:\home\tbinary\www\application\views\users_interface\includes\sidebar.php;f11;23;13;23;;S:\home\tbinary\www\application\views\admin_interface\register\register.php;f15;74;17;74;;S:\home\tbinary\www\application\views\admin_interface\includes\Codelobster0.php;f12;4;14;4;;S:\home\tbinary\www\application\views\admin_interface\Codelobster0.php;f15;17;17;17;;S:\home\tbinary\www\application\views\users_interface\includes\footer.php;f12;3;14;3;;S:\home\tbinary\www\application\views\forms\text-editor.php;f16;46;18;46;;S:\home\tbinary\www\application\views\admin_interface\includes\navigation.php;f12;4;14;4;;S:\home\tbinary\www\application\views\admin_interface\users\users.php;f15;25;17;25;;S:\home\tbinary\www\application\views\users_interface\includes\header.php;f12;33;14;33;;S:\home\tbinary\www\application\views\users_interface\pages.php;f14;17;16;17;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+			<treenode node="i;PHP:Var Name;S:\home\tbinary\www\application\views\users_interface\includes\sidebar.php;f11;23;13;23;;S:\home\tbinary\www\application\views\admin_interface\register\register.php;f15;74;17;74;;S:\home\tbinary\www\application\views\admin_interface\includes\Codelobster0.php;f12;4;14;4;;S:\home\tbinary\www\application\views\admin_interface\Codelobster0.php;f15;17;17;17;;S:\home\tbinary\www\application\views\users_interface\includes\footer.php;f12;3;14;3;;S:\home\tbinary\www\application\views\forms\text-editor.php;f16;46;18;46;;S:\home\tbinary\www\application\views\admin_interface\includes\navigation.php;f12;4;14;4;;S:\home\tbinary\www\application\views\users_interface\includes\header.php;f12;33;14;33;;S:\home\tbinary\www\application\views\admin_interface\users\users.php;f15;26;17;26;;S:\home\tbinary\www\application\views\users_interface\pages.php;f14;17;16;17;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
 			<treenode node="IN;PHP:Var Name;S:\home\tbinary\www\system\core\CodeIgniter.php;f1;212;4;212;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
@@ -9064,7 +9082,7 @@
 			</treenode>
 			<treenode node="page;PHP:Var Name;S:\home\tbinary\www\application\views\forms\text-editor.php;f63;12;68;12;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
-			<treenode node="pages;PHP:Var Name;S:\home\tbinary\www\application\views\admin_interface\register\register.php;f13;91;19;91;;S:\home\tbinary\www\application\views\admin_interface\users\users.php;f13;48;19;48;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+			<treenode node="pages;PHP:Var Name;S:\home\tbinary\www\application\views\admin_interface\register\register.php;f13;91;19;91;;S:\home\tbinary\www\application\views\admin_interface\users\users.php;f13;51;19;51;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
 			<treenode node="passport;PHP:Var Name;S:\home\tbinary\www\application\views\admin_interface\register\print-sample-notice.php;f17;29;26;29;;S:\home\tbinary\www\application\views\admin_interface\register\print-covering-letter.php;f17;48;26;48;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
@@ -9096,7 +9114,7 @@
 			</treenode>
 			<treenode node="system_path;PHP:Var Name;S:\home\tbinary\www\index.php;f1;58;13;58;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
-			<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\views\forms\frmuserprofile.php;f13;0;18;0;;S:\home\tbinary\www\application\views\forms\frmpassword.php;f13;0;18;0;;S:\home\tbinary\www\application\views\forms\frmedituser.php;f23;0;28;0;;S:\home\tbinary\www\application\views\clients_interface\profile.php;f6;2;11;2;;S:\home\tbinary\www\application\views\clients_interface\control-panel.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\users\user-edit.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\register\register.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\register\register-edit.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\register\register-add.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\register\print-sample-notice.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\register\print-covering-letter.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\control-panel.php;f6;2;11;2;;S:\home\tbinary\www\application\views\users_interface\Codelobster0.php;f7;5;12;5;;S:\home\tbinary\www\application\views\forms\frmadduser.php;f23;0;28;0;;S:\home\tbinary\www\application\views\admin_interface\languages.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\Codelobster0.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\pages.php;f6;2;11;2;;S:\home\tbinary\www\application\views\forms\text-editor.php;f13;0;18;0;;S:\home\tbinary\www\application\views\users_interface\index.php;f7;5;12;5;;S:\home\tbinary\www\application\views\admin_interface\users\users.php;f6;2;11;2;;S:\home\tbinary\www\application\views\users_interface\trade.php;f7;5;12;5;;S:\home\tbinary\www\application\views\users_interface\includes\header.php;f11;13;16;13;;S:\home\tbinary\www\application\views\users_interface\pages.php;f7;5;12;5;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+			<treenode node="this;PHP:Var Name;S:\home\tbinary\www\application\views\forms\frmuserprofile.php;f13;0;18;0;;S:\home\tbinary\www\application\views\forms\frmpassword.php;f13;0;18;0;;S:\home\tbinary\www\application\views\forms\frmedituser.php;f23;0;28;0;;S:\home\tbinary\www\application\views\clients_interface\profile.php;f6;2;11;2;;S:\home\tbinary\www\application\views\clients_interface\control-panel.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\users\user-edit.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\register\register.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\register\register-edit.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\register\register-add.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\register\print-sample-notice.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\register\print-covering-letter.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\control-panel.php;f6;2;11;2;;S:\home\tbinary\www\application\views\users_interface\Codelobster0.php;f7;5;12;5;;S:\home\tbinary\www\application\views\forms\frmadduser.php;f23;0;28;0;;S:\home\tbinary\www\application\views\admin_interface\languages.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\Codelobster0.php;f6;2;11;2;;S:\home\tbinary\www\application\views\admin_interface\pages.php;f6;2;11;2;;S:\home\tbinary\www\application\views\forms\text-editor.php;f13;0;18;0;;S:\home\tbinary\www\application\views\users_interface\includes\header.php;f11;13;16;13;;S:\home\tbinary\www\application\views\admin_interface\users\users.php;f6;2;11;2;;S:\home\tbinary\www\application\views\users_interface\pages.php;f7;5;12;5;;S:\home\tbinary\www\application\views\users_interface\index.php;f7;5;12;5;;S:\home\tbinary\www\application\views\users_interface\trade.php;f7;5;12;5;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
 			<treenode node="title;PHP:Var Name;S:\home\tbinary\www\application\views\users_interface\includes\head.php;f11;3;17;3;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
@@ -9106,7 +9124,7 @@
 			</treenode>
 			<treenode node="user;PHP:Var Name;S:\home\tbinary\www\application\views\forms\frmuserprofile.php;f85;6;90;6;;S:\home\tbinary\www\application\views\forms\frmpassword.php;f90;6;95;6;;S:\home\tbinary\www\application\views\forms\frmedituser.php;f79;6;84;6;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
-			<treenode node="userinfo;PHP:Var Name;S:\home\tbinary\www\application\views\forms\frmuserprofile.php;f10;83;19;83;;S:\home\tbinary\www\application\views\clients_interface\control-panel.php;f12;13;21;13;;S:\home\tbinary\www\application\views\admin_interface\users\users.php;f37;32;46;32;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+			<treenode node="userinfo;PHP:Var Name;S:\home\tbinary\www\application\views\forms\frmuserprofile.php;f10;83;19;83;;S:\home\tbinary\www\application\views\clients_interface\control-panel.php;f12;13;21;13;;S:\home\tbinary\www\application\views\admin_interface\users\users.php;f37;35;46;35;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
 			<treenode node="users;PHP:Var Name;S:\home\tbinary\www\application\views\admin_interface\users\users.php;f12;16;18;16;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
@@ -9116,6 +9134,178 @@
 			</treenode>
 		</phptree>
 		<jstree>
+			<treenode node="Highcharts.theme;JS:Function Name;S:\home\tbinary\www\js\main.js;f1;3;2;94;;;;vpos;;v;;r;;d20,3;;b0,0;;m">
+				<treenode node="chart;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;5;5;19;;;;vpos;;v;;r;;d11,5;;b0,0;;m">
+					<treenode node="backgroundColor;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;6;8;12;;;;vpos;;v;;r;;d24,6;;b0,0;;m">
+						<treenode node="linearGradient;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;7;24;7;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+						<treenode node="stops;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;8;15;8;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+					</treenode>
+					<treenode node="backgroundColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;6;22;6;;;;vposbackgroundColor;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="borderColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;17;18;17;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="borderRadius;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;18;16;18;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="borderWidth;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;13;18;13;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="plotBackgroundColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;14;26;14;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="plotBorderWidth;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;16;22;16;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="plotShadow;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;15;17;15;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="credits;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;20;5;22;;;;vpos;;v;;r;;d13,20;;b0,0;;m">
+					<treenode node="enabled;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f5;21;12;21;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="labels;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;89;5;93;;;;vpos;;v;;r;;d12,89;;b0,0;;m">
+					<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;90;8;92;;;;vpos;;v;;r;;d14,90;;b0,0;;m">
+						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;91;15;91;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+					</treenode>
+					<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;90;12;90;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="legend;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;76;5;88;;;;vpos;;v;;r;;d12,76;;b0,0;;m">
+					<treenode node="itemHiddenStyle;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;85;8;87;;;;vpos;;v;;r;;d24,85;;b0,0;;m">
+						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;86;15;86;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+					</treenode>
+					<treenode node="itemHoverStyle;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;82;8;84;;;;vpos;;v;;r;;d23,82;;b0,0;;m">
+						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;83;15;83;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+					</treenode>
+					<treenode node="itemStyle;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;77;8;81;;;;vpos;;v;;r;;d18,77;;b0,0;;m">
+						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;79;15;79;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+						<treenode node="font;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;78;14;78;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+					</treenode>
+					<treenode node="itemHiddenStyle;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;85;22;85;;;;vpositemHiddenStyle;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="itemHoverStyle;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;82;21;82;;;;vpositemHoverStyle;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="itemStyle;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;77;16;77;;;;vpositemStyle;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="subtitle;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;29;5;34;;;;vpos;;v;;r;;d14,29;;b0,0;;m">
+					<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;30;8;33;;;;vpos;;v;;r;;d14,30;;b0,0;;m">
+						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;31;15;31;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+						<treenode node="font;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;32;14;32;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+					</treenode>
+					<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;30;12;30;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="title;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;23;5;28;;;;vpos;;v;;r;;d11,23;;b0,0;;m">
+					<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;24;8;27;;;;vpos;;v;;r;;d14,24;;b0,0;;m">
+						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;25;15;25;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+						<treenode node="font;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;26;14;26;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+					</treenode>
+					<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;24;12;24;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="xAxis;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;35;5;54;;;;vpos;;v;;r;;d11,35;;b0,0;;m">
+					<treenode node="labels;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;39;8;44;;;;vpos;;v;;r;;d15,39;;b0,0;;m">
+						<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f10;40;11;43;;;;vpos;;v;;r;;d17,40;;b0,0;;m">
+							<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;41;18;41;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+							<treenode node="font;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;42;17;42;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+						</treenode>
+						<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;40;15;40;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+					</treenode>
+					<treenode node="title;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;45;8;53;;;;vpos;;v;;r;;d14,45;;b0,0;;m">
+						<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f10;46;11;52;;;;vpos;;v;;r;;d17,46;;b0,0;;m">
+							<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;47;18;47;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+							<treenode node="fontFamily;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;50;23;50;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+							<treenode node="fontSize;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;49;21;49;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+							<treenode node="fontWeight;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;48;23;48;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+						</treenode>
+						<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;46;15;46;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+					</treenode>
+					<treenode node="gridLineWidth;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;36;20;36;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="labels;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;39;13;39;;;;vposlabels;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="lineColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;37;16;37;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="tickColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;38;16;38;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="title;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;45;12;45;;;;vpostitle;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="yAxis;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;55;5;75;;;;vpos;;v;;r;;d11,55;;b0,0;;m">
+					<treenode node="labels;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;61;8;66;;;;vpos;;v;;r;;d15,61;;b0,0;;m">
+						<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f10;62;11;65;;;;vpos;;v;;r;;d17,62;;b0,0;;m">
+							<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;63;18;63;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+							<treenode node="font;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;64;17;64;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+						</treenode>
+						<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;62;15;62;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+					</treenode>
+					<treenode node="title;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;67;8;74;;;;vpos;;v;;r;;d14,67;;b0,0;;m">
+						<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f10;68;11;73;;;;vpos;;v;;r;;d17,68;;b0,0;;m">
+							<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;69;18;69;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+							<treenode node="fontFamily;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;72;23;72;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+							<treenode node="fontSize;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;71;21;71;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+							<treenode node="fontWeight;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;70;23;70;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+							</treenode>
+						</treenode>
+						<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;68;15;68;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
+						</treenode>
+					</treenode>
+					<treenode node="labels;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;61;13;61;;;;vposlabels;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="lineColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;57;16;57;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="lineWidth;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;58;16;58;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="minorTickInterval;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;56;24;56;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="tickColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;60;16;60;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="tickWidth;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;59;16;59;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="title;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;67;12;67;;;;vpostitle;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="chart;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;5;9;5;;;;vposchart;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="colors;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;4;10;4;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="credits;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;20;11;20;;;;vposcredits;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="labels;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;89;10;89;;;;vposlabels;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="legend;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;76;10;76;;;;vposlegend;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="subtitle;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;29;12;29;;;;vpossubtitle;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="title;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;23;9;23;;;;vpostitle;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="xAxis;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;35;9;35;;;;vposxAxis;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="yAxis;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;55;9;55;;;;vposyAxis;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
 			<treenode node="a;JS:Function Name;S:\home\tbinary\www\ckeditor\ckeditor.js;f64;113;99;186;;S:\home\tbinary\www\ckeditor\ckeditor.js;f275;252;191;339;;;;vpos;;v;;r;;d439,185;;b0,0;;ma;;pd;;pb;;pc;;pa;;p">
 				<treenode node="d;JS:Function Name;S:\home\tbinary\www\ckeditor\ckeditor.js;f17;338;424;338;;;;vpos;;v;;r;;d29,338;;b0,0;;m">
 					<treenode node="a;JS:JS Var Name;S:\home\tbinary\www\ckeditor\ckeditor.js;f38;338;39;338;;;;vposCKEDITOR;;v;;r;;d-1,-1;;b0,0;;m">
@@ -14496,178 +14686,6 @@
 				<treenode node="v;JS:JS Var Name;S:\home\tbinary\www\js\vendor\jquery-1.8.3.min.js;f302;1;303;1;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 				</treenode>
 			</treenode>
-			<treenode node="Highcharts.theme;JS:Function Name;S:\home\tbinary\www\js\main.js;f1;3;2;94;;;;vpos;;v;;r;;d20,3;;b0,0;;m">
-				<treenode node="chart;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;5;5;19;;;;vpos;;v;;r;;d11,5;;b0,0;;m">
-					<treenode node="backgroundColor;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;6;8;12;;;;vpos;;v;;r;;d24,6;;b0,0;;m">
-						<treenode node="linearGradient;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;7;24;7;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-						<treenode node="stops;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;8;15;8;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-					</treenode>
-					<treenode node="backgroundColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;6;22;6;;;;vposbackgroundColor;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="borderColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;17;18;17;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="borderRadius;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;18;16;18;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="borderWidth;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;13;18;13;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="plotBackgroundColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;14;26;14;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="plotBorderWidth;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;16;22;16;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="plotShadow;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;15;17;15;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="credits;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;20;5;22;;;;vpos;;v;;r;;d13,20;;b0,0;;m">
-					<treenode node="enabled;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f5;21;12;21;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="labels;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;89;5;93;;;;vpos;;v;;r;;d12,89;;b0,0;;m">
-					<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;90;8;92;;;;vpos;;v;;r;;d14,90;;b0,0;;m">
-						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;91;15;91;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-					</treenode>
-					<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;90;12;90;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="legend;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;76;5;88;;;;vpos;;v;;r;;d12,76;;b0,0;;m">
-					<treenode node="itemHiddenStyle;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;85;8;87;;;;vpos;;v;;r;;d24,85;;b0,0;;m">
-						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;86;15;86;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-					</treenode>
-					<treenode node="itemHoverStyle;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;82;8;84;;;;vpos;;v;;r;;d23,82;;b0,0;;m">
-						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;83;15;83;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-					</treenode>
-					<treenode node="itemStyle;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;77;8;81;;;;vpos;;v;;r;;d18,77;;b0,0;;m">
-						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;79;15;79;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-						<treenode node="font;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;78;14;78;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-					</treenode>
-					<treenode node="itemHiddenStyle;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;85;22;85;;;;vpositemHiddenStyle;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="itemHoverStyle;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;82;21;82;;;;vpositemHoverStyle;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="itemStyle;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;77;16;77;;;;vpositemStyle;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="subtitle;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;29;5;34;;;;vpos;;v;;r;;d14,29;;b0,0;;m">
-					<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;30;8;33;;;;vpos;;v;;r;;d14,30;;b0,0;;m">
-						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;31;15;31;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-						<treenode node="font;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;32;14;32;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-					</treenode>
-					<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;30;12;30;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="title;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;23;5;28;;;;vpos;;v;;r;;d11,23;;b0,0;;m">
-					<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;24;8;27;;;;vpos;;v;;r;;d14,24;;b0,0;;m">
-						<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;25;15;25;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-						<treenode node="font;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;26;14;26;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-					</treenode>
-					<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;24;12;24;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="xAxis;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;35;5;54;;;;vpos;;v;;r;;d11,35;;b0,0;;m">
-					<treenode node="labels;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;39;8;44;;;;vpos;;v;;r;;d15,39;;b0,0;;m">
-						<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f10;40;11;43;;;;vpos;;v;;r;;d17,40;;b0,0;;m">
-							<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;41;18;41;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-							<treenode node="font;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;42;17;42;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-						</treenode>
-						<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;40;15;40;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-					</treenode>
-					<treenode node="title;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;45;8;53;;;;vpos;;v;;r;;d14,45;;b0,0;;m">
-						<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f10;46;11;52;;;;vpos;;v;;r;;d17,46;;b0,0;;m">
-							<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;47;18;47;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-							<treenode node="fontFamily;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;50;23;50;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-							<treenode node="fontSize;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;49;21;49;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-							<treenode node="fontWeight;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;48;23;48;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-						</treenode>
-						<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;46;15;46;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-					</treenode>
-					<treenode node="gridLineWidth;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;36;20;36;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="labels;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;39;13;39;;;;vposlabels;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="lineColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;37;16;37;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="tickColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;38;16;38;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="title;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;45;12;45;;;;vpostitle;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="yAxis;JS:Function Name;S:\home\tbinary\www\js\main.js;f4;55;5;75;;;;vpos;;v;;r;;d11,55;;b0,0;;m">
-					<treenode node="labels;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;61;8;66;;;;vpos;;v;;r;;d15,61;;b0,0;;m">
-						<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f10;62;11;65;;;;vpos;;v;;r;;d17,62;;b0,0;;m">
-							<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;63;18;63;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-							<treenode node="font;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;64;17;64;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-						</treenode>
-						<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;62;15;62;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-					</treenode>
-					<treenode node="title;JS:Function Name;S:\home\tbinary\www\js\main.js;f7;67;8;74;;;;vpos;;v;;r;;d14,67;;b0,0;;m">
-						<treenode node="style;JS:Function Name;S:\home\tbinary\www\js\main.js;f10;68;11;73;;;;vpos;;v;;r;;d17,68;;b0,0;;m">
-							<treenode node="color;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;69;18;69;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-							<treenode node="fontFamily;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;72;23;72;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-							<treenode node="fontSize;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;71;21;71;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-							<treenode node="fontWeight;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f13;70;23;70;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-							</treenode>
-						</treenode>
-						<treenode node="style;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f10;68;15;68;;;;vposstyle;;v;;r;;d-1,-1;;b0,0;;m">
-						</treenode>
-					</treenode>
-					<treenode node="labels;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;61;13;61;;;;vposlabels;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="lineColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;57;16;57;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="lineWidth;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;58;16;58;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="minorTickInterval;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;56;24;56;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="tickColor;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;60;16;60;;;;vposString;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="tickWidth;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;59;16;59;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-					<treenode node="title;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f7;67;12;67;;;;vpostitle;;v;;r;;d-1,-1;;b0,0;;m">
-					</treenode>
-				</treenode>
-				<treenode node="chart;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;5;9;5;;;;vposchart;;v;;r;;d-1,-1;;b0,0;;m">
-				</treenode>
-				<treenode node="colors;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;4;10;4;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
-				</treenode>
-				<treenode node="credits;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;20;11;20;;;;vposcredits;;v;;r;;d-1,-1;;b0,0;;m">
-				</treenode>
-				<treenode node="labels;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;89;10;89;;;;vposlabels;;v;;r;;d-1,-1;;b0,0;;m">
-				</treenode>
-				<treenode node="legend;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;76;10;76;;;;vposlegend;;v;;r;;d-1,-1;;b0,0;;m">
-				</treenode>
-				<treenode node="subtitle;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;29;12;29;;;;vpossubtitle;;v;;r;;d-1,-1;;b0,0;;m">
-				</treenode>
-				<treenode node="title;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;23;9;23;;;;vpostitle;;v;;r;;d-1,-1;;b0,0;;m">
-				</treenode>
-				<treenode node="xAxis;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;35;9;35;;;;vposxAxis;;v;;r;;d-1,-1;;b0,0;;m">
-				</treenode>
-				<treenode node="yAxis;JS:JS Var Name;S:\home\tbinary\www\js\main.js;f4;55;9;55;;;;vposyAxis;;v;;r;;d-1,-1;;b0,0;;m">
-				</treenode>
-			</treenode>
 			<treenode node="i;JS:Function Name;S:\home\tbinary\www\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js;f11260;3;11803;3;;S:\home\tbinary\www\ckeditor\ckeditor.js;f436;346;374;728;;;;vpos;;v;;r;;d11285,3;;b0,0;;ma;;pc;;pd;;pe;;pf;;pi;;pj;;p">
 				<treenode node="onreadystatechange;JS:Function Name;S:\home\tbinary\www\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js;f11668;3;11713;3;;;;vpos;;v;;r;;d11697,3;;b0,0;;m">
 					<treenode node="k;JS:JS Var Name;S:\home\tbinary\www\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js;f11698;3;11699;3;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
@@ -18610,7 +18628,7 @@
 			</treenode>
 			<treenode node="docType;JS:JS Var Name;S:\home\tbinary\www\ckeditor\ckeditor.js;f199;165;206;165;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
-			<treenode node="document;JS:JS Var Name;S:\home\tbinary\www\user_guide\nav\prototype.lite.js;f13;40;21;40;;S:\home\tbinary\www\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js;f14670;3;14678;3;;S:\home\tbinary\www\js\vendor\bootstrap.js;f17;34;25;34;;S:\home\tbinary\www\ckeditor\ckeditor.js;f357;21;365;21;;S:\home\tbinary\www\application\views\admin_interface\pages.php;f4;25;12;25;;S:\home\tbinary\www\application\views\users_interface\includes\scripts.php;f25;1;33;1;;S:\home\tbinary\www\application\views\admin_interface\includes\scripts.php;f25;1;33;1;;S:\home\tbinary\www\application\views\admin_interface\users\users.php;f4;59;12;59;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+			<treenode node="document;JS:JS Var Name;S:\home\tbinary\www\user_guide\nav\prototype.lite.js;f13;40;21;40;;S:\home\tbinary\www\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js;f14670;3;14678;3;;S:\home\tbinary\www\js\vendor\bootstrap.js;f17;34;25;34;;S:\home\tbinary\www\ckeditor\ckeditor.js;f357;21;365;21;;S:\home\tbinary\www\application\views\admin_interface\pages.php;f4;25;12;25;;S:\home\tbinary\www\application\views\users_interface\includes\scripts.php;f25;1;33;1;;S:\home\tbinary\www\application\views\admin_interface\users\users.php;f4;62;12;62;;S:\home\tbinary\www\application\views\admin_interface\includes\scripts.php;f25;1;33;1;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
 			<treenode node="Dropdown;JS:JS Var Name;S:\home\tbinary\www\js\vendor\bootstrap.js;f2;605;10;605;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
@@ -19814,7 +19832,7 @@
 			</treenode>
 			<treenode node="width;JS:JS Var Name;S:\home\tbinary\www\ckeditor\plugins\pastefromword\filter\default.js;f290;27;295;27;;S:\home\tbinary\www\ckeditor\ckeditor.js;f127;100;132;100;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
-			<treenode node="window;JS:JS Var Name;S:\home\tbinary\www\user_guide\nav\user_guide_menu.js;f0;0;6;0;;S:\home\tbinary\www\user_guide\nav\prototype.lite.js;f5;73;11;73;;S:\home\tbinary\www\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js;f1;3;7;3;;S:\home\tbinary\www\js\vendor\jquery-1.8.3.min.js;f93575;1;93581;1;;S:\home\tbinary\www\js\vendor\bootstrap.min.js;f352;5;358;5;;S:\home\tbinary\www\js\vendor\bootstrap.js;f2;59;8;59;;S:\home\tbinary\www\ckeditor\ckeditor.js;f15;4;21;4;;S:\home\tbinary\www\application\views\users_interface\includes\scripts.php;f8;1;14;1;;S:\home\tbinary\www\application\views\admin_interface\includes\scripts.php;f8;1;14;1;;S:\home\tbinary\www\js\scripts.js;f3;75;9;75;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+			<treenode node="window;JS:JS Var Name;S:\home\tbinary\www\user_guide\nav\user_guide_menu.js;f0;0;6;0;;S:\home\tbinary\www\user_guide\nav\prototype.lite.js;f5;73;11;73;;S:\home\tbinary\www\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js;f1;3;7;3;;S:\home\tbinary\www\js\vendor\jquery-1.8.3.min.js;f93575;1;93581;1;;S:\home\tbinary\www\js\vendor\bootstrap.min.js;f352;5;358;5;;S:\home\tbinary\www\js\vendor\bootstrap.js;f2;59;8;59;;S:\home\tbinary\www\ckeditor\ckeditor.js;f15;4;21;4;;S:\home\tbinary\www\application\views\users_interface\includes\scripts.php;f8;1;14;1;;S:\home\tbinary\www\application\views\admin_interface\includes\scripts.php;f8;1;14;1;;S:\home\tbinary\www\js\scripts.js;f3;76;9;76;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
 			<treenode node="wn;JS:JS Var Name;S:\home\tbinary\www\js\vendor\jquery-1.8.3.min.js;f78843;1;78845;1;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
@@ -19830,7 +19848,7 @@
 			</treenode>
 			<treenode node="wysiwyg;JS:JS Var Name;S:\home\tbinary\www\ckeditor\ckeditor.js;f453;567;460;567;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
-			<treenode node="x;JS:JS Var Name;S:\home\tbinary\www\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js;f12340;3;12341;3;;S:\home\tbinary\www\js\vendor\jquery-1.8.3.min.js;f9620;1;9621;1;;S:\home\tbinary\www\ckeditor\plugins\pastefromword\filter\default.js;f448;6;449;6;;S:\home\tbinary\www\ckeditor\ckeditor.js;f193;39;194;39;;;;vposActiveXObject;;v;;r;;d-1,-1;;b0,0;;m">
+			<treenode node="x;JS:JS Var Name;S:\home\tbinary\www\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js;f12340;3;12341;3;;S:\home\tbinary\www\js\vendor\jquery-1.8.3.min.js;f9620;1;9621;1;;S:\home\tbinary\www\ckeditor\plugins\pastefromword\filter\default.js;f448;6;449;6;;S:\home\tbinary\www\ckeditor\ckeditor.js;f193;39;194;39;;S:\home\tbinary\www\js\main.js;f5;106;6;106;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
 			<treenode node="X;JS:JS Var Name;S:\home\tbinary\www\js\vendor\jquery-1.8.3.min.js;f26623;1;26624;1;;S:\home\tbinary\www\ckeditor\plugins\pastefromword\filter\default.js;f47;7;48;7;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 			</treenode>
@@ -20034,8 +20052,8 @@
 		<file name="S:\home\tbinary\www\js\vendor\jquery-1.8.3.min.js" crc="-1524496051"/>
 		<file name="S:\home\tbinary\www\js\vendor\bootstrap.min.js" crc="913488683"/>
 		<file name="S:\home\tbinary\www\js\vendor\bootstrap.js" crc="-473460769"/>
-		<file name="S:\home\tbinary\www\js\scripts.js" crc="1438299171"/>
-		<file name="S:\home\tbinary\www\js\main.js" crc="-1006029415"/>
+		<file name="S:\home\tbinary\www\js\scripts.js" crc="-1171375142"/>
+		<file name="S:\home\tbinary\www\js\main.js" crc="-619093345"/>
 		<file name="S:\home\tbinary\www\ckeditor\samples\plugins\wysiwygarea\fullpage.html" crc="1372003490"/>
 		<file name="S:\home\tbinary\www\ckeditor\samples\plugins\toolbar\toolbar.html" crc="-1968025356"/>
 		<file name="S:\home\tbinary\www\ckeditor\samples\plugins\magicline\magicline.html" crc="1781095717"/>
@@ -20210,10 +20228,10 @@
 		<file name="S:\home\tbinary\www\application\views\users_interface\includes\scripts.php" crc="1102498818"/>
 		<file name="S:\home\tbinary\www\application\views\users_interface\includes\header.php" crc="-2076039733"/>
 		<file name="S:\home\tbinary\www\application\views\users_interface\includes\head.php" crc="1648904139"/>
-		<file name="S:\home\tbinary\www\application\views\users_interface\includes\footer.php" crc="-296455041"/>
+		<file name="S:\home\tbinary\www\application\views\users_interface\includes\footer.php" crc="374303960"/>
 		<file name="S:\home\tbinary\www\application\views\users_interface\includes\copyright.php" crc="1364813978"/>
-		<file name="S:\home\tbinary\www\application\views\users_interface\trade.php" crc="381273826"/>
-		<file name="S:\home\tbinary\www\application\views\users_interface\pages.php" crc="-732027035"/>
+		<file name="S:\home\tbinary\www\application\views\users_interface\trade.php" crc="1320406523"/>
+		<file name="S:\home\tbinary\www\application\views\users_interface\pages.php" crc="-1346163798"/>
 		<file name="S:\home\tbinary\www\application\views\users_interface\index.php" crc="-1497424388"/>
 		<file name="S:\home\tbinary\www\application\views\forms\text-editor.php" crc="-1520016230"/>
 		<file name="S:\home\tbinary\www\application\views\forms\frmuserprofile.php" crc="-724340913"/>
@@ -20221,7 +20239,7 @@
 		<file name="S:\home\tbinary\www\application\views\forms\frmlogin.php" crc="1661809459"/>
 		<file name="S:\home\tbinary\www\application\views\forms\frmedituser.php" crc="1612964693"/>
 		<file name="S:\home\tbinary\www\application\views\forms\frmadduser.php" crc="-1657311295"/>
-		<file name="S:\home\tbinary\www\application\views\forms\formrealregister.php" crc="421092096"/>
+		<file name="S:\home\tbinary\www\application\views\forms\formrealregister.php" crc="1219045563"/>
 		<file name="S:\home\tbinary\www\application\views\forms\formdemoregister.php" crc="-1796586354"/>
 		<file name="S:\home\tbinary\www\application\views\clients_interface\includes\scripts.php" crc="-354704598"/>
 		<file name="S:\home\tbinary\www\application\views\clients_interface\includes\rightbar.php" crc="2138235774"/>
@@ -20234,14 +20252,14 @@
 		<file name="S:\home\tbinary\www\application\views\alert_messages\alert-info.php" crc="466077828"/>
 		<file name="S:\home\tbinary\www\application\views\alert_messages\alert-error.php" crc="190536483"/>
 		<file name="S:\home\tbinary\www\application\views\alert_messages\alert-auth-error.php" crc="1479654339"/>
-		<file name="S:\home\tbinary\www\application\views\admin_interface\users\users.php" crc="-1653425287"/>
+		<file name="S:\home\tbinary\www\application\views\admin_interface\users\users.php" crc="-1484282058"/>
 		<file name="S:\home\tbinary\www\application\views\admin_interface\users\user-edit.php" crc="-1492582588"/>
 		<file name="S:\home\tbinary\www\application\views\admin_interface\modal\user-delete.php" crc="-1235986273"/>
 		<file name="S:\home\tbinary\www\application\views\admin_interface\modal\leng-insert.php" crc="1880121770"/>
 		<file name="S:\home\tbinary\www\application\views\admin_interface\modal\category-insert.php" crc="887676470"/>
 		<file name="S:\home\tbinary\www\application\views\admin_interface\modal\category-delete.php" crc="-279316863"/>
 		<file name="S:\home\tbinary\www\application\views\admin_interface\includes\scripts.php" crc="-929615278"/>
-		<file name="S:\home\tbinary\www\application\views\admin_interface\includes\rightbar.php" crc="-953810900"/>
+		<file name="S:\home\tbinary\www\application\views\admin_interface\includes\rightbar.php" crc="1717088890"/>
 		<file name="S:\home\tbinary\www\application\views\admin_interface\includes\navigation.php" crc="-1929075309"/>
 		<file name="S:\home\tbinary\www\application\views\admin_interface\includes\header.php" crc="810374570"/>
 		<file name="S:\home\tbinary\www\application\views\admin_interface\includes\head.php" crc="-1988837540"/>
@@ -20251,7 +20269,7 @@
 		<file name="S:\home\tbinary\www\application\views\admin_interface\categories.php" crc="-1783292090"/>
 		<file name="S:\home\tbinary\www\application\views\index.html" crc="-1574479902"/>
 		<file name="S:\home\tbinary\www\application\third_party\index.html" crc="-1574479902"/>
-		<file name="S:\home\tbinary\www\application\models\mdusers.php" crc="1493358800"/>
+		<file name="S:\home\tbinary\www\application\models\mdusers.php" crc="-2072131212"/>
 		<file name="S:\home\tbinary\www\application\models\mdunion.php" crc="-896807604"/>
 		<file name="S:\home\tbinary\www\application\models\mdpages.php" crc="790217480"/>
 		<file name="S:\home\tbinary\www\application\models\mdlanguages.php" crc="1809148214"/>
@@ -20283,7 +20301,7 @@
 		<file name="S:\home\tbinary\www\application\core\MY_Model.php" crc="-498449847"/>
 		<file name="S:\home\tbinary\www\application\core\MY_Controller.php" crc="1161981768"/>
 		<file name="S:\home\tbinary\www\application\core\index.html" crc="-1574479902"/>
-		<file name="S:\home\tbinary\www\application\controllers\users_interface.php" crc="1770065503"/>
+		<file name="S:\home\tbinary\www\application\controllers\users_interface.php" crc="-1959581305"/>
 		<file name="S:\home\tbinary\www\application\controllers\index.html" crc="-1574479902"/>
 		<file name="S:\home\tbinary\www\application\controllers\clients_interface.php" crc="273861462"/>
 		<file name="S:\home\tbinary\www\application\controllers\admin_interface.php" crc="-837495234"/>

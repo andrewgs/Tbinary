@@ -18,7 +18,7 @@
 	<?php else:?>
 		<div class="span6 offset2 auth-data">
 		<?php if($this->user['admin']):?>
-		Hello, <strong><?=$this->user['name'];?></strong><br/><?=anchor('admin-panel/actions/users-list','My Account',array('class'=>'action-cabinet'));?>
+		Hello, <strong><?=$this->user['name'];?></strong><br/><?=anchor('admin-panel/actions/users-list','Administration Panel',array('class'=>'action-cabinet'));?>
 		<?php else:?>
 		Hello, <strong><?=$this->user['name'];?></strong><br/><?=anchor('#','My Account',array('class'=>'action-cabinet'));?>
 		<?php endif;?>

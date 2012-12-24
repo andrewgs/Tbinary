@@ -138,7 +138,7 @@ class Users_interface extends MY_Controller{
 				if($user['id']):
 					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'#">My Account</a>';
 				else:
-					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">My Account</a>';
+					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">Administration Panel</a>';
 				endif;
 				$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'logoff">Logout</a>';
 			endif;

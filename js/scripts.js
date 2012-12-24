@@ -66,7 +66,7 @@ function backpath(path){window.location=path;}
 			if(account == 'demo'){postdata = postdata+"&demo=1"}else{postdata = postdata+"&demo=0"}
 			$.post(baseurl+"registering",{'postdata':postdata},
 				function(data){
-					$(thisObj).html('Open Account');
+					$(thisObj).html('Account created').css('background','none repeat scroll 0 0 #A6BD01');
 					if(data.status){
 						$("#login-form").remove();$("#login-block").html(data.newlink);$("#login-block").parents('div:first').addClass('auth-data');
 						$(".FieldSend").val('');}else{alert(data.message);}

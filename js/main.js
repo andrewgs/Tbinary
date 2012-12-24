@@ -105,7 +105,6 @@ $(function() {
 	});
 	
 	var x = (new Date()).getTime(); // current time
-	console.log(x);
 	
 	// $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
 	$.getJSON('http://vl611.sysfx.com:8000/advertisements/content/test.13/rates/json/dispatcher?cc1=EUR&cc2=USD&callback=?', function(json_data) {

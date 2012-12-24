@@ -138,7 +138,7 @@ class Users_interface extends MY_Controller{
 				if($user['id']):
 					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'#">My Account</a>';
 				else:
-					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">My Account</a>';
+					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">Administration Panel</a>';
 				endif;
 				$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'logoff">Logout</a>';
 			endif;
@@ -148,7 +148,7 @@ class Users_interface extends MY_Controller{
 
 	public function registering(){
 		
-		$statusval = array('status'=>FALSE,'message'=>'Logon failure','newlink'=>'');
+		$statusval = array('status'=>FALSE,'message'=>'Logon failure','newlink'=>'','mode'=>'');
 		$data = trim($this->input->post('postdata'));
 		if(!$data):
 			show_404();
@@ -159,37 +159,51 @@ class Users_interface extends MY_Controller{
 			$dataval[$dataid[0]] = $dataid[1];
 		endfor;
 		if($dataval && !$this->loginstatus):
-			/*$postdata = http_build_query(array('answerType'=>$dataval['answerType'],'act'=>$dataval['act'],'office'=>$dataval['office'],
+			$dataval['answerType'] = 'xml'; $dataval['act'] = 'send'; $dataval['office'] = 'main';
+			$postdata = http_build_query(array('answerType'=>$dataval['answerType'],'act'=>$dataval['act'],'office'=>$dataval['office'],
 						'fname'=>$dataval['fname'],'lname'=>$dataval['lname'],'email'=>$dataval['email'],'country'=>$dataval['country'],
 						'phone' => $dataval['phone']));
 			$opts = array('http' =>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded','content'=>$postdata));
 			$context  = stream_context_create($opts);
 			if($dataval['demo']):
-				$result = file_get_contents('http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22&demo=1',false,$context);
+				$statusval['status'] = 'demo';
+				$xml_string = file_get_contents('http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22&demo=1',false,$context);
 			else:
-				$result = file_get_contents('http:vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22',false,$context);
+				$statusval['status'] = 'real';
+				$xml_string = file_get_contents('http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22',false,$context);
 			endif;
-			header('Content-type: text/xml');
-			echo($result);*/
 			//обработка XML-документа
-			$dataval['zip_code'] = 'none';
-			$dataval['state'] = 'none';
-			$dataval['city'] = 'none';
-			$dataval['address1'] = 'none';
-			$dataval['address2'] = 'none';
-			$dataval['password'] = $this->randomPassword(12);
-			$xml = TRUE;
-			if($xml):
-				$user_id = $this->mdusers->insert_record($dataval);
-				if($user_id):
-					$statusval['status'] = TRUE;
-					$statusval['message'] = '';
-					$this->session->set_userdata(array('logon'=>md5($dataval['email']),'userid'=>$user_id));
-					$statusval['newlink'] = 'Hello, <strong>'.$dataval['fname'].' '.$dataval['lname'].'</strong><br/>';
-					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'#">My Account</a>';
-					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'logoff">Logout</a>';
-					$this->mdusers->update_field($user_id,'language',$this->language,'users');
+			$xml_document = simplexml_load_string($xml_string);
+			if($xml_document && ($xml_document->getName() == 'success')):
+				$dataval['remote_id'] = (int)$xml_document->accounts->acct_id;
+				$dataval['trade_login'] = (string)$xml_document->login;
+				$dataval['password'] = (string)$xml_document->password;
+				if($dataval['remote_id']):
+					if(!$this->mdusers->record_exist('users','email',trim($dataval['email']))):
+						$user_id = $this->mdusers->insert_record($dataval);
+						if($user_id):
+							$statusval['status'] = TRUE;
+							$statusval['message'] = 'Registration is successful!';
+							$this->session->set_userdata(array('logon'=>md5(trim($dataval['email'])),'userid'=>$user_id));
+							$statusval['newlink'] = 'Hello, <strong>'.$dataval['fname'].' '.$dataval['lname'].'</strong><br/>';
+							$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'#">My Account</a>';
+							$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'logoff">Logout</a>';
+							$this->mdusers->update_field($user_id,'language',$this->language,'users');
+							ob_start();?>
+							<p>Dear <em><?=$dataval['fname'].' '.$dataval['lname'];?></em>,</p>
+							<p>Thank you for registration on tbinary.com. To gain access to your account, please use these credentials:</p>
+							<p>Login: <?=$dataval['email'];?><br/>Password: <?=$dataval['password'];?></p><?
+							$mailtext = ob_get_clean();
+							$this->send_mail($dataval['email'],'robot@sysfx.com','Tbinary trading platform','Register to tbinary.com',$mailtext);
+						endif;
+					else:
+						$statusval['message'] = 'Email is already registered';
+					endif;
+				else:
+					$statusval['message'] = 'Error when registering!';
 				endif;
+			else:
+				$statusval['message'] = 'Error when registering!';
 			endif;
 		endif;
 		echo json_encode($statusval);

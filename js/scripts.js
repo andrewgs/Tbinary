@@ -27,7 +27,7 @@ function myserialize(objects){
 function backpath(path){window.location=path;}
 
 (function($){
-	var baseurl = "http://dev.realitygroup.ru/tbinary.sysfx/";
+	var baseurl = "http://tbinary/";
 	$("#msgeclose").click(function(){$("#msgdealert").fadeOut(1000,function(){$(this).remove();});});
 	$("#msgsclose").click(function(){$("#msgdsalert").fadeOut(1000,function(){$(this).remove();});});
 	$(".digital").keypress(function(e){if(e.which!=8 && e.which!=46 && e.which!=0 && (e.which<48 || e.which>57)){return false;}});
@@ -52,6 +52,7 @@ function backpath(path){window.location=path;}
 		}
 	});
 	$(".signup-btn").click(function(event){
+		var thisObj = $(this);$(thisObj).html('Please wait...');
 		var err = false;event.preventDefault();
 		var account = $(this).attr('data-account');
 		var email = $("#signup-email-"+account).val();
@@ -65,10 +66,10 @@ function backpath(path){window.location=path;}
 			if(account == 'demo'){postdata = postdata+"&demo=1"}else{postdata = postdata+"&demo=0"}
 			$.post(baseurl+"registering",{'postdata':postdata},
 				function(data){
+					$(thisObj).html('Account created').css('background','none repeat scroll 0 0 #A6BD01');
 					if(data.status){
 						$("#login-form").remove();$("#login-block").html(data.newlink);$("#login-block").parents('div:first').addClass('auth-data');
-						$(".FieldSend").val('');
-					}
+						$(".FieldSend").val('');}else{alert(data.message);}
 				},
 			"json");
 		}

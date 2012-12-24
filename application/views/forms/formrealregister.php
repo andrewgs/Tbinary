@@ -1,5 +1,5 @@
 <form class="signup-form real" action="http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22" method="post" target="signup_iframe">
-	<input type="hidden" class="FieldSend" name="answerType" value="xml" />	
+	<input type="hidden" class="FieldSend" name="answerType" value="xml" />
 	<input type="hidden" class="FieldSend" name="act" value="send" />
 	<input type="hidden" class="FieldSend" name="office" value="main" />
 	<input type="text" class="valid-required FieldSend" name="fname" data-placement="right" role="tooltip" data-original-title="Field cannot be empty" placeholder="First name" />

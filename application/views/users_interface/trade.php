@@ -19,7 +19,7 @@
 		<?php if($this->user['admin']):?>
 		<iframe id="trade-wrapper" src="http://demo.sysfx.com:8100/trade/trade5-4.jsp?entry=test.21"></iframe>
 		<?php else:?>
-		<iframe id="trade-wrapper" src="http://demo.sysfx.com:8100/trade/trade5-4.jsp?entry=test.21&login=<?=$client['email'];?>&password=<?=$client['password'];?>"></iframe>
+		<iframe id="trade-wrapper" src="http://demo.sysfx.com:8100/trade/trade5-4.jsp?entry=test.21&login=<?=$client['trade_login'];?>&password=<?=$client['password'];?>"></iframe>
 		<?php endif;?>
 	<?php endif;?>
 	</div>

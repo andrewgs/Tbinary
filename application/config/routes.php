@@ -26,8 +26,8 @@ $route['admin-panel/actions/profile']					= "admin_interface/actions_profile";
 $route['']							= "users_interface/index";
 $route['trade']						= "users_interface/trade";
 $route['faq']						= "users_interface/pages";
-$route['deposit']						= "users_interface/pages";
-$route['contact-us']						= "users_interface/pages";
+$route['deposit']					= "users_interface/pages";
+$route['contact-us']				= "users_interface/pages";
 
 $route['login']						= "users_interface/login";
 $route['logoff']					= "users_interface/logoff";

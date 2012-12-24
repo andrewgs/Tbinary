@@ -13,7 +13,7 @@ input[type="text"], input[type="password"] { border-radius: 2px; border: 1px sol
 .invest:hover { background: #a6bd01; color: #4B5010; }
 .invest.disabled { background: #cfdbb7; }
 
-#content { margin: 2em 0 4em; }
+#content { margin: 2em 0 2.5em; }
 #content h1, 
 #content h2, 
 #content h3 { color: #494949; color: #444; }
@@ -58,7 +58,7 @@ p.slogan { color: #444; font: bold 30px/42px "din-condensed-web", arial, sans-se
 .switcher__active span { border-bottom: 0; }
 
 .signup-form { margin: 0 0 10px; }
-.signup-form input { padding: 9px 14px; margin-bottom: 13px; }
+.signup-form input { padding: 9px 14px; margin-bottom: 13px; color: #444; }
 .signup-form select { height: 43px; width: 236px; border-radius: 2px; font-size: 12px; padding: 0 0 0 12px; color: #999; }
 .signup-form label { color: #888; font-size: 12px; display: inline-block; position: relative; top: -3px; left: 4px; }
 #demo-signup { display: none; }

@@ -20,13 +20,16 @@
 						<tr>
 							<th>&nbsp;</th>
 							<th>&nbsp;</th>
+							<th>&nbsp;</th>
 						</tr>
 					</thead>
 					<tbody>
 					<?php for($i=0;$i<count($users);$i++):?>
 						<tr class="align-center">
 							<td>
-								<?=$users[$i]['first_name'].' '.$users[$i]['last_name'];?><br/>
+								<?=$users[$i]['first_name'].' '.$users[$i]['last_name'];?>
+							</td>
+							<td>
 								Адрес: <?=$users[$i]['address1'];?><br/>
 								Email: <?=$users[$i]['email'];?><br/>
 								Телефоны: <?=$users[$i]['day_phone'];?> <?=$users[$i]['home_phone'];?><br/>
@@ -35,7 +38,7 @@
 								<?php endif;?>
 							</td>
 							<td>
-								<?=anchor('admin-panel/actions/users/edit/id/'.$users[$i]['id'],'<i class="icon-pencil"></i>',array('class'=>'btn'));?>
+								<!-- <?=anchor('admin-panel/actions/users/edit/id/'.$users[$i]['id'],'<i class="icon-pencil"></i>',array('class'=>'btn'));?> -->
 							<?php if($users[$i]['id'] != $userinfo['uid']):?>
 								<div id="params<?=$i;?>" style="display:none" data-uid="<?=$users[$i]['id'];?>"></div>
 								<div style="height:3px;">&nbsp;</div>

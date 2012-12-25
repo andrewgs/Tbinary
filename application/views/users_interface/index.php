@@ -55,11 +55,7 @@
 						<p class="caption"><?=(isset($page[3]['link']))?$page[3]['link']:'';?></p>
 					</div>
 					<div class="span6">
-					<?php if($this->loginstatus):?>
-						<?=anchor('trade',(isset($page[3]['content']))?$page[3]['content']:'Start trade now',array('class'=>'btn btn-action'));?>
-					<?php else:?>
-						<a href="" id="TradeLink" class="btn btn-action none">First need login</a>
-					<?php endif;?>
+						<?=anchor('trade',(isset($page[3]['content']))?$page[3]['content']:'Start trade now',array('class'=>'btn btn-action','id'=>"TradeLink"));?>
 					</div>
 			</div>
 		</div>
@@ -79,6 +75,9 @@
 		$(function(){
 			$("ul.switcher li a").click(function(e){e.preventDefault();$("ul.switcher li a").removeClass('switcher__active');$(this).addClass('switcher__active');
 				$("div.signup-form:visible").hide();var elem_id = $(this).attr('href');$(elem_id).show();});
+		<?php if(!$this->loginstatus):?>
+			$("#TradeLink").click(function(event){alert("First need login!");event.preventDefault();});
+		<?php endif;?>
 		});
 	</script>
 </body>

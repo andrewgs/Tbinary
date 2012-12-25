@@ -45,7 +45,7 @@ class Mdusers extends MY_Model{
 		return $this->db->insert_id();
 	}
 	
-	function update_record($id,$data){
+	function update_record($data){
 
 		$this->db->set('first_name',$data['first_name']);
 		$this->db->set('last_name',$data['last_name']);
@@ -57,7 +57,9 @@ class Mdusers extends MY_Model{
 		$this->db->set('country',$data['country']);
 		$this->db->set('day_phone',$data['day_phone']);
 		$this->db->set('home_phone',$data['home_phone']);
-		$this->db->where('id',$id);
+		$this->db->set('active',$data['active']);
+		$this->db->set('coach',$data['coach']);
+		$this->db->where('id',$data['id']);
 		$this->db->update('users');
 		return $this->db->affected_rows();
 	}

@@ -298,7 +298,7 @@ class Admin_interface extends MY_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
-		$pagevar['pages'] = $this->pagination('admin-panel/actions//users-list',5,$this->mdusers->count_clients(),10);
+		$pagevar['pages'] = $this->pagination('admin-panel/actions/users-list',5,$this->mdusers->count_clients(),10);
 		
 		for($i=0;$i<count($pagevar['users']);$i++):
 			$pagevar['users'][$i]['password'] = $this->encrypt->decode($pagevar['users'][$i]['trade_password']);
@@ -314,6 +314,7 @@ class Admin_interface extends MY_Controller{
 		$pagevar = array(
 					'baseurl' 		=> base_url(),
 					'userinfo'		=> $this->user,
+					'langs'			=> $this->mdlanguages->read_records('languages'),
 					'user'			=> $this->mdusers->read_record($this->uri->segment(6),'users'),
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
@@ -323,25 +324,32 @@ class Admin_interface extends MY_Controller{
 		
 		if($this->input->post('submit')):
 			unset($_POST['submit']);
-			$this->form_validation->set_rules('organization',' ','required|trim');
-			$this->form_validation->set_rules('grn',' ','required|trim');
-			$this->form_validation->set_rules('inn',' ','required|trim');
-			$this->form_validation->set_rules('number',' ','required|trim');
-			$this->form_validation->set_rules('address',' ','required|trim');
-			$this->form_validation->set_rules('phones',' ','trim');
-			$this->form_validation->set_rules('login',' ','required|trim');
-			$this->form_validation->set_rules('password',' ','required|trim');
+			$this->form_validation->set_rules('first_name',' ','required|trim');
+			$this->form_validation->set_rules('last_name',' ','required|trim');
 			if(!$this->form_validation->run()):
-				$this->session->set_userdata('msgr','Ошибка. Неверно заполены необходимые поля<br/>');
-				$this->user_edit();
-				return FALSE;
+				$this->session->set_userdata('msgr','Error. Incorrectly filled in the required fields!');
+				redirect($this->uri->uri_string());
 			else:
-				$this->mdusers->update_record($this->uri->segment(6),$_POST);
-				$this->session->set_userdata('msgs','Запись сохранена успешно.');
+				$update = $this->input->post();
+				if(isset($update['coach'])):
+					$update['coach'] = 0;
+				else:
+					$update['coach'] = 1;
+				endif;
+				if(!isset($update['active'])):
+					$update['active'] = 0;
+				endif;
+				$update['id'] = $this->uri->segment(6);
+				$result = $this->mdusers->update_record($update);
+				if($result):
+					$this->session->set_userdata('msgs','Profile <strong>'.$pagevar['user']['email'].'</strong> updating!');
+				endif;
+				
 				redirect($this->session->userdata('backpath'));
 			endif;
 		endif;
-		$pagevar['user']['pass'] = $this->encrypt->decode($pagevar['user']['cryptpassword']);
+		$pagevar['user']['password'] = $this->encrypt->decode($pagevar['user']['trade_password']);
+		$pagevar['user']['signdate'] = $this->operation_dot_date($pagevar['user']['signdate']);
 		$this->load->view("admin_interface/users/user-edit",$pagevar);
 	}
 	

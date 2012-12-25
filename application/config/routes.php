@@ -9,13 +9,15 @@ $route['cabinet/profile']	= "clients_interface/profile";
 
 /*************************************************** ADMINS INTRERFACE ***********************************************/
 
-$route['admin-panel/actions/users-list']				= "admin_interface/users_list";
-$route['admin-panel/actions/users-list/from']			= "admin_interface/users_list";
-$route['admin-panel/actions/users-list/from/:num']		= "admin_interface/users_list";
+$route['admin-panel/actions/users-list']						= "admin_interface/users_list";
+$route['admin-panel/actions/users-list/from']					= "admin_interface/users_list";
+$route['admin-panel/actions/users-list/from/:num']				= "admin_interface/users_list";
 
-$route['admin-panel/actions/pages']						= "admin_interface/pages_lang";
-$route['admin-panel/actions/pages/lang/:num/new-page']	= "admin_interface/lang_new_page";
-$route['admin-panel/actions/pages/lang/:num/page/:num']	= "admin_interface/lang_edit_page";
+$route['admin-panel/actions/users/edit/id/:num']				= "admin_interface/user_edit";
+
+$route['admin-panel/actions/pages']								= "admin_interface/pages_lang";
+$route['admin-panel/actions/pages/lang/:num/new-page']			= "admin_interface/lang_new_page";
+$route['admin-panel/actions/pages/lang/:num/page/:num']			= "admin_interface/lang_edit_page";
 $route['admin-panel/actions/pages/lang/:num/page/home']			= "admin_interface/home_page";
 $route['admin-panel/actions/pages/lang/:num/page/trade']		= "admin_interface/menu_page";
 $route['admin-panel/actions/pages/lang/:num/page/faq']			= "admin_interface/menu_page";

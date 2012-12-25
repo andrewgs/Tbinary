@@ -54,8 +54,6 @@ class Users_interface extends MY_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
-//		print_r($pagevar['page']);exit;
-		
 		$this->load->view("users_interface/index",$pagevar);
 	}
 	
@@ -71,6 +69,7 @@ class Users_interface extends MY_Controller{
 			'content'			=> $page_data['content'],
 			'active_category'	=> $page_data['category'],
 			'baseurl' 			=> base_url(),
+			'main_menu'			=> $this->mdpages->read_top_menu($this->language),
 			'languages'			=> $this->mdlanguages->read_records('languages'),
 			'footer'			=> array('category'=>$this->mdcategory->read_records($this->language),'pages'=>$this->mdpages->read_records('id,title,link,url,category',$this->language)),
 			'msgs'				=> $this->session->userdata('msgs'),
@@ -92,6 +91,7 @@ class Users_interface extends MY_Controller{
 			'content'		=> $page_data['content'],
 			'baseurl' 		=> base_url(),
 			'languages'		=> $this->mdlanguages->read_records('languages'),
+			'main_menu'		=> $this->mdpages->read_top_menu($this->language),
 			'client'		=> array(),
 			'footer'		=> array('category'=>$this->mdcategory->read_records($this->language),'pages'=>$this->mdpages->read_records('id,title,link,url,category',$this->language)),
 			'msgs'			=> $this->session->userdata('msgs'),
@@ -110,7 +110,8 @@ class Users_interface extends MY_Controller{
 	
 	public function logoff(){
 		
-		$this->session->sess_destroy();
+		$this->session->unset_userdata(array('logon'=>'','userid'=>''));
+		$this->session->set_userdata('current_language',$this->language);
 		if(isset($_SERVER['HTTP_REFERER'])):
 			redirect($_SERVER['HTTP_REFERER']);
 		else:
@@ -190,7 +191,7 @@ class Users_interface extends MY_Controller{
 							$statusval['message'] = 'Registration is successful!';
 							$this->session->set_userdata(array('logon'=>md5(trim($dataval['email'])),'userid'=>$user_id));
 							$statusval['newlink'] = 'Hello, <strong>'.$dataval['fname'].' '.$dataval['lname'].'</strong><br/>';
-							$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'#">My Account</a>';
+							$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'cabinet">My Account</a>';
 							$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'logoff">Logout</a>';
 							$this->mdusers->update_field($user_id,'language',$this->language,'users');
 							ob_start();?>

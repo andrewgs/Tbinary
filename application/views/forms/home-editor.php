@@ -2,10 +2,11 @@
 	<fieldset>
 		<legend><?=$form_legend.' '.strtoupper($langs[$this->uri->segment(5)-1]['name']);?></legend>
 		<ul id="ProductTab" class="nav nav-tabs">
-			<li class="active"><a href="#part_0" data-toggle="tab">Part 1</a></li>
-		<?php for($p=1;$p<count($page);$p++):?>
-			<li><a href="#part_<?=$p;?>" data-toggle="tab">Part <?=$p+1;?></a></li>
-		<?php endfor;?>
+			<li class="active"><a href="#part_0" data-toggle="tab">General</a></li>
+			<li><a href="#part_1" data-toggle="tab">How to trade</a></li>
+			<li><a href="#part_2" data-toggle="tab">Features</a></li>
+			<li><a href="#part_3" data-toggle="tab">Check out</a></li>
+			<li><a href="#part_4" data-toggle="tab">Info</a></li>
 		</ul>
 		<div id="ProductTabContent" class="tab-content">
 		<?php for($p=0;$p<count($page);$p++):?>

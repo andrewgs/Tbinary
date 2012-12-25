@@ -26,24 +26,28 @@
 					<tbody>
 					<?php for($i=0;$i<count($users);$i++):?>
 						<tr class="align-center">
-							<td>
-								<?=$users[$i]['first_name'].' '.$users[$i]['last_name'];?>
-							</td>
-							<td>
-								Адрес: <?=$users[$i]['address1'];?><br/>
-								Email: <?=$users[$i]['email'];?><br/>
-								Телефоны: <?=$users[$i]['day_phone'];?> <?=$users[$i]['home_phone'];?><br/>
-								<?php if($users[$i]['id'] != $userinfo['uid']):?>
-								Логин: <strong><?=$users[$i]['email'];?></strong> Пароль: <strong><?=$users[$i]['password'];?></strong>
+							<td class="span6">
+								<?=$users[$i]['first_name'].' '.$users[$i]['last_name'];?><br/>
+								<strong><?=$users[$i]['email'];?></strong>
+								<br/><span class="label label-info"><?=$users[$i]['signdate'];?></span>
+								<?php if($users[$i]['coach']):?>
+								&nbsp;<span class="label label-warning">Speak with a coach</span>
+								<?php endif;?>
+								<?php if(!$users[$i]['active']):?>
+									<br/><br/><span class="label label-inverse"><em>User is not active</em></span>
 								<?php endif;?>
 							</td>
-							<td>
-								<!-- <?=anchor('admin-panel/actions/users/edit/id/'.$users[$i]['id'],'<i class="icon-pencil"></i>',array('class'=>'btn'));?> -->
-							<?php if($users[$i]['id'] != $userinfo['uid']):?>
-								<div id="params<?=$i;?>" style="display:none" data-uid="<?=$users[$i]['id'];?>"></div>
-								<div style="height:3px;">&nbsp;</div>
-								<a class="deleteUser btn" data-param="<?=$i;?>" data-toggle="modal" href="#deleteUser" title="Удалить"><i class="icon-trash"></i></a>
-							<?php endif;?>
+							<td class="span12">
+								<strong>Address one:</strong> <?=$users[$i]['address1'];?><br/>
+								<strong>Address two:</strong> <?=$users[$i]['address2'];?><br/>
+								<strong>Email:</strong> <em><?=$users[$i]['email'];?></em><br/>
+								<strong>Day phone:</strong> <?=$users[$i]['day_phone'];?><br/>
+								<strong>Home phone:</strong> <?=$users[$i]['home_phone'];?><br/>
+							</td>
+							<td class="span1">
+								<?=anchor('admin-panel/actions/users/edit/id/'.$users[$i]['id'],'<i class="icon-pencil icon-white"></i>',array('class'=>'btn btn-info'));?><br/>
+								<div style="height:3px;"> </div>
+								<a class="deleteUser btn btn-danger" data-uid="<?=$users[$i]['id'];?>" data-toggle="modal" href="#deleteUser" title="Delete user"><i class="icon-trash icon-white"></i></a>
 							</td>
 						</tr>
 					<?php endfor; ?>
@@ -62,7 +66,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			var uID = 0;
-			$(".deleteUser").click(function(){var Param = $(this).attr('data-param'); uID = $("div[id = params"+Param+"]").attr("data-uid");});
+			$(".deleteUser").click(function(){var uID = $(this).attr('data-uid');});
 			$("#DelUser").click(function(){location.href='<?=$baseurl;?>admin-panel/actions/users/delete/id/'+uID;});
 		});
 	</script>

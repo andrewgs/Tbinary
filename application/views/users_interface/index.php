@@ -58,7 +58,7 @@
 					<?php if($this->loginstatus):?>
 						<?=anchor('trade',(isset($page[3]['content']))?$page[3]['content']:'Start trade now',array('class'=>'btn btn-action'));?>
 					<?php else:?>
-						<a href="" class="btn btn-action none">First need register</a>
+						<a href="" id="TradeLink" class="btn btn-action none">First need login</a>
 					<?php endif;?>
 					</div>
 			</div>

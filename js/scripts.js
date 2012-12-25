@@ -47,7 +47,8 @@ function backpath(path){window.location=path;}
 		if(!err){
 			var postdata = myserialize($("#login-form .FieldSend"));
 			$.post(baseurl+"login",{'postdata':postdata},function(data){
-				if(data.status){$("#login-form").remove();$("#login-block").html(data.newlink);$("#login-block").parents('div:first').addClass('auth-data'); $(".signup-btn").attr("disabled","disabled").addClass('none').html('Not active');}
+				if(data.status){$("#login-form").remove();$("#login-block").html(data.newlink);$("#login-block").parents('div:first').addClass('auth-data');
+					$(".signup-btn").attr("disabled","disabled").addClass('none').html('Not active'); $("#TradeLink").replaceWith('<a class="btn btn-action" href="'+baseurl+'trade">Start trade now</a>');}
 				else{$("#login-email").attr('data-original-title','Logon failure').tooltip('show');}},"json");
 		}
 	});
@@ -70,6 +71,7 @@ function backpath(path){window.location=path;}
 					if(data.status){
 						$(thisObj).attr("disabled","disabled").html('Account created').css('background','none repeat scroll 0 0 #A6BD01').die('click');
 						$("#login-form").remove();$("#login-block").html(data.newlink);$("#login-block").parents('div:first').addClass('auth-data');
+						$("#TradeLink").replaceWith('<a class="btn btn-action" href="'+baseurl+'trade">Start trade now</a>');
 						$(".FieldSend").val('');}else{$(thisObj).html('Open accaunt');alert(data.message);}
 				},
 			"json");

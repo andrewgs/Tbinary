@@ -127,9 +127,9 @@ $(function() {
 									prepared[n.date] = n.ask;
 								});
 								
-								$.each(prepared, function(timestamp, ask){
-									series.addPoint([timestamp, ask], false, true);
-								});								
+								for ( var timestamp in prepared ){
+									series.addPoint([parseInt(timestamp), prepared[timestamp]], false, true);
+								}
 								
 								window.chart.redraw();
 							});
@@ -143,6 +143,7 @@ $(function() {
 			tooltip: {
 	            formatter: function() {
 	                var s = '<b>'+ Highcharts.dateFormat('%A, %b %e, %Y, %H:%M:%S', this.x) +'</b>';
+					//console.log(this);
 	
 	                $.each(this.points, function(i, point) {
 	                    s += '<br/>1 USD = '+ point.y +' EUR';
@@ -168,7 +169,8 @@ $(function() {
 				//	enabled : true,
 				//	radius : 3
 				//},
-				step: true,
+				//step: true,
+				//type: 'spline',
 				shadow : true,
 				data : (function() {
 					var prepared={}, data = [];
@@ -177,10 +179,10 @@ $(function() {
 						prepared[n.date] = n.ask;
 					});
 					
-					$.each(prepared, function(timestamp, ask){
-						data.push([timestamp, ask]);
-					});
-					
+					for ( var timestamp in prepared ){
+						data.push([parseInt(timestamp), prepared[timestamp]]);
+					}
+
 					return data;
 				})()
 			}]

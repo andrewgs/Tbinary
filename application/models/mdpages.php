@@ -54,16 +54,34 @@ class Mdpages extends MY_Model{
 		$query = $this->db->get('pages',1);
 		$data = $query->result_array();
 		if(isset($data[0])) return $data[0];
-		return FALSE;
+		return NULL;
 	}
 	
-	function read_fields($fields){
+	function read_pages(){
 			
-		$this->db->select($fields);
+		$this->db->select('id,language,link,manage');
+		$this->db->where('url !=','');
+		$this->db->where('url !=','trade');
+		$this->db->where('url !=','faq');
+		$this->db->where('url !=','deposit');
+		$this->db->where('url !=','contact-us');
 		$query = $this->db->get('pages');
 		$data = $query->result_array();
 		if($data) return $data;
-		return FALSE;
+		return NULL;
+	}
+
+	function home_pages($language){
+		
+		$this->db->where('language',$language);
+		$this->db->where('url','');
+		$this->db->where_in('category',array(0,-1));
+		$this->db->order_by('category','DESC');
+		$this->db->order_by('title');
+		$query = $this->db->get('pages');
+		$data = $query->result_array();
+		if($data) return $data;
+		return NULL;
 	}
 
 	function read_records($fields,$language){
@@ -73,17 +91,29 @@ class Mdpages extends MY_Model{
 		$query = $this->db->get('pages');
 		$data = $query->result_array();
 		if($data) return $data;
-		return FALSE;
+		return NULL;
 	}
 	
-	function category_records($category,$language){
+	function read_top_menu($language){
+			
+		$this->db->select('id,title,link,url');
+		$this->db->where('language',$language);
+		$this->db->where('category',0);
+		$this->db->where('manage',0);
+		$query = $this->db->get('pages');
+		$data = $query->result_array();
+		if(count($data)) return $data;
+		return NULL;
+	}
+	
+	function category_pages($category,$language){
 			
 		$this->db->where('category',$category);
 		$this->db->where('language',$language);
 		$query = $this->db->get('pages');
 		$data = $query->result_array();
 		if($data) return $data;
-		return FALSE;
+		return NULL;
 	}
 
 	function page_on_language($language,$page){

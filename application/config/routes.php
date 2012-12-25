@@ -16,6 +16,11 @@ $route['admin-panel/actions/users-list/from/:num']		= "admin_interface/users_lis
 $route['admin-panel/actions/pages']						= "admin_interface/pages_lang";
 $route['admin-panel/actions/pages/lang/:num/new-page']	= "admin_interface/lang_new_page";
 $route['admin-panel/actions/pages/lang/:num/page/:num']	= "admin_interface/lang_edit_page";
+$route['admin-panel/actions/pages/lang/:num/page/home']			= "admin_interface/home_page";
+$route['admin-panel/actions/pages/lang/:num/page/trade']		= "admin_interface/menu_page";
+$route['admin-panel/actions/pages/lang/:num/page/faq']			= "admin_interface/menu_page";
+$route['admin-panel/actions/pages/lang/:num/page/deposit']		= "admin_interface/menu_page";
+$route['admin-panel/actions/pages/lang/:num/page/contact-us']	= "admin_interface/menu_page";
 
 $route['admin-panel/actions/pages/lang/:num/categories']= "admin_interface/lang_categories";
 

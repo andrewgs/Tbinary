@@ -39,20 +39,22 @@ class Users_interface extends MY_Controller{
 	
 	public function index(){
 		
-		$page_data = $this->mdpages->read_fields_url('','*',$this->language);
-		
+		$page_data = $this->mdpages->home_pages($this->language);
 		$pagevar = array(
-			'title'			=> $page_data['title'],
-			'description'	=> $page_data['description'],
-			'content'		=> $page_data['content'],
+			'title'			=> (isset($page_data[0]['title']) && !empty($page_data[0]['title']))?$page_data[0]['title']:'Tbinary trading platform',
+			'description'	=> (isset($page_data[0]['description']) && !empty($page_data[0]['description']))?$page_data[0]['description']:'Tbinary trading platform',
 			'baseurl' 		=> base_url(),
+			'page'			=> (isset($page_data))?$page_data:array(),
 			'languages'		=> $this->mdlanguages->read_records('languages'),
+			'main_menu'		=> $this->mdpages->read_top_menu($this->language),
 			'footer'		=> array('category'=>$this->mdcategory->read_records($this->language),'pages'=>$this->mdpages->read_records('id,title,link,url,category',$this->language)),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr')
 		);
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
+		
+//		print_r($pagevar['page']);exit;
 		
 		$this->load->view("users_interface/index",$pagevar);
 	}
@@ -64,7 +66,7 @@ class Users_interface extends MY_Controller{
 			show_404();
 		endif;
 		$pagevar = array(
-			'title'				=> $page_data['title'],
+			'title'				=> (!empty($page_data['title']))?$page_data['title']:'Tbinary trading platform',
 			'description'		=> $page_data['description'],
 			'content'			=> $page_data['content'],
 			'active_category'	=> $page_data['category'],
@@ -85,7 +87,7 @@ class Users_interface extends MY_Controller{
 		$page_data = $this->mdpages->read_fields_url('trade','*',$this->language);
 		
 		$pagevar = array(
-			'title'			=> $page_data['title'],
+			'title'			=> (!empty($page_data['title']))?$page_data['title']:'Tbinary trading platform',
 			'description'	=> $page_data['description'],
 			'content'		=> $page_data['content'],
 			'baseurl' 		=> base_url(),
@@ -158,28 +160,30 @@ class Users_interface extends MY_Controller{
 			$dataid = preg_split("/=/",$data[$i]);
 			$dataval[$dataid[0]] = $dataid[1];
 		endfor;
-		if($dataval && !$this->loginstatus):
-			$dataval['answerType'] = 'xml'; $dataval['act'] = 'send'; $dataval['office'] = 'main';
-			$postdata = http_build_query(array('answerType'=>$dataval['answerType'],'act'=>$dataval['act'],'office'=>$dataval['office'],
-						'fname'=>$dataval['fname'],'lname'=>$dataval['lname'],'email'=>$dataval['email'],'country'=>$dataval['country'],
-						'phone' => $dataval['phone']));
-			$opts = array('http' =>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded','content'=>$postdata));
-			$context  = stream_context_create($opts);
-			if($dataval['demo']):
-				$statusval['status'] = 'demo';
-				$xml_string = file_get_contents('http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22&demo=1',false,$context);
-			else:
-				$statusval['status'] = 'real';
-				$xml_string = file_get_contents('http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22',false,$context);
-			endif;
-			//обработка XML-документа
-			$xml_document = simplexml_load_string($xml_string);
-			if($xml_document && ($xml_document->getName() == 'success')):
-				$dataval['remote_id'] = (int)$xml_document->accounts->acct_id;
-				$dataval['trade_login'] = (string)$xml_document->login;
-				$dataval['password'] = (string)$xml_document->password;
-				if($dataval['remote_id']):
-					if(!$this->mdusers->record_exist('users','email',trim($dataval['email']))):
+		if($this->mdusers->record_exist('users','email',trim($dataval['email']))):
+			$statusval['message'] = 'Email is already registered';
+		else:
+			if($dataval && !$this->loginstatus):
+				$dataval['answerType'] = 'xml'; $dataval['act'] = 'send'; $dataval['office'] = 'main';
+				$postdata = http_build_query(array('answerType'=>$dataval['answerType'],'act'=>$dataval['act'],'office'=>$dataval['office'],
+							'fname'=>$dataval['fname'],'lname'=>$dataval['lname'],'email'=>$dataval['email'],'country'=>$dataval['country'],
+							'phone' => $dataval['phone']));
+				$opts = array('http' =>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded','content'=>$postdata));
+				$context  = stream_context_create($opts);
+				if($dataval['demo']):
+					$statusval['mode'] = 'demo';
+					$xml_string = file_get_contents('http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22&demo=1',false,$context);
+				else:
+					$statusval['mode'] = 'real';
+					$xml_string = file_get_contents('http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22',false,$context);
+				endif;
+				//обработка XML-документа
+				$xml_document = simplexml_load_string($xml_string);
+				if($xml_document && ($xml_document->getName() == 'success')):
+					$dataval['remote_id'] = (int)$xml_document->accounts->acct_id;
+					$dataval['trade_login'] = (string)$xml_document->login;
+					$dataval['password'] = (string)$xml_document->password;
+					if($dataval['remote_id']):
 						$user_id = $this->mdusers->insert_record($dataval);
 						if($user_id):
 							$statusval['status'] = TRUE;
@@ -197,13 +201,11 @@ class Users_interface extends MY_Controller{
 							$this->send_mail($dataval['email'],'robot@sysfx.com','Tbinary trading platform','Register to tbinary.com',$mailtext);
 						endif;
 					else:
-						$statusval['message'] = 'Email is already registered';
+						$statusval['message'] = 'Error when registering!';
 					endif;
 				else:
 					$statusval['message'] = 'Error when registering!';
 				endif;
-			else:
-				$statusval['message'] = 'Error when registering!';
 			endif;
 		endif;
 		echo json_encode($statusval);

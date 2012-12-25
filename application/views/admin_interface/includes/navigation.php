@@ -7,9 +7,17 @@
 				<a id="drop<?=$i?>" class="dropdown-toggle" data-toggle="dropdown" role="button" href="#"><?=strtoupper($langs[$i]['name']);?> <b class="caret"></b></a>
 				<ul class="dropdown-menu" aria-labelledby="drop<?=$i?>" role="menu">
 					<div class="hightPageslist">
+					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/page/home','<i class="icon-home"></i> Home');?></li>
+					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/page/trade','<i class="icon-certificate"></i> Trade');?></li>
+					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/page/faq','<i class="icon-info-sign"></i> FAQ');?></li>
+					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/page/deposit','<i class="icon-asterisk"></i> Deposit');?></li>
+					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/page/contact-us','<i class="icon-globe"></i> Contact Us');?></li>
+				<?php if($langs_pages):?>
+					<hr/>
+				<?php endif;?>
 				<?php for($j=0;$j<count($langs_pages);$j++):?>
 					<?php if($langs[$i]['id'] == $langs_pages[$j]['language']):?>
-						<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/page/'.$langs_pages[$j]['id'],'<i class="icon-edit"></i> '.$langs_pages[$j]['link'],array('tabindex'=>'-1'));?></li>
+						<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/page/'.$langs_pages[$j]['id'],'<i class="icon-circle-arrow-right"></i> '.$langs_pages[$j]['link'],array('tabindex'=>'-1'));?></li>
 					<?php endif;?>
 				<?php endfor;?>
 					</div>

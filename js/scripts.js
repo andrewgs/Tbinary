@@ -47,12 +47,12 @@ function backpath(path){window.location=path;}
 		if(!err){
 			var postdata = myserialize($("#login-form .FieldSend"));
 			$.post(baseurl+"login",{'postdata':postdata},function(data){
-				if(data.status){$("#login-form").remove();$("#login-block").html(data.newlink);$("#login-block").parents('div:first').addClass('auth-data');}
+				if(data.status){$("#login-form").remove();$("#login-block").html(data.newlink);$("#login-block").parents('div:first').addClass('auth-data'); $(".signup-btn").attr("disabled","disabled").addClass('none').html('Not active');}
 				else{$("#login-email").attr('data-original-title','Logon failure').tooltip('show');}},"json");
 		}
 	});
 	$(".signup-btn").click(function(event){
-		var thisObj = $(this);$(thisObj).html('Please wait...');
+		var thisObj = $(this);
 		var err = false;event.preventDefault();
 		var account = $(this).attr('data-account');
 		var email = $("#signup-email-"+account).val();
@@ -64,12 +64,13 @@ function backpath(path){window.location=path;}
 			if($("#coach-"+account+":checked").length == 1){coach = 1;}
 			postdata = postdata+"&coach="+coach;
 			if(account == 'demo'){postdata = postdata+"&demo=1"}else{postdata = postdata+"&demo=0"}
+			$(thisObj).html('Please wait...');
 			$.post(baseurl+"registering",{'postdata':postdata},
 				function(data){
-					$(thisObj).html('Account created').css('background','none repeat scroll 0 0 #A6BD01');
 					if(data.status){
+						$(thisObj).attr("disabled","disabled").html('Account created').css('background','none repeat scroll 0 0 #A6BD01').die('click');
 						$("#login-form").remove();$("#login-block").html(data.newlink);$("#login-block").parents('div:first').addClass('auth-data');
-						$(".FieldSend").val('');}else{alert(data.message);}
+						$(".FieldSend").val('');}else{$(thisObj).html('Open accaunt');alert(data.message);}
 				},
 			"json");
 		}

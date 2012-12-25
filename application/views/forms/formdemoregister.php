@@ -12,5 +12,9 @@
 	</select>
 	<input type="text" class="valid-required FieldSend" name="phone" data-placement="right" role="tooltip" data-original-title="Field cannot be empty" placeholder="Phone" />
 	<input type="checkbox" id="coach-demo" value="1" checked="checked" name="coach"/> <label for="coach">I'd like to speak with a trading coach</label>
+<?php if(!$this->loginstatus):?>
 	<button data-account="demo" type="submit" class="btn btn-action signup-btn" name="Submit">Open Demo Account</button>
+<?php else:?>
+	<button class="btn btn-action none" disabled="disabled">Not active</button>
+<?php endif;?>
 </form>

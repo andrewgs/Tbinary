@@ -4,11 +4,9 @@
 	</div>
 	<nav class="span10">
 		<ul id="main-nav">
-			<li><?=anchor('','Home');?></li>
-			<li><?=anchor('trade','Trade');?></li>
-			<li><?=anchor('faq','FAQ');?></li>
-			<li><?=anchor('deposit','Deposit');?></li>
-			<li><?=anchor('contact-us','Contact Us');?></li>
+		<?php for($i=0;$i<count($main_menu);$i++):?>
+			<li><?=anchor($main_menu[$i]['url'],$main_menu[$i]['link']);?></li>
+		<?php endfor;?>
 		</ul>
 	</nav>
 	<?php if(!$this->loginstatus):?>
@@ -25,11 +23,11 @@
 		<?=anchor('logoff','Logout',array('class'=>'action-cabinet'));?>
 		</div>
 	<?php endif;?>
-	
+<?php if($languages):?>
 	<div id="ChangeLang">
 		<div class="btn-group">
-			<button class="btn btn-mini ttObject">&nbsp;<?=strtolower($languages[$this->language-1]['name']);?>&nbsp;</button>
-			<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+			<button class="btn btn-mini">&nbsp;<?=strtolower($languages[$this->language-1]['name']);?>&nbsp;</button>
+			<button data-placement="right" role="tooltip" data-original-title="Change site language" class="btn btn-mini dropdown-toggle ttObject" data-toggle="dropdown"><span class="caret"></span></button>
 			<ul class="dropdown-menu" style="min-width:0px;">
 		<?php for($i=0;$i<count($languages);$i++):?>
 			<?php if($i != ($this->language-1)):?>
@@ -41,4 +39,5 @@
 			</ul>
 		</div>
 	</div>
+<?php endif;?>
 </header>

@@ -9,13 +9,13 @@
 			<div class="span19">
 				<div class="navbar">
 					<div class="navbar-inner">
-						<a class="brand none" href="">Profile</a>
+						<a class="brand none" href="">Balance</a>
 					</div>
 				</div>
 				<?php $this->load->view("alert_messages/alert-error");?>
 				<?php $this->load->view("alert_messages/alert-success");?>
 				<div style="height:3px;"> </div>
-				<?php $this->load->view("forms/frmedituser");?>
+			
 			</div>
 		<?php $this->load->view("clients_interface/includes/rightbar");?>
 		</div>

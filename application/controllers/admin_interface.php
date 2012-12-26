@@ -10,18 +10,6 @@ class Admin_interface extends MY_Controller{
 		endif;
 	}
 	
-	public function control_panel(){
-		
-		$pagevar = array(
-					'baseurl' 		=> base_url(),
-					'msgs'			=> $this->session->userdata('msgs'),
-					'msgr'			=> $this->session->userdata('msgr')
-			);
-		$this->session->unset_userdata('msgs');
-		$this->session->unset_userdata('msgr');
-		$this->load->view("admin_interface/control-panel",$pagevar);
-	}
-
 	/******************************************* pages_lang ******************************************************/
 	
 	public function home_page(){
@@ -344,7 +332,6 @@ class Admin_interface extends MY_Controller{
 				if($result):
 					$this->session->set_userdata('msgs','Profile <strong>'.$pagevar['user']['email'].'</strong> updating!');
 				endif;
-				
 				redirect($this->session->userdata('backpath'));
 			endif;
 		endif;
@@ -358,7 +345,7 @@ class Admin_interface extends MY_Controller{
 		$id = $this->uri->segment(6);
 		if($id):
 			$result = $this->mdusers->delete_record($id,'users');
-			$this->session->set_userdata('msgs','Пользователь удален успешно.');
+			$this->session->set_userdata('msgs','User deleted successfully.');
 			redirect($this->session->userdata('backpath'));
 		else:
 			show_404();

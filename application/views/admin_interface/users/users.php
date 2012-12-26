@@ -7,13 +7,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="span19">
-				<?php $this->load->view("alert_messages/alert-error");?>
-				<?php $this->load->view("alert_messages/alert-success");?>
 				<div class="navbar">
 					<div class="navbar-inner">
 						<a class="brand none" href="">Users list</a>
 					</div>
 				</div>
+				<?php $this->load->view("alert_messages/alert-error");?>
+				<?php $this->load->view("alert_messages/alert-success");?>
+				<div style="height:3px;"> </div>
 			<?php if($users):?>
 				<table class="table table-striped table-bordered">
 					<thead>
@@ -66,7 +67,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			var uID = 0;
-			$(".deleteUser").click(function(){var uID = $(this).attr('data-uid');});
+			$(".deleteUser").click(function(){uID = $(this).attr('data-uid');});
 			$("#DelUser").click(function(){location.href='<?=$baseurl;?>admin-panel/actions/users/delete/id/'+uID;});
 		});
 	</script>

@@ -99,6 +99,7 @@
 						<input type="text" class="span8" disabled="disabled" autocomplete="off" name="password" value="<?=$user['password'];?>">
 					</div>
 				</div>
+			<?php if($this->user['admin']):?>
 				<div class="control-group info">
 					<label for="remote_id" class="control-label">Trade ID: </label>
 					<div class="controls">
@@ -132,6 +133,7 @@
 						</label>
 					</div>
 				</div>
+			<?php endif;?>
 			</div>
 		</div>
 	</fieldset>

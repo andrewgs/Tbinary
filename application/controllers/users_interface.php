@@ -139,7 +139,7 @@ class Users_interface extends MY_Controller{
 				$this->session->set_userdata(array('logon'=>md5($user['login']),'userid'=>$user['id']));
 				$statusval['newlink'] = 'Hello, <strong>'.$user['first_name'].' '.$user['last_name'].'</strong><br/>';
 				if($user['id']):
-					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'#">My Account</a>';
+					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'cabinet/balance">My Account</a>';
 				else:
 					$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'admin-panel/actions/users-list">Administration Panel</a>';
 				endif;
@@ -191,7 +191,7 @@ class Users_interface extends MY_Controller{
 							$statusval['message'] = 'Registration is successful!';
 							$this->session->set_userdata(array('logon'=>md5(trim($dataval['email'])),'userid'=>$user_id));
 							$statusval['newlink'] = 'Hello, <strong>'.$dataval['fname'].' '.$dataval['lname'].'</strong><br/>';
-							$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'cabinet">My Account</a>';
+							$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'cabinet/balance">My Account</a>';
 							$statusval['newlink'] .= '<a class="action-cabinet" href="'.base_url().'logoff">Logout</a>';
 							$this->mdusers->update_field($user_id,'language',$this->language,'users');
 							ob_start();?>

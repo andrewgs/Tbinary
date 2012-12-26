@@ -5,6 +5,8 @@ $route['404_override'] = '';
 
 /************************************************** CLIENT INTRERFACE ***********************************************/
 
+$route['cabinet/balance']	= "clients_interface/balance";
+$route['cabinet/portfolio']	= "clients_interface/portfolio";
 $route['cabinet/profile']	= "clients_interface/profile";
 
 /*************************************************** ADMINS INTRERFACE ***********************************************/
@@ -14,6 +16,7 @@ $route['admin-panel/actions/users-list/from']					= "admin_interface/users_list"
 $route['admin-panel/actions/users-list/from/:num']				= "admin_interface/users_list";
 
 $route['admin-panel/actions/users/edit/id/:num']				= "admin_interface/user_edit";
+$route['admin-panel/actions/users/delete/id/:num']				= "admin_interface/user_delete";
 
 $route['admin-panel/actions/pages']								= "admin_interface/pages_lang";
 $route['admin-panel/actions/pages/lang/:num/new-page']			= "admin_interface/lang_new_page";

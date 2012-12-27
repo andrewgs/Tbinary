@@ -64,6 +64,14 @@ class Mdusers extends MY_Model{
 		return $this->db->affected_rows();
 	}
 	
+	function set_base_lang($language,$base_lang){
+
+		$this->db->set('language',$base_lang);
+		$this->db->where('language',$language);
+		$this->db->update('users');
+		return $this->db->affected_rows();
+	}
+	
 	function auth_user($login,$password){
 		
 		$this->db->select('id,email AS login,first_name,last_name');

@@ -1,4 +1,4 @@
-<div id="deleteUser" class="modal hide fade">
+<div id="deleteUser" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="Delete User" aria-hidden="true">
 	<div class="modal-header">
 		<a class="close" data-dismiss="modal">×</a>
 		<h3>Deleting a user</h3>

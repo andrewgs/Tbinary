@@ -11,6 +11,16 @@ class Mdlanguages extends MY_Model{
 		parent::__construct();
 	}
 	
+	function visible_languages($field = 'id',$order = 'ASC'){
+		
+		$this->db->where('active',1);
+		$this->db->order_by($field,$order);
+		$query = $this->db->get('languages');
+		$data = $query->result_array();
+		if(count($data)) return $data;
+		return NULL;
+	}
+	
 	function insert_record($data){
 
 		$this->name = $data['name'];
@@ -23,6 +33,7 @@ class Mdlanguages extends MY_Model{
 	function update_record($id,$data){
 
 		$this->db->set('name',$data['name']);
+		$this->db->set('active',$data['active']);
 		$this->db->where('id',$id);
 		$this->db->update('languages');
 		return $this->db->affected_rows();

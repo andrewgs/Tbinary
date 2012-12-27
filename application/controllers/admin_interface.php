@@ -19,7 +19,7 @@ class Admin_interface extends MY_Controller{
 					'langs'			=> $this->mdlanguages->read_records('languages'),
 					'langs_pages'	=> $this->mdpages->read_pages(),
 					'page'			=> $this->mdpages->home_pages($this->uri->segment(5)),
-					'form_legend'	=> 'The form of editing home page. Language: ',
+					'form_legend'	=> 'The form of editing home page. Language: '.strtoupper($this->mdlanguages->read_field($this->uri->segment(5),'languages','name')),
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
 			);
@@ -92,7 +92,7 @@ class Admin_interface extends MY_Controller{
 					$insert['base'] = 1;
 				endif;
 				$insert['name'] = $this->english_symbol($insert['name']);
-				if($insert['name']):
+				if(!empty($insert['name'])):
 					$count_pages = $this->mdpages->count_all_records('languages');
 					$lang_id = $this->mdlanguages->insert_record($insert);
 					if($count_pages):
@@ -132,6 +132,9 @@ class Admin_interface extends MY_Controller{
 						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'Contact us page','description'=>'','link'=>'contact us','content'=>'','url'=>'contact-us','category'=>0),0);
 						$this->session->set_userdata('msgs','Base language added!');
 					endif;
+				else:
+					$this->session->set_userdata('msgr','Error. Incorrect language name!');
+					redirect($this->uri->uri_string());
 				endif;
 				redirect($this->uri->uri_string());
 			endif;
@@ -148,7 +151,7 @@ class Admin_interface extends MY_Controller{
 					'langs_pages'	=> $this->mdpages->read_pages(),
 					'page'			=> array('title'=>'','description'=>'','link'=>'','url'=>'','content'=>'','category'=>0,'manage'=>1),
 					'redactor'		=> TRUE,
-					'form_legend'	=> 'The form of creating a new page. Language: ',
+					'form_legend'	=> 'The form of creating a new page. Language: '.strtoupper($this->mdlanguages->read_field($this->uri->segment(5),'languages','name')),
 					'category'		=> $this->mdcategory->read_records($this->uri->segment(5)),
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
@@ -195,7 +198,7 @@ class Admin_interface extends MY_Controller{
 					'langs_pages'	=> $this->mdpages->read_pages(),
 					'page'			=> $this->mdpages->read_record($this->uri->segment(7),'pages'),
 					'redactor'		=> TRUE,
-					'form_legend'	=> 'The form of editing page. Language: ',
+					'form_legend'	=> 'The form of editing page. Language: '.strtoupper($this->mdlanguages->read_field($this->uri->segment(5),'languages','name')),
 					'category'		=> $this->mdcategory->read_records($this->uri->segment(5)),
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
@@ -234,6 +237,24 @@ class Admin_interface extends MY_Controller{
 		$this->load->view("admin_interface/pages",$pagevar);
 	}
 	
+	public function lang_delete_page(){
+		
+		$page = $this->uri->segment(5);
+		$manage = $this->mdpages->read_field($page,'pages','manage');
+		if($page && $manage):
+			$this->mdpages->delete_record($page,'pages');
+			$this->session->set_userdata('msgs','Page deleted successfully.');
+		else:
+			$this->session->set_userdata('msgr','Error! Impossible to remove page.');
+		endif;
+		if(isset($_SERVER['HTTP_REFERER'])):
+			redirect($_SERVER['HTTP_REFERER']);
+		else:
+			redirect('admin-panel/actions/pages');
+		endif;
+	}
+	
+	
 	/******************************************* categories ******************************************************/
 	
 	public function lang_categories(){
@@ -243,7 +264,7 @@ class Admin_interface extends MY_Controller{
 					'langs'			=> $this->mdlanguages->read_records('languages'),
 					'langs_pages'	=> $this->mdpages->read_pages(),
 					'category'		=> $this->mdcategory->read_records($this->uri->segment(5)),
-					'form_legend'	=> 'Category list pages. Language: ',
+					'form_legend'	=> 'Category list pages. Language: '.strtoupper($this->mdlanguages->read_field($this->uri->segment(5),'languages','name')),
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
 			);
@@ -267,7 +288,102 @@ class Admin_interface extends MY_Controller{
 			endif;
 		endif;
 		
+		if($this->input->post('updcategory')):
+			unset($_POST['updcategory']);
+			$this->form_validation->set_rules('title',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Error. Incorrectly filled in the required fields!');
+				redirect($this->uri->uri_string());
+			else:
+				$result = $this->mdcategory->update_record($this->input->post());
+				if($result):
+					$this->session->set_userdata('msgs','Category <strong>'.$this->input->post('title').'</strong> updated!');
+				endif;
+				redirect($this->uri->uri_string());
+			endif;
+		endif;
+		
 		$this->load->view("admin_interface/categories",$pagevar);
+	}
+	
+	public function category_detele(){
+		
+		$category = $this->uri->segment(5);
+		if($category):
+			$this->mdcategory->delete_record($category,'category');
+			$this->mdpages->delete_category($category);
+			$this->session->set_userdata('msgs','Category deleted successfully.');
+		else:
+			$this->session->set_userdata('msgr','Error! Impossible to remove category.');
+		endif;
+		if(isset($_SERVER['HTTP_REFERER'])):
+			redirect($_SERVER['HTTP_REFERER']);
+		else:
+			redirect('admin-panel/actions/pages');
+		endif;
+	}
+	
+	/******************************************* properties ******************************************************/
+	
+	public function lang_properties(){
+		
+		$pagevar = array(
+					'baseurl' 		=> base_url(),
+					'langs'			=> $this->mdlanguages->read_records('languages'),
+					'langs_pages'	=> $this->mdpages->read_pages(),
+					'lang'			=> $this->mdlanguages->read_record($this->uri->segment(5),'languages'),
+					'form_legend'	=> 'Properties language. Language: '.strtoupper($this->mdlanguages->read_field($this->uri->segment(5),'languages','name')),
+					'msgs'			=> $this->session->userdata('msgs'),
+					'msgr'			=> $this->session->userdata('msgr')
+			);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('name',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Error. Incorrectly filled in the required fields!');
+				redirect($this->uri->uri_string());
+			else:
+				$update = $this->input->post();
+				$update['name'] = $this->english_symbol($update['name']);
+				if(!empty($update['name'])):
+					if(!isset($update['active'])):
+						$update['active'] = 0;
+						$base_language = $this->mdlanguages->base_language();
+						$this->mdusers->set_base_lang($this->uri->segment(5),$base_language);
+					endif;
+					$result = $this->mdlanguages->update_record($this->uri->segment(5),$update);
+					if($result):
+						$this->session->set_userdata('msgs','Language <strong>'.$update['name'].'</strong> updated!');
+					endif;
+					redirect('admin-panel/actions/pages');
+				else:
+					$this->session->set_userdata('msgr','Error. Incorrect language name!');
+					redirect($this->uri->uri_string());
+				endif;
+			endif;
+		endif;
+		
+		$this->load->view("admin_interface/properties",$pagevar);
+	}
+	
+	public function lang_detele(){
+		
+		$base_language = $this->mdlanguages->base_language();
+		$lang = $this->uri->segment(5);
+		if($lang != $base_language):
+			$this->mdlanguages->delete_record($lang,'languages');
+			$this->mdpages->delete_language($lang);
+			$this->mdcategory->delete_language($lang);
+			$this->mdusers->set_base_lang($lang,$base_language);
+			$this->session->set_userdata('msgs','Languages deleted successfully.');
+			redirect('admin-panel/actions/pages');
+		else:
+			$this->session->set_userdata('msgr','Error! Impossible to remove language.');
+			redirect($this->uri->uri_string());
+		endif;
 	}
 	
 	/********************************************* users ********************************************************/

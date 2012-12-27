@@ -14,15 +14,14 @@ class Mdcategory extends MY_Model{
 
 		$this->language = $data['language'];
 		$this->title = $data['title'];
-		
 		$this->db->insert('category',$this);
 		return $this->db->insert_id();
 	}
 	
-	function update_record($id,$data){
+	function update_record($data){
 
 		$this->db->set('title',$data['title']);
-		$this->db->where('id',$id);
+		$this->db->where('id',$data['category_id']);
 		$this->db->update('category');
 		return $this->db->affected_rows();
 	}
@@ -34,5 +33,12 @@ class Mdcategory extends MY_Model{
 		$data = $query->result_array();
 		if(count($data)) return $data;
 		return NULL;
+	}
+	
+	function delete_language($lang){
+	
+		$this->db->where('language',$lang);
+		$this->db->delete('category');
+		return $this->db->affected_rows();
 	}
 }

@@ -27,7 +27,12 @@ $route['admin-panel/actions/pages/lang/:num/page/faq']			= "admin_interface/menu
 $route['admin-panel/actions/pages/lang/:num/page/deposit']		= "admin_interface/menu_page";
 $route['admin-panel/actions/pages/lang/:num/page/contact-us']	= "admin_interface/menu_page";
 
-$route['admin-panel/actions/pages/lang/:num/categories']= "admin_interface/lang_categories";
+$route['admin-panel/actions/pages/delete-lang/:num']			= "admin_interface/lang_detele";
+$route['admin-panel/actions/pages/delete-category/:num']		= "admin_interface/category_detele";
+$route['admin-panel/actions/pages/delete-page/:num']			= "admin_interface/lang_delete_page";
+
+$route['admin-panel/actions/pages/lang/:num/categories']		= "admin_interface/lang_categories";
+$route['admin-panel/actions/pages/lang/:num/properties']		= "admin_interface/lang_properties";
 
 $route['admin-panel/actions/profile']					= "admin_interface/actions_profile";
 

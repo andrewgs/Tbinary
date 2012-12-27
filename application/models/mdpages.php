@@ -125,4 +125,18 @@ class Mdpages extends MY_Model{
 		if($data) return TRUE;
 		return FALSE;
 	}
+
+	function delete_language($lang){
+	
+		$this->db->where('language',$lang);
+		$this->db->delete('pages');
+		return $this->db->affected_rows();
+	}
+	
+	function delete_category($category){
+	
+		$this->db->where('category',$category);
+		$this->db->delete('pages');
+		return $this->db->affected_rows();
+	}
 }

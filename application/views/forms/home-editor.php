@@ -1,6 +1,6 @@
 <?=form_open($this->uri->uri_string(),array('class'=>'form-horizontal')); ?>
 	<fieldset>
-		<legend><?=$form_legend.' '.strtoupper($langs[$this->uri->segment(5)-1]['name']);?></legend>
+		<legend><?=$form_legend;?></legend>
 		<ul id="ProductTab" class="nav nav-tabs">
 			<li class="active"><a href="#part_0" data-toggle="tab">General</a></li>
 			<li><a href="#part_1" data-toggle="tab">How to trade</a></li>

@@ -10,12 +10,3 @@
 
 h1 { font-size: 28.5px; margin: 1em 0; }
 .navbar .brand { font-size: 14px; }
-
-.clear {
-	clear: both;
-	display: block;
-	overflow: hidden;
-	visibility: hidden;
-	width: 0;
-	height: 0
-}

@@ -78,6 +78,31 @@ class Clients_interface extends MY_Controller{
 				redirect($this->uri->uri_string());
 			endif;
 		endif;
+		
+		if($this->input->post('newpassword')):
+			unset($_POST['newpassword']);
+			$this->form_validation->set_rules('password',' ','required|trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Error. Incorrectly filled in the required fields!');
+				redirect($this->uri->uri_string());
+			else:
+				$user_id = $this->mdusers->valid_password($this->user['uid'],'password',md5($this->input->post('password')));
+				if($user_id):
+					$new_password = $this->randomPassword(10);
+					$result = $this->mdusers->update_field($this->user['uid'],'password',md5($new_password),'users');
+					if($result):
+						ob_start();?>
+						<p>Dear <em><?=$this->user['name'];?></em>,</p>
+						<p>You have requested a new password to access the site <?=anchor('','Tbinary trading platform');?></p>
+						<p>Login: <?=$this->user['email'];?><br/>Password: <?=$new_password;?></p><?
+						$mailtext = ob_get_clean();
+						$this->send_mail($this->user['email'],'robot@sysfx.com','Tbinary trading platform','Requested a new password to tbinary.com',$mailtext);
+						$this->session->set_userdata('msgs','Password changed.');
+					endif;
+				endif;
+				redirect($this->uri->uri_string());
+			endif;
+		endif;
 		$pagevar['user']['password'] = $this->encrypt->decode($pagevar['user']['trade_password']);
 		$pagevar['user']['signdate'] = $this->operation_dot_date($pagevar['user']['signdate']);
 		$this->load->view("clients_interface/profile",$pagevar);

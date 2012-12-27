@@ -12,12 +12,17 @@
 						<a class="brand none" href="">Profile</a>
 					</div>
 				</div>
+				<div style="float:right;margin:5px 0;">
+					<a class="btn btn-inverse" data-toggle="modal" href="#newPassword">Request new password</a>
+				</div>
+				<div class="clear"></div>
 				<?php $this->load->view("alert_messages/alert-error");?>
 				<?php $this->load->view("alert_messages/alert-success");?>
-				<div style="height:3px;"> </div>
+				<div class="clear"></div>
 				<?php $this->load->view("forms/frmedituser");?>
 			</div>
 		<?php $this->load->view("clients_interface/includes/rightbar");?>
+		<?php $this->load->view("clients_interface/modal/new-password");?>
 		</div>
 	</div>
 	<?php $this->load->view("clients_interface/includes/scripts");?>

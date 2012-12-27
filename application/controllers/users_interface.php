@@ -148,6 +148,34 @@ class Users_interface extends MY_Controller{
 		endif;
 		echo json_encode($statusval);
 	}
+	
+	public function forgot_password(){
+		
+		$statusval = array('status'=>FALSE,'title'=>'<span class="label label-success">Successfully</span>','message'=>'New password sent to your email');
+		$user_email = trim($this->input->post('user_email'));
+		if(!$user_email):
+			show_404();
+		endif;
+		$user_id = $this->mdusers->user_exist('email',trim($user_email));
+		if($user_id):
+			$new_password = $this->randomPassword(10);
+			$result = $this->mdusers->update_field($user_id,'password',md5($new_password),'users');
+			if($result):
+				$user = $this->mdusers->read_record($user_id,'users');
+				ob_start();?>
+				<p>Dear <em><?=$user['name'];?></em>,</p>
+				<p>You have requested a new password to access the site <?=anchor('','Tbinary trading platform');?></p>
+				<p>Login: <?=$user['email'];?><br/>Password: <?=$new_password;?></p><?
+				$mailtext = ob_get_clean();
+				$this->send_mail($user['email'],'robot@sysfx.com','Tbinary trading platform','Requested a new password to tbinary.com',$mailtext);
+				$statusval['status'] = TRUE;
+				$this->session->set_userdata('msgs','Password changed.');
+			endif;
+		else:
+			$statusval['title'] = '<span class="label label-warning">Specified Email does not exist</span>';
+		endif;
+		echo json_encode($statusval);
+	}
 
 	public function registering(){
 		

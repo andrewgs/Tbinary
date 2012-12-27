@@ -52,6 +52,21 @@ function backpath(path){window.location=path;}
 				else{$("#login-email").attr('data-original-title','Logon failure').tooltip('show');}},"json");
 		}
 	});
+	$("#ForgotPassword").click(function(){
+		var popover_content = $("#popover-content").html();
+		if($(this).attr("data-popshow") == 0){
+			$("#ForgotPassword").attr("data-content",popover_content).popover('show');$(this).attr("data-popshow",1);
+			$(".ForgotBtn").live('click',function(event){event.preventDefault();forgot_password();});
+		}
+	});
+	function forgot_password(){
+		var err = false;
+		var forgot_mail = $("#ForgotEmail").val();
+		if(forgot_mail==''){$("#ForgotEmail").tooltip('show');err = true;};
+		if(!err && !isValidEmailAddress(forgot_mail)){$("#ForgotEmail").attr('data-original-title','Not valid email address').tooltip('show');err = true;}
+		if(!err){$.post(baseurl+"forgot-password",{'user_email':forgot_mail},function(data){
+				if(data.status){$("#login-form .forgot-block").html(data.message);}$("#login-form .popover-title").html(data.title);},"json");}
+	}
 	$(".signup-btn").click(function(event){
 		var thisObj = $(this);
 		var err = false;event.preventDefault();

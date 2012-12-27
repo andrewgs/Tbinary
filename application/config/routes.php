@@ -47,6 +47,7 @@ $route['contact-us']				= "users_interface/pages";
 $route['login']						= "users_interface/login";
 $route['logoff']					= "users_interface/logoff";
 $route['registering']				= "users_interface/registering";
+$route['forgot-password']			= "users_interface/forgot_password";
 
 $route['change-site-language/:any'] = "users_interface/change_language";
 

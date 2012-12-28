@@ -70,6 +70,8 @@
 	<?php $this->load->view("users_interface/includes/footer");?>
 	<?php $this->load->view("users_interface/includes/copyright");?>
 	<?php $this->load->view("users_interface/includes/scripts");?>
+	<script src="<?=$baseurl;?>js/vendor/highstock.js"></script>
+	<script src="<?=$baseurl;?>js/vendor/exporting.js"></script>
 	<script src="<?=$baseurl;?>js/main.js"></script>
 	<script type="text/javascript">
 		$(function(){

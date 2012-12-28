@@ -116,8 +116,8 @@ $(function() {
 				events : {
 					load : function() {
 						
-						// set up the updating of the chart each 5 seconds
 						var series = this.series[0];
+												
 						setInterval(function() {
 							$.getJSON('http://vl611.sysfx.com:8000/advertisements/content/test.13/rates/json/dispatcher?cc1=EUR&cc2=USD&callback=?', function(json) {
 								
@@ -142,8 +142,9 @@ $(function() {
 								    var timestamp = tuples[i][0];
 								    var ask = tuples[i][1];
 									
-									series.addPoint([timestamp, ask], false, true);
+									series.addPoint([parseInt(timestamp), ask], false, true);
 								}
+								//console.log(series.data.length);
 																
 								window.chart.redraw();
 							});
@@ -167,25 +168,35 @@ $(function() {
 	            }
 	        },
 	        
+	        xAxis: {
+                type: 'datetime',
+                tickPixelInterval: 150
+            },
+            
+            yAxis: {
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+	        
 			rangeSelector: false,
-			
-			//title : {
-			//	text : 'EUR/USD'
-			//},
-			
+						
 			exporting: {
 				enabled: false
 			},
 			
 			series : [{
 				name : 'USD/JPY',
-				//marker : {
-				//	enabled : true,
-				//	radius : 3
-				//},
-				//step: true,
-				//type: 'spline',
+				marker : {
+					enabled : true,
+					radius : 3
+				},
 				shadow : true,
+				tooltip : {
+					valueDecimals : 2
+				},
 				data : (function() {
 					var prepared={}, data = [];
 				

@@ -10,10 +10,8 @@
 				<div class="navbar">
 					<div class="navbar-inner">
 						<a class="brand none" href="">Profile</a>
+						<a class="btn btn-info pull-right" data-toggle="modal" href="#newPassword">Request new password</a>
 					</div>
-				</div>
-				<div style="float:right;margin:5px 0;">
-					<a class="btn btn-inverse" data-toggle="modal" href="#newPassword">Request new password</a>
 				</div>
 				<div class="clear"></div>
 				<?php $this->load->view("alert_messages/alert-error");?>

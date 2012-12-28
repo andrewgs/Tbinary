@@ -23,7 +23,17 @@
 	<?php $this->load->view("clients_interface/includes/scripts");?>
 	<script type="text/javascript">
 		$(document).ready(function(){
-
+			$.ajax({
+				url: 'http://vl625.sysfx.com:9089/gateway/serviceGateway.jsp?schemaId=demo.20',
+				type: 'GET',
+				crossDomain: true,
+				success: function(data){
+					console.log(data[0].serverName);
+				},
+				error: function() {
+					console.info('Request now allowed');
+				}
+			});
 		});
 	</script>
 </body>

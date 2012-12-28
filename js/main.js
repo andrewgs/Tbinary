@@ -121,16 +121,30 @@ $(function() {
 						setInterval(function() {
 							$.getJSON('http://vl611.sysfx.com:8000/advertisements/content/test.13/rates/json/dispatcher?cc1=EUR&cc2=USD&callback=?', function(json) {
 								
-								var prepared = {};
+								var prepared = {}, tuples = [];
 								
 								$.each(json, function(i,n){
 									prepared[n.date] = n.ask;
 								});
-								
-								for ( var timestamp in prepared ){
-									series.addPoint([parseInt(timestamp), prepared[timestamp]], false, true);
+
+								for (var key in prepared) {
+									tuples.push([parseInt(key), prepared[key]]);
 								}
 								
+								tuples.sort(function(a, b) {
+								    a = a[0];
+								    b = b[0];
+								
+								    return a < b ? -1 : (a > b ? 1 : 0);
+								});
+								
+								for (var i = 0; i < tuples.length; i++) {
+								    var timestamp = tuples[i][0];
+								    var ask = tuples[i][1];
+									
+									series.addPoint([timestamp, ask], false, true);
+								}
+																
 								window.chart.redraw();
 							});
 						}, 2000);

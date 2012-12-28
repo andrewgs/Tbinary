@@ -39,8 +39,8 @@
 								<?php endif;?>
 							</td>
 							<td class="span12">
-								<strong>Address one:</strong> <?=$users[$i]['address1'];?><br/>
-								<strong>Address two:</strong> <?=$users[$i]['address2'];?><br/>
+								<strong>Address line 1:</strong> <?=$users[$i]['address1'];?><br/>
+								<strong>Address line 2:</strong> <?=$users[$i]['address2'];?><br/>
 								<strong>Email:</strong> <em><?=$users[$i]['email'];?></em><br/>
 								<strong>Day phone:</strong> <?=$users[$i]['day_phone'];?><br/>
 								<strong>Home phone:</strong> <?=$users[$i]['home_phone'];?><br/>

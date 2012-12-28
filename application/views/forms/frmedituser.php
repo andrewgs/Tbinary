@@ -50,13 +50,13 @@
 			</div>
 			<div class="tab-pane fade in" id="address">
 				<div class="control-group">
-					<label for="address1" class="control-label">Address one: </label>
+					<label for="address1" class="control-label">Address line 1: </label>
 					<div class="controls">
 						<textarea rows="1" class="span14" autocomplete="off" name="address1"><?=$user['address1'];?></textarea>
 					</div>
 				</div>
 				<div class="control-group">
-					<label for="address2" class="control-label">Address two: </label>
+					<label for="address2" class="control-label">Address line 2: </label>
 					<div class="controls">
 						<textarea rows="1" class="span14" autocomplete="off" name="address2"><?=$user['address2'];?></textarea>
 					</div>

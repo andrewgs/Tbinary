@@ -163,7 +163,7 @@ class Users_interface extends MY_Controller{
 			if($result):
 				$user = $this->mdusers->read_record($user_id,'users');
 				ob_start();?>
-				<p>Dear <em><?=$user['name'];?></em>,</p>
+				<p>Dear <em><?=$user['first_name'].' '.$user['last_name'];?></em>,</p>
 				<p>You have requested a new password to access the site <?=anchor('','Tbinary trading platform');?></p>
 				<p>Login: <?=$user['email'];?><br/>Password: <?=$new_password;?></p><?
 				$mailtext = ob_get_clean();

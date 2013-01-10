@@ -1,6 +1,9 @@
 
 $(function() {
-
+	
+	var chart_link = '';
+	$.ajax({async: false,url:"http://tbinary/get-chart-link",dataType: 'json',success: function(data){chart_link = data.vlink;}});
+	
 	Highcharts.theme = {
 	   colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
 	   chart: {
@@ -107,8 +110,7 @@ $(function() {
 	var x = (new Date()).getTime(); // current time
 	
 	// $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
-	$.getJSON('http://vl611.sysfx.com:8000/advertisements/content/test.13/rates/json/dispatcher?cc1=EUR&cc2=USD&callback=?', function(json_data) {
-	
+	$.getJSON(chart_link, function(json_data){
 		// Create the chart
 		window.chart = new Highcharts.StockChart({
 			chart : {
@@ -120,7 +122,7 @@ $(function() {
 						series.remove();
 												
 						setInterval(function() {
-							$.getJSON('http://vl611.sysfx.com:8000/advertisements/content/test.13/rates/json/dispatcher?cc1=EUR&cc2=USD&callback=?', function(json) {
+							$.getJSON(chart_link, function(json) {
 								
 								var prepared = {}, tuples = [];
 								

@@ -109,6 +109,11 @@ class Users_interface extends MY_Controller{
 		$this->load->view("users_interface/trade",$pagevar);
 	}
 	
+	public function get_chart_link(){
+	
+		echo json_encode(array('vlink'=>$this->mdsettings->read_field(2,'settings','link')));
+	}
+	
 	public function logoff(){
 		
 		$this->session->unset_userdata(array('logon'=>'','userid'=>''));

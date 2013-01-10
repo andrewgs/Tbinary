@@ -1,4 +1,4 @@
-<form class="signup-form demo" action="<?=$action_registration;?>" method="post" target="signup_iframe">
+<form class="signup-form demo" action="<?=$action_registration;?>&demo=1" method="post" target="signup_iframe">
 	<input type="hidden" class="FieldSend" name="answerType" value="xml" />	
 	<input type="hidden" class="FieldSend" name="act" value="send" />
 	<input type="hidden" class="FieldSend" name="office" value="main" />

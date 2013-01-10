@@ -40,6 +40,7 @@ $route['admin-panel/actions/profile']					= "admin_interface/actions_profile";
 /*************************************************** USERS INTRERFACE ***********************************************/
 
 $route['']							= "users_interface/index";
+$route['get-chart-link']			= "users_interface/get_chart_link";
 $route['trade']						= "users_interface/trade";
 $route['faq']						= "users_interface/pages";
 $route['deposit']					= "users_interface/pages";

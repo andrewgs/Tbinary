@@ -45,6 +45,7 @@ class Users_interface extends MY_Controller{
 			'description'	=> (isset($page_data[0]['description']) && !empty($page_data[0]['description']))?$page_data[0]['description']:'Tbinary trading platform',
 			'baseurl' 		=> base_url(),
 			'page'			=> (isset($page_data))?$page_data:array(),
+			'action_registration' => $this->mdsettings->read_field(1,'settings','link'),
 			'languages'		=> $this->mdlanguages->visible_languages(),
 			'main_menu'		=> $this->mdpages->read_top_menu($this->language),
 			'footer'		=> array('category'=>$this->mdcategory->read_records($this->language),'pages'=>$this->mdpages->read_records('id,title,link,url,category',$this->language)),
@@ -201,10 +202,10 @@ class Users_interface extends MY_Controller{
 				$context  = stream_context_create($opts);
 				if($dataval['demo']):
 					$statusval['mode'] = 'demo';
-					$xml_string = file_get_contents('http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22&demo=1',false,$context);
+					$xml_string = file_get_contents($this->mdsettings->read_field(1,'settings','link').'&demo=1',false,$context);
 				else:
 					$statusval['mode'] = 'real';
-					$xml_string = file_get_contents('http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22',false,$context);
+					$xml_string = file_get_contents($this->mdsettings->read_field(1,'settings','link'),false,$context);
 				endif;
 				//обработка XML-документа
 				$xml_document = simplexml_load_string($xml_string);

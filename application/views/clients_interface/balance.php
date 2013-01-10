@@ -29,7 +29,7 @@
 									<td width="100px"><?= $acc['accountId']; ?></td>
 									<td width="150px"><?= $acc['amount']; ?></td>
 									<td>
-										<form method="post" action="http://vl625.allcharge.demo.20.sysfx.com:9089/secure/serviceOrder.jsp">
+										<form method="post" action="<?=$action_deposit;?>">
 											
 											<label>Amount</label>
 											<input name="amount" type="text" class="span2 amount" value="50" />

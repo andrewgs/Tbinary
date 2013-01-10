@@ -1,4 +1,4 @@
-<form class="signup-form real" action="http://vl608.sysfx.com:8022/registration.aws?SCHEMA$=tfx22" method="post" target="signup_iframe">
+<form class="signup-form real" action="<?=$action_registration;?>" method="post" target="signup_iframe">
 	<input type="hidden" class="FieldSend" name="answerType" value="xml" />
 	<input type="hidden" class="FieldSend" name="act" value="send" />
 	<input type="hidden" class="FieldSend" name="office" value="main" />

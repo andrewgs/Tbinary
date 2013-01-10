@@ -14,7 +14,7 @@ class Admin_interface extends MY_Controller{
 		
 		$pagevar = array(
 					'baseurl' 		=> base_url(),
-					'settings'		=> array('link1'=>$this->mdsettings->read_field(1,'settings','link'),'link2'=>$this->mdsettings->read_field(2,'settings','link'),'link3'=>$this->mdsettings->read_field(3,'settings','link')),
+					'settings'		=> array('registration'=>$this->mdsettings->read_field(1,'settings','link'),'charts'=>$this->mdsettings->read_field(2,'settings','link'),'deposit'=>$this->mdsettings->read_field(3,'settings','link')),
 					'form_legend'	=> 'The form of editing settings links.',
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
@@ -24,17 +24,17 @@ class Admin_interface extends MY_Controller{
 
 		if($this->input->post('submit')):
 			unset($_POST['submit']);
-			$this->form_validation->set_rules('link1',' ','trim');
-			$this->form_validation->set_rules('link2',' ','trim');
-			$this->form_validation->set_rules('link3',' ','trim');
+			$this->form_validation->set_rules('registration',' ','trim');
+			$this->form_validation->set_rules('charts',' ','trim');
+			$this->form_validation->set_rules('deposit',' ','trim');
 			if(!$this->form_validation->run()):
 				$this->session->set_userdata('msgr','Error. Incorrectly filled in the required fields!');
 				redirect($this->uri->uri_string());
 			else:
 				$update = $this->input->post();
-				$this->mdsettings->update_field(1,'link',$update['link1'],'settings');
-				$this->mdsettings->update_field(2,'link',$update['link2'],'settings');
-				$this->mdsettings->update_field(3,'link',$update['link3'],'settings');
+				$this->mdsettings->update_field(1,'link',$update['registration'],'settings');
+				$this->mdsettings->update_field(2,'link',$update['charts'],'settings');
+				$this->mdsettings->update_field(3,'link',$update['deposit'],'settings');
 				$this->session->set_userdata('msgs','Settings saved!');
 				redirect($this->uri->uri_string());
 			endif;

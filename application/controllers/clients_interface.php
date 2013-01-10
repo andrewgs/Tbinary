@@ -17,6 +17,7 @@ class Clients_interface extends MY_Controller{
 			'description'	=> '',
 			'baseurl' 		=> base_url(),
 			'userinfo'		=> $this->user,
+			'action_deposit'=> $this->mdsettings->read_field(3,'settings','link'),
 			'user'			=> $this->mdusers->read_record($this->user['uid'],'users'),
 			'msgs'			=> $this->session->userdata('msgs'),
 			'msgr'			=> $this->session->userdata('msgr')

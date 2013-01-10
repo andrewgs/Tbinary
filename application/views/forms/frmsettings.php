@@ -2,21 +2,21 @@
 <fieldset>
 	<legend><?=$form_legend;?></legend>
 	<div class="control-group">
-		<label for="link1" class="control-label">link1: </label>
+		<label for="registration" class="control-label">Registration: </label>
 		<div class="controls">
-			<input type="text" class="span14" name="link1" value="<?=$settings['link1'];?>">
+			<input type="text" class="span14" name="registration" value="<?=$settings['registration'];?>">
 		</div>
 	</div>
 	<div class="control-group">
-		<label for="link2" class="control-label">link2: </label>
+		<label for="charts" class="control-label">Charts: </label>
 		<div class="controls">
-			<input type="text" class="span14" name="link2" value="<?=$settings['link2'];?>">
+			<input type="text" class="span14" name="charts" value="<?=$settings['charts'];?>">
 		</div>
 	</div>
 	<div class="control-group">
-		<label for="link3" class="control-label">link3: </label>
+		<label for="deposit" class="control-label">Deposit: </label>
 		<div class="controls">
-			<input type="text" class="span14" name="link3" value="<?=$settings['link3'];?>">
+			<input type="text" class="span14" name="deposit" value="<?=$settings['deposit'];?>">
 		</div>
 	</div>
 	<div class="form-actions">

@@ -32,7 +32,7 @@ ol li { margin-bottom: 0.4em; color: #333; font-size: 13px; }
 
 header { border-bottom: 1px dashed #aeaeae;  padding: 2em 0 0; height: 80px; position: relative; }
 #logo { display: block; width: 170px; height: 49px; background: url('../img/logo.png') no-repeat; text-indent: -9999px; margin: 10px 0 0; }
-#login-form { position: relative; margin-bottom: 10px; }
+#login-form { position: relative; margin: 8px 0 10px; }
 #login-form a { color: #c0c0c0; display: block; position: absolute; right: -30px; bottom: 45px; }
 #login-form a:hover { color: #999; text-decoration: none; }
 #login-form .btn-action { position: absolute; bottom: 5px; right: 0px; height: 30px; width: 72px; font: 15px/22px "din-condensed-web", sans-serif; }
@@ -49,7 +49,7 @@ header { border-bottom: 1px dashed #aeaeae;  padding: 2em 0 0; height: 80px; pos
 p.slogan { color: #444; font: bold 30px/42px "din-condensed-web", arial, sans-serif; text-transform: uppercase; margin: 25px 0 22px; }
 	p.slogan em { font-style: normal; color: #c4221d; }
 
-.switcher { list-style: none; font-size: 22px; width: 100%; display: inline-block; margin-bottom: 14px; text-transform: uppercase; font-family: "din-condensed-web", sans-serif; color: #494949; }
+.switcher { list-style: none; font-size: 22px; width: 100%; display: inline-block; margin-bottom: 12px; text-transform: uppercase; font-family: "din-condensed-web", sans-serif; color: #494949; }
 .switcher li { display: inline; }
 .switcher a { text-decoration: none; position: relative; top: 1px; color: #c4221d; float: left; padding: 8px 15px 14px 8px; border-bottom: 1px solid #ccc; }
 .switcher .switcher__active { color: #333; border-left: 1px solid #ccc; border-right: 1px solid #ccc; border-bottom: 0; outline: 0; }
@@ -58,7 +58,8 @@ p.slogan { color: #444; font: bold 30px/42px "din-condensed-web", arial, sans-se
 .switcher__active span { border-bottom: 0; }
 
 .signup-form { margin: 0 0 10px; }
-.signup-form input { padding: 9px 14px; margin-bottom: 13px; color: #444; }
+.signup-form input { margin-bottom: 13px; color: #444; }
+.signup-form input[type=text], .signup-form input[type=password] { padding: 9px 14px; }
 .signup-form select { height: 43px; width: 236px; border-radius: 2px; font-size: 12px; padding: 0 0 0 12px; color: #999; }
 .signup-form label { color: #888; font-size: 12px; display: inline-block; position: relative; top: -3px; left: 4px; }
 #demo-signup { display: none; }
@@ -109,3 +110,6 @@ input.highcharts-range-selector { margin: 0; }
 #trade-wrapper { width: 96%; height: 600px; overflow: hidden; margin: 0 2%; display: block; background: #fff; padding: 5px; border-radius: 2px; border: 1px solid #eee; box-shadow: 0 0 7px #e0e0e0; }
 
 #ChangeLang{position: absolute;top: 3px;right: 0;}
+
+.dropdown-menu li > a { font-size: 12px !important; padding: 0px 10px !important; }
+.pluso { position: absolute !important; top: 0; right: 100px; } 

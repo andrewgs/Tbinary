@@ -13,6 +13,10 @@
 		<div id="main">
 			<p class="slogan">Join the most <em>advanced, trusted and reliable</em> trading platform</p>
 			<div class="row">
+				<? if($this->loginstatus): ?>
+				<div id="container" class="span24"> </div>
+				<p>&nbsp;</p>
+				<? else: ?>
 				<div id="container" class="span18"> </div>
 				<div class="span6">
 					<ul class="switcher">
@@ -26,6 +30,7 @@
 						<?php $this->load->view("forms/formdemoregister");?>
 					</div>
 				</div>
+				<? endif; ?>
 			</div>
 			<div class="row">
 				<div class="span18">
@@ -78,7 +83,7 @@
 			$("ul.switcher li a").click(function(e){e.preventDefault();$("ul.switcher li a").removeClass('switcher__active');$(this).addClass('switcher__active');
 				$("div.signup-form:visible").hide();var elem_id = $(this).attr('href');$(elem_id).show();});
 		<?php if(!$this->loginstatus):?>
-			$("#TradeLink").click(function(event){alert("First need login!");event.preventDefault();});
+			$("#TradeLink").click(function(event){alert("Please log in or sign up first!");event.preventDefault();});
 		<?php endif;?>
 		});
 	</script>

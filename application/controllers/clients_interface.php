@@ -24,6 +24,26 @@ class Clients_interface extends MY_Controller{
 		$this->session->unset_userdata('msgs');
 		$this->session->unset_userdata('msgr');
 		
+
+		$postdata = http_build_query(array('j_username' => 'act_test', 'j_password' => '2000', 'service' => 'true'));
+		$opts = array('http' => array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded','content'=>$postdata));
+		$context  = stream_context_create($opts);
+		$json_string = file_get_contents('http://vl625.allcharge.demo.20.sysfx.com:9089/serviceLogin.jsp',false, $context);
+		$res = json_decode($json_string, true);
+		
+		if ( $res['status'] != 'LOGIN' ) {
+			echo 'Error while requesting user balance';
+		}
+		$jsessionid = $res['jsessionid'];
+		setcookie('jsessionid', $jsessionid, time() + (86400 * 7)); // 86400 = 1 day
+		
+		$opts = array('http' => array('method' => 'GET', 'header'=> 'Cookie: jsessionid=' . $jsessionid."\r\n"));
+		$context = stream_context_create($opts);
+		$contents = file_get_contents('http://vl625.allcharge.demo.20.sysfx.com:9089/secure/serviceAccounts.jsp', false, $context);
+		$accounts = json_decode($contents, true);
+		
+		$pagevar['accounts'] = $accounts;
+
 		$this->load->view("clients_interface/balance",$pagevar);
 	}
 	

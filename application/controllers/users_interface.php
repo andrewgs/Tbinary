@@ -40,7 +40,6 @@ class Users_interface extends MY_Controller{
 	public function index(){
 		
 		$page_data = $this->mdpages->home_pages($this->language);
-		
 		$pagevar = array(
 			'title'			=> (isset($page_data[0]['title']) && !empty($page_data[0]['title']))?$page_data[0]['title']:'Tbinary trading platform',
 			'description'	=> (isset($page_data[0]['description']) && !empty($page_data[0]['description']))?$page_data[0]['description']:'Tbinary trading platform',

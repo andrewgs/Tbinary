@@ -117,6 +117,7 @@ $(function() {
 					load : function() {
 						
 						var series = this.series[0];
+						series.remove();
 												
 						setInterval(function() {
 							$.getJSON('http://vl611.sysfx.com:8000/advertisements/content/test.13/rates/json/dispatcher?cc1=EUR&cc2=USD&callback=?', function(json) {

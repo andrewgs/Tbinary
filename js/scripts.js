@@ -92,4 +92,7 @@ function backpath(path){window.location=path;}
 			"json");
 		}
 	});
+	
+	$.Placeholder.init();
+	
 })(window.jQuery);

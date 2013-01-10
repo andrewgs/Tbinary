@@ -11,10 +11,10 @@
 				<?php $this->load->view("alert_messages/alert-error");?>
 				<?php $this->load->view("alert_messages/alert-success");?>
 				<div style="float:right;margin:5px 0 25px 0;">
-					<?=anchor('admin-panel/actions/pages/lang/'.$lang['id'].'/new-page','<i class="icon-plus-sign icon-white"></i> New page',array('class'=>'btn btn-primary','style'=>'margin-left:3px;'));?>
-					<?=anchor('admin-panel/actions/pages/lang/'.$lang['id'].'/categories','<i class="icon-th-list icon-white"></i> Categories',array('class'=>'btn btn-primary','style'=>'margin-left:3px;'));?>
+					<?=anchor('admin-panel/actions/pages/lang/'.$lang['id'].'/new-page','<i class="icon-plus-sign icon-white"></i> New page',array('class'=>'btn btn-info','style'=>'margin-left:3px;'));?>
+					<?=anchor('admin-panel/actions/pages/lang/'.$lang['id'].'/categories','<i class="icon-th-list icon-white"></i> Categories',array('class'=>'btn btn-info','style'=>'margin-left:3px;'));?>
 				<?php if(!$lang['base']):?>
-					<a class="btn btn-inverse deleteLang" data-toggle="modal" href="#deleteLang" data-lang="<?=$lang['id'];?>"><i class="icon-trash icon-white"></i> Delete language</a>
+					<a class="btn btn-danger deleteLang" data-toggle="modal" href="#deleteLang" data-lang="<?=$lang['id'];?>"><i class="icon-trash icon-white"></i> Delete language</a>
 				<?php endif;?>
 				</div>
 				<div class="clear"></div>

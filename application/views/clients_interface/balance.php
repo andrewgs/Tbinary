@@ -14,7 +14,36 @@
 				</div>
 				<?php $this->load->view("alert_messages/alert-error");?>
 				<?php $this->load->view("alert_messages/alert-success");?>
-				<div style="height:3px;"> </div>
+				<div>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Account</th>
+								<th>Deposit, $</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<? foreach ($accounts as $acc) : ?>
+								<tr>
+									<td width="100px"><?= $acc['accountId']; ?></td>
+									<td width="150px"><?= $acc['amount']; ?></td>
+									<td>
+										<form method="post" action="http://vl625.allcharge.demo.20.sysfx.com:9089/secure/serviceOrder.jsp">
+											
+											<label>Amount</label>
+											<input name="amount" type="text" class="span2 amount" value="50" />
+											<input type="hidden" name="accountId" value="<?= $acc['accountId']; ?>" />
+											<input type="hidden" name="success" value="http://<?= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]; ?>" />
+											<input type="hidden" name="cancel" value="http://<?= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]; ?>" />
+											<button type="submit" class="btn btn-mini btn-success service-order">Deposit Funds</button>
+										</form>
+									</td>
+								</tr>
+							<? endforeach; ?>
+						</tbody>
+					</table>	
+				</div>
 			
 			</div>
 		<?php $this->load->view("clients_interface/includes/rightbar");?>
@@ -23,17 +52,7 @@
 	<?php $this->load->view("clients_interface/includes/scripts");?>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$.ajax({
-				url: 'http://vl625.sysfx.com:9089/gateway/serviceGateway.jsp?schemaId=demo.20',
-				type: 'GET',
-				crossDomain: true,
-				success: function(data){
-					console.log(data[0].serverName);
-				},
-				error: function() {
-					console.info('Request now allowed');
-				}
-			});
+			
 		});
 	</script>
 </body>

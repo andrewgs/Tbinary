@@ -8,13 +8,13 @@
 		</ul>
 		<div id="ProductTabContent" class="tab-content">
 			<div class="tab-pane fade in active" id="general">
-				<div class="control-group warning">
+				<div class="control-group">
 					<label for="first_name" class="control-label">First name: </label>
 					<div class="controls">
 						<input type="text" class="span10 input-valid" autocomplete="off" name="first_name" data-placement="right" role="tooltip" data-original-title="Field cannot be empty" value="<?=$user['first_name'];?>">
 					</div>
 				</div>
-				<div class="control-group warning">
+				<div class="control-group">
 					<label for="last_name" class="control-label">Last name: </label>
 					<div class="controls">
 						<input type="text" class="span10 input-valid" autocomplete="off" name="last_name" data-placement="right" role="tooltip" data-original-title="Field cannot be empty" value="<?=$user['last_name'];?>">
@@ -38,7 +38,6 @@
 						<input type="text" class="span6" name="home_phone" autocomplete="off" value="<?=$user['home_phone'];?>">
 					</div>
 				</div>
-				<hr/>
 				<div class="control-group">
 					<label for="signdate" class="control-label">Date of sign up: </label>
 					<div class="controls">
@@ -81,19 +80,19 @@
 				</div>
 			</div>
 			<div class="tab-pane fade in" id="additionally">
-				<div class="control-group info">
+				<div class="control-group">
 					<label for="email" class="control-label">User email: </label>
 					<div class="controls">
 						<input type="text" class="span8" disabled="disabled" autocomplete="off" name="email" value="<?=$user['email'];?>">
 					</div>
 				</div>
-				<div class="control-group info">
+				<div class="control-group">
 					<label for="trade_login" class="control-label">Trade login: </label>
 					<div class="controls">
 						<input type="text" class="span8" disabled="disabled" autocomplete="off" name="trade_login" value="<?=$user['trade_login'];?>">
 					</div>
 				</div>
-				<div class="control-group info">
+				<div class="control-group">
 					<label for="password" class="control-label">Trade password: </label>
 					<div class="controls">
 						<input type="text" class="span8" disabled="disabled" autocomplete="off" name="password" value="<?=$user['password'];?>">
@@ -129,7 +128,7 @@
 					<label for="language" class="control-label">User language: </label>
 					<div class="controls">
 						<label class="checkbox" style="padding-left: 0">
-							<span class="label label-info"><?=strtoupper($langs[$user['language']-1]['name'])?></span>
+							<span class="label"><?=strtoupper($langs[$user['language']-1]['name'])?></span>
 						</label>
 					</div>
 				</div>
@@ -139,6 +138,6 @@
 	</fieldset>
 	<div class="form-actions">
 		<button class="btn btn-success sendForm" type="submit" name="submit" value="send">Save profile</button>
-		<button class="btn btn-inverse backpath" type="button">Cancel</button>
+		<button class="btn backpath" type="button">Cancel</button>
 	</div>
 <?= form_close(); ?>

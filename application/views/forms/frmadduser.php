@@ -1,4 +1,4 @@
-<?=form_open($this->uri->uri_string(),array('class'=>'form-horizontal')); ?>
+<?=form_open_multipart($this->uri->uri_string(),array('class'=>'form-horizontal')); ?>
 	<legend>Форма регистрации пользователя</legend>
 	<fieldset>
 		<div class="control-group">

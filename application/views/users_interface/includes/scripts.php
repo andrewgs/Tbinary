@@ -1,6 +1,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="<?=$baseurl;?>js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
 <script src="<?=$baseurl;?>js/vendor/bootstrap.min.js"></script>
+<script src="<?=$baseurl;?>js/vendor/jquery.placeholder.1.3.min.js"></script>
 <script src="<?=$baseurl;?>js/scripts.js"></script>
 <script type="text/javascript">
 	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

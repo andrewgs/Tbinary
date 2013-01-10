@@ -10,6 +10,38 @@ class Admin_interface extends MY_Controller{
 		endif;
 	}
 	
+	public function actions_settings(){
+		
+		$pagevar = array(
+					'baseurl' 		=> base_url(),
+					'settings'		=> array('link1'=>$this->mdsettings->read_field(1,'settings','link'),'link2'=>$this->mdsettings->read_field(2,'settings','link'),'link3'=>$this->mdsettings->read_field(3,'settings','link')),
+					'form_legend'	=> 'The form of editing settings links.',
+					'msgs'			=> $this->session->userdata('msgs'),
+					'msgr'			=> $this->session->userdata('msgr')
+			);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+
+		if($this->input->post('submit')):
+			unset($_POST['submit']);
+			$this->form_validation->set_rules('link1',' ','trim');
+			$this->form_validation->set_rules('link2',' ','trim');
+			$this->form_validation->set_rules('link3',' ','trim');
+			if(!$this->form_validation->run()):
+				$this->session->set_userdata('msgr','Error. Incorrectly filled in the required fields!');
+				redirect($this->uri->uri_string());
+			else:
+				$update = $this->input->post();
+				$this->mdsettings->update_field(1,'link',$update['link1'],'settings');
+				$this->mdsettings->update_field(2,'link',$update['link2'],'settings');
+				$this->mdsettings->update_field(3,'link',$update['link3'],'settings');
+				$this->session->set_userdata('msgs','Settings saved!');
+				redirect($this->uri->uri_string());
+			endif;
+		endif;
+		$this->load->view("admin_interface/settings",$pagevar);
+	}
+	
 	/******************************************* pages_lang ******************************************************/
 	
 	public function home_page(){
@@ -50,7 +82,6 @@ class Admin_interface extends MY_Controller{
 			endif;
 		endif;
 		$this->load->view("admin_interface/page-home",$pagevar);
-		
 	}
 	
 	public function menu_page(){

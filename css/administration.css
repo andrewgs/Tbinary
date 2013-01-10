@@ -2,11 +2,72 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-   
-.hightPageslist{
-	overflow: auto;
-	max-height: 300px;
+
+html, body { background: url('../img/bg.jpg') repeat; }   
+h1 { margin: 1em 0; font: 29px/34px "din-condensed-web", sans-serif; text-transform: uppercase; border-bottom: 1px dashed #AEAEAE; padding-bottom: 0.5em; }
+
+.hightPageslist { overflow: auto; max-height: 300px; }
+.navbar .brand { font-size: 14px; }
+
+.well { background-color: transparent; border: 0 none; box-shadow: none; margin-top: 0; padding-top: 0; }
+.sidebar-nav { margin-top: 0; padding-top: 0; }
+.nav-tabs > li, .nav-pills > li { line-height: 1em; margin: 0 inherit; }
+
+.nav-pills.nav-stacked > li > a {
+	color: #0A120A;
+	font: 13px/21px arial, sans-serif;
+	border-bottom: 2px solid #F4F0E5;
+	background: transparent;
+	padding: 0.5em 0 0;
+	border-radius: 0;
+	margin-left: 1.2em;
+}
+.nav-pills.nav-stacked > li > a:hover {
+	border-bottom: 2px solid #e0e0e0;	
+}
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+	background: transparent;
+	color: #0A120A;
+	border-bottom: 2px solid #C4221D !important;
+	cursor: default;
 }
 
-h1 { font-size: 28.5px; margin: 1em 0; }
-.navbar .brand { font-size: 14px; }
+.nav-header {
+	color: #7D7A75;
+	text-shadow: 0 1px #fff;
+	margin-top: 0.5em;
+}
+
+.nav-tabs a {
+	font-size: 13px;
+	color: #0A120A;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+	background: transparent;
+	border-radius: 0;
+	border: 0 none;
+	font-weight: bold;
+	text-shadow: 0 1px #fff;
+}
+
+legend { margin-bottom: 1em; }
+label, input { font-size: 13px !important; }
+.control-group input, textarea, input { border-radius: 2px; padding: 6px 8px; }
+
+.btn {
+	border-radius: 2px;
+	padding: 8px 12px;
+}
+.btn-mini {
+	padding: 3px 6px;
+}
+
+.navbar-inner { border-radius: 2px; }
+.table { border-radius: 2px; } 
+.table td, .table th { font-size: 13px; background: #fafafa; }
+.label { margin-top: 0.5em; }
+.form-horizontal .form-actions { padding-left: 0; }
+.table td label { display: inline-block; }
+.table td input { display: inline-block; border-radius: 2px; margin: 0 7px; box-shadow: none; }
+.table td form { margin: 0; padding: 0; }

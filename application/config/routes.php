@@ -34,6 +34,7 @@ $route['admin-panel/actions/pages/delete-page/:num']			= "admin_interface/lang_d
 $route['admin-panel/actions/pages/lang/:num/categories']		= "admin_interface/lang_categories";
 $route['admin-panel/actions/pages/lang/:num/properties']		= "admin_interface/lang_properties";
 
+$route['admin-panel/actions/settings']					= "admin_interface/actions_settings";
 $route['admin-panel/actions/profile']					= "admin_interface/actions_profile";
 
 /*************************************************** USERS INTRERFACE ***********************************************/

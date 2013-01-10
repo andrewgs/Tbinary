@@ -23,7 +23,7 @@
 		<?=anchor('logoff','Logout',array('class'=>'action-cabinet'));?>
 		</div>
 	<?php endif;?>
-<?php if($languages):?>
+	<?php if($languages):?>
 	<div id="ChangeLang">
 		<div class="btn-group">
 			<button class="btn btn-mini">&nbsp;<?=strtolower($languages[$this->language-1]['name']);?>&nbsp;</button>
@@ -39,5 +39,29 @@
 			</ul>
 		</div>
 	</div>
-<?php endif;?>
+	<?php endif;?>
+
+	<div class='pluso pluso-theme-light pluso-round pluso-small'>
+		<div class='pluso-more-container'>
+			<a class='pluso-more' href=''></a>
+		</div><a class='pluso-facebook'></a><a class='pluso-twitter'></a><a class='pluso-vkontakte'></a><a class='pluso-odnoklassniki'></a><a class='pluso-google'></a><a class='pluso-livejournal'></a><a class='pluso-moimir'></a>
+	</div>
+	<script type='text/javascript'>
+		if (!window.pluso) {
+			pluso = {
+				version : '0.9.1',
+				url : 'http://share.pluso.ru/'
+			};
+			h = document.getElementsByTagName('head')[0];
+			l = document.createElement('link');
+			l.href = pluso.url + 'pluso.css';
+			l.type = 'text/css';
+			l.rel = 'stylesheet';
+			s = document.createElement('script');
+			s.src = pluso.url + 'pluso.js';
+			s.charset = 'UTF-8';
+			h.appendChild(l);
+			h.appendChild(s)
+		}
+	</script>
 </header>

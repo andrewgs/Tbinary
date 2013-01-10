@@ -32,7 +32,7 @@
 			</div>
 		</div>
 		<div class="form-actions">
-			<button class="btn btn-primary sendForm" type="submit" name="submit" value="submit">Submit Form</button>
+			<button class="btn btn-success sendForm" type="submit" name="submit" value="submit">Submit Form</button>
 		</div>
 	</fieldset>
 <?= form_close(); ?>

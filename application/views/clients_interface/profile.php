@@ -10,7 +10,7 @@
 				<div class="navbar">
 					<div class="navbar-inner">
 						<a class="brand none" href="">Profile</a>
-						<a class="btn btn-info pull-right" data-toggle="modal" href="#newPassword">Request new password</a>
+						<!--<a class="btn btn-info pull-right" data-toggle="modal" href="#newPassword">Request new password</a>-->
 					</div>
 				</div>
 				<div class="clear"></div>

@@ -17,13 +17,7 @@
 				<div style="height:3px;"> </div>
 			<?php if($users):?>
 				<table class="table table-striped table-bordered">
-					<thead>
-						<tr>
-							<th>&nbsp;</th>
-							<th>&nbsp;</th>
-							<th>&nbsp;</th>
-						</tr>
-					</thead>
+					<thead/>
 					<tbody>
 					<?php for($i=0;$i<count($users);$i++):?>
 						<tr class="align-center">
@@ -32,7 +26,7 @@
 								<strong><?=$users[$i]['email'];?></strong>
 								<br/><span class="label label-info"><?=$users[$i]['signdate'];?></span>
 								<?php if($users[$i]['coach']):?>
-								&nbsp;<span class="label label-warning">Speak with a coach</span>
+								&nbsp;<span class="label">Speak with a coach</span>
 								<?php endif;?>
 								<?php if(!$users[$i]['active']):?>
 									<br/><br/><span class="label label-inverse"><em>User is not active</em></span>
@@ -46,9 +40,9 @@
 								<strong>Home phone:</strong> <?=$users[$i]['home_phone'];?><br/>
 							</td>
 							<td class="span1">
-								<?=anchor('admin-panel/actions/users/edit/id/'.$users[$i]['id'],'<i class="icon-pencil icon-white"></i>',array('class'=>'btn btn-info'));?><br/>
+								<?=anchor('admin-panel/actions/users/edit/id/'.$users[$i]['id'],'<i class="icon-pencil"></i>',array('class'=>'btn'));?><br/>
 								<div style="height:3px;"> </div>
-								<a class="deleteUser btn btn-danger" data-uid="<?=$users[$i]['id'];?>" data-toggle="modal" href="#deleteUser" title="Delete user"><i class="icon-trash icon-white"></i></a>
+								<a class="deleteUser btn" data-uid="<?=$users[$i]['id'];?>" data-toggle="modal" href="#deleteUser" title="Delete user"><i class="icon-trash"></i></a>
 							</td>
 						</tr>
 					<?php endfor; ?>

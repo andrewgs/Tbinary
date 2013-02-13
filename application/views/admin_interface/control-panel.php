@@ -21,5 +21,10 @@
 	</div>
 	<?php $this->load->view('admin_interface/includes/footer');?>
 	<?php $this->load->view("admin_interface/includes/scripts");?>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+		});
+	</script>
 </body>
 </html>

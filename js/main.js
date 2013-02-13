@@ -2,7 +2,7 @@
 $(function() {
 	
 	var chart_link = '';
-	$.ajax({async: false,url:"http://tbinary/get-chart-link",dataType: 'json',success: function(data){chart_link = data.vlink;}});
+	$.ajax({async: false,url:"http://test.sysfx.us/get-chart-link",dataType: 'json',success: function(data){chart_link = data.vlink;}});
 	
 	Highcharts.theme = {
 	   colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],

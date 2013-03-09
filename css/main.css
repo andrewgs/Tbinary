@@ -42,10 +42,11 @@ header { border-bottom: 1px dashed #aeaeae;  padding: 2em 0 0; height: 80px; pos
 	.action-cabinet:hover { color: #C4221D; text-decoration: none; border-bottom: 1px solid;  }
 #login-block { margin: 0.25em 0 0; }
 
-#main-nav { margin: 40px 0 0; }
-#main-nav li { float: left; text-transform: uppercase; margin-right: 1.75em; font-size: 13px; }
+#main-nav { margin: 32px 0 0 0; }
+#main-nav li { float: left; text-transform: uppercase; margin-right: 1em; font-size: 13px; }
 #main-nav li a { text-decoration: none; color: #444; padding-bottom: 0.5em; display: inline-block; }
 #main-nav li a:hover { border-bottom: 2px solid #e0e0e0; }
+#main-nav li.active a { border-bottom: 2px solid #CA1F1A; }
 p.slogan { color: #444; font: bold 30px/42px "din-condensed-web", arial, sans-serif; text-transform: uppercase; margin: 25px 0 22px; }
 	p.slogan em { font-style: normal; color: #c4221d; }
 
@@ -88,6 +89,7 @@ p.slogan { color: #444; font: bold 30px/42px "din-condensed-web", arial, sans-se
 .win-payout, .min-payout { color: #5cb004; font-size: 26px; font-weight: bold; display: block; margin: 0.4em; padding-left: 0.1em; }
 .min-payout { font-size: 14px; padding-left: 1.5em; }
 .ticker .timer { display: block; margin: 1em 0 0.4em 0.75em; }
+.read-more { text-decoration: none; color: #222; border-bottom: 1px solid #ccc; font-weight: bold; display: inline-block; margin-bottom: 1.5em; }
 
 .gray-bg { background: #DCD9D3; border: 1px solid #d0d0d0; border-style: solid none; padding: 1.75em 0 1.5em; margin: 2em 0 3em; }
 .gray-bg strong { font-size: 1.1em; line-height: 0.75em; }

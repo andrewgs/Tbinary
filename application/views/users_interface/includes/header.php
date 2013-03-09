@@ -1,8 +1,8 @@
 <header class="row">
-	<div class="span6">
+	<div class="span5">
 		<?=anchor('','Tbinary trading platform',array('id'=>'logo'));?>
 	</div>
-	<nav class="span10">
+	<nav class="span12">
 		<ul id="main-nav">
 		<?php for($i=0;$i<count($main_menu);$i++):?>
 			<li><?=anchor($main_menu[$i]['url'],$main_menu[$i]['link']);?></li>
@@ -10,11 +10,11 @@
 		</ul>
 	</nav>
 	<?php if(!$this->loginstatus):?>
-		<div class="span7 offset1">
+		<div class="span7">
 		<?php $this->load->view("forms/frmlogin");?>
 		</div>
 	<?php else:?>
-		<div class="span6 offset2 auth-data">
+		<div class="span6 offset1 auth-data">
 		<?php if($this->user['admin']):?>
 		Hello, <strong><?=$this->user['name'];?></strong><br/><?=anchor('admin-panel/actions/users-list','Administration Panel',array('class'=>'action-cabinet'));?>
 		<?php else:?>

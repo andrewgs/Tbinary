@@ -65,16 +65,17 @@ class Mdpages extends MY_Model{
 		$this->db->where('url !=','faq');
 		$this->db->where('url !=','deposit');
 		$this->db->where('url !=','contact-us');
+		$this->db->where('url !=','bussiness-partners');
 		$query = $this->db->get('pages');
 		$data = $query->result_array();
 		if($data) return $data;
 		return NULL;
 	}
 
-	function home_pages($language){
+	function trade_pages($language){
 		
 		$this->db->where('language',$language);
-		$this->db->where('url','');
+		$this->db->where('url','trade');
 		$this->db->where_in('category',array(0,-1));
 		$this->db->order_by('category','DESC');
 		$this->db->order_by('title');
@@ -100,6 +101,7 @@ class Mdpages extends MY_Model{
 		$this->db->where('language',$language);
 		$this->db->where('category',0);
 		$this->db->where('manage',0);
+		$this->db->order_by('id');
 		$query = $this->db->get('pages');
 		$data = $query->result_array();
 		if(count($data)) return $data;

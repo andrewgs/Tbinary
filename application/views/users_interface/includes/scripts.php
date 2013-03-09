@@ -4,6 +4,15 @@
 <script src="<?=$baseurl;?>js/vendor/jquery.placeholder.1.3.min.js"></script>
 <script src="<?=$baseurl;?>js/scripts.js"></script>
 <script type="text/javascript">
+	$(function(){
+		$('#main-nav > li').each(function(){
+			if ( $(this).find('a').attr('href') === window.location.href ) {
+				$(this).addClass('active');
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
 	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';

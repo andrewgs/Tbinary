@@ -27,7 +27,7 @@ function myserialize(objects){
 function backpath(path){window.location=path;}
 
 (function($){
-	var baseurl = "http://test.sysfx.us/";
+	var baseurl = "http://tbinary/";
 	$("#msgeclose").click(function(){$("#msgdealert").fadeOut(1000,function(){$(this).remove();});});
 	$("#msgsclose").click(function(){$("#msgdsalert").fadeOut(1000,function(){$(this).remove();});});
 	$(".digital").keypress(function(e){if(e.which!=8 && e.which!=46 && e.which!=0 && (e.which<48 || e.which>57)){return false;}});
@@ -92,7 +92,4 @@ function backpath(path){window.location=path;}
 			"json");
 		}
 	});
-	
-	$.Placeholder.init();
-	
 })(window.jQuery);

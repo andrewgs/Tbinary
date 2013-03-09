@@ -12,6 +12,7 @@
 					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/page/faq','<i class="icon-info-sign"></i> FAQ');?></li>
 					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/page/deposit','<i class="icon-asterisk"></i> Deposit');?></li>
 					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/page/contact-us','<i class="icon-globe"></i> Contact Us');?></li>
+					<li><?=anchor('admin-panel/actions/pages/lang/'.$langs[$i]['id'].'/page/bussiness-partners','<i class="icon-user"></i> Partners');?></li>
 				<?php for($j=0;$j<count($langs_pages);$j++):?>
 					<?php if($langs[$i]['id'] == $langs_pages[$j]['language']):?>
 						<hr/><?php break;?>

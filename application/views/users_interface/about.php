@@ -60,7 +60,7 @@
 						<p class="caption"><?=(isset($page[3]['link']))?$page[3]['link']:'';?></p>
 					</div>
 					<div class="span6">
-						<?=anchor('start-trade',(isset($page[3]['content']))?$page[3]['content']:'Start trade now',array('class'=>'btn btn-action','id'=>"TradeLink"));?>
+						<?=anchor('trade',(isset($page[3]['content']))?$page[3]['content']:'Start trade now',array('class'=>'btn btn-action','id'=>"TradeLink"));?>
 					</div>
 			</div>
 		</div>
@@ -82,6 +82,9 @@
 		$(function(){
 			$("ul.switcher li a").click(function(e){e.preventDefault();$("ul.switcher li a").removeClass('switcher__active');$(this).addClass('switcher__active');
 				$("div.signup-form:visible").hide();var elem_id = $(this).attr('href');$(elem_id).show();});
+		<?php if(!$this->loginstatus):?>
+			$("#TradeLink").click(function(event){alert("Please log in or sign up first!");event.preventDefault();});
+		<?php endif;?>
 		});
 	</script>
 </body>

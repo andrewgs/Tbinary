@@ -44,14 +44,14 @@ class Admin_interface extends MY_Controller{
 	
 	/******************************************* pages_lang ******************************************************/
 	
-	public function home_page(){
+	public function trade_page(){
 		
 		$pagevar = array(
 					'baseurl' 		=> base_url(),
 					'langs'			=> $this->mdlanguages->read_records('languages'),
 					'langs_pages'	=> $this->mdpages->read_pages(),
-					'page'			=> $this->mdpages->home_pages($this->uri->segment(5)),
-					'form_legend'	=> 'The form of editing home page. Language: '.strtoupper($this->mdlanguages->read_field($this->uri->segment(5),'languages','name')),
+					'page'			=> $this->mdpages->trade_pages($this->uri->segment(5)),
+					'form_legend'	=> 'The form of editing trade page. Language: '.strtoupper($this->mdlanguages->read_field($this->uri->segment(5),'languages','name')),
 					'msgs'			=> $this->session->userdata('msgs'),
 					'msgr'			=> $this->session->userdata('msgr')
 			);
@@ -69,24 +69,30 @@ class Admin_interface extends MY_Controller{
 				redirect($this->uri->uri_string());
 			else:
 				$update = $this->input->post();
-				$this->mdpages->update_field($update['home_main'],'title',$update['title'],'pages');
-				$this->mdpages->update_field($update['home_main'],'description',$update['description'],'pages');
-				$this->mdpages->update_field($update['home_main'],'link',$update['link'],'pages');
-				$this->mdpages->update_field($update['home_main'],'url','','pages');
+				$this->mdpages->update_field($update['trade_main'],'title',$update['title'],'pages');
+				$this->mdpages->update_field($update['trade_main'],'description',$update['description'],'pages');
+				$this->mdpages->update_field($update['trade_main'],'link',$update['link'],'pages');
+				$this->mdpages->update_field($update['trade_main'],'url','trade','pages');
 				for($i=1;$i<5;$i++):
-					$this->mdpages->update_field($update['home_'.$i],'link',$update['link_'.$i],'pages');
-					$this->mdpages->update_field($update['home_'.$i],'content',$update['content_'.$i],'pages');
+					$this->mdpages->update_field($update['trade_'.$i],'link',$update['link_'.$i],'pages');
+					$this->mdpages->update_field($update['trade_'.$i],'content',$update['content_'.$i],'pages');
 				endfor;
 				$this->session->set_userdata('msgs','Page <strong>'.$update['link'].'</strong> updating!');
 				redirect('admin-panel/actions/pages');
 			endif;
 		endif;
-		$this->load->view("admin_interface/page-home",$pagevar);
+		
+		$this->load->view("admin_interface/page-trade",$pagevar);
 	}
 	
 	public function menu_page(){
 		
-		$page = $this->mdpages->read_fields_url($this->uri->segment(7),'id',$this->uri->segment(5));
+		if($this->uri->segment(7) == 'home'):
+			$pageUrl = '';
+		else:
+			$pageUrl = $this->uri->segment(7);
+		endif;
+		$page = $this->mdpages->read_fields_url($pageUrl,'id',$this->uri->segment(5));
 		if($page['id']):
 			redirect('admin-panel/actions/pages/lang/'.$this->uri->segment(5).'/page/'.$page['id']);
 		else:
@@ -133,11 +139,11 @@ class Admin_interface extends MY_Controller{
 							for($i=0;$i<count($pages);$i++):
 								$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>$pages[$i]['title'],'description'=>$pages[$i]['description'],'link'=>$pages[$i]['link'],'content'=>$pages[$i]['content'],'url'=>$pages[$i]['url'],'category'=>0),$pages[$i]['manage']);
 							endfor;
-							//begin inserting home pages parts
-							$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'home_0','description'=>'','link'=>'How to trade options','content'=>'','url'=>'','category'=>-1),0);
-							$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'home_1','description'=>'','link'=>'Tbinary trading platform features','content'=>'','url'=>'','category'=>-1),0);
-							$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'home_2','description'=>'','link'=>'Check out the features below, or go ahead and sign up.','content'=>'Start trade now','url'=>'','category'=>-1),0);
-							$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'home_3','description'=>'','link'=>'','content'=>'','url'=>'','category'=>-1),0);
+							//begin inserting trade pages parts
+							$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'trade_0','description'=>'','link'=>'How to trade options','content'=>'','url'=>'trade','category'=>-1),0);
+							$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'trade_1','description'=>'','link'=>'Tbinary trading platform features','content'=>'','url'=>'trade','category'=>-1),0);
+							$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'trade_2','description'=>'','link'=>'Check out the features below, or go ahead and sign up.','content'=>'Start trade now','url'=>'trade','category'=>-1),0);
+							$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'trade_3','description'=>'','link'=>'','content'=>'','url'=>'trade','category'=>-1),0);
 							//end
 							$category = $this->mdcategory->read_records($base_language);
 							for($i=0;$i<count($category);$i++):
@@ -152,15 +158,17 @@ class Admin_interface extends MY_Controller{
 					else:
 						
 						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'Home page','description'=>'','link'=>'home','content'=>'','url'=>'','category'=>0),0);
-						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'home_0','description'=>'','link'=>'How to trade options','content'=>'','url'=>'','category'=>-1),0);
-						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'home_1','description'=>'','link'=>'Tbinary trading platform features','content'=>'','url'=>'','category'=>-1),0);
-						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'home_2','description'=>'','link'=>'Check out the features below, or go ahead and sign up.','content'=>'Start trade now','url'=>'','category'=>-1),0);
-						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'home_3','description'=>'','link'=>'','content'=>'','url'=>'','category'=>-1),0);
 						
-						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'Trade page','description'=>'','link'=>'trade','content'=>'','url'=>'trade','category'=>0),0);
+						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'Trade page','description'=>'','link'=>'Trade','content'=>'','url'=>'trade','category'=>0),0);
+						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'trade_0','description'=>'','link'=>'How to trade options','content'=>'','url'=>'trade','category'=>-1),0);
+						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'trade_1','description'=>'','link'=>'Tbinary trading platform features','content'=>'','url'=>'trade','category'=>-1),0);
+						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'trade_2','description'=>'','link'=>'Check out the features below, or go ahead and sign up.','content'=>'Start trade now','url'=>'trade','category'=>-1),0);
+						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'trade_3','description'=>'','link'=>'','content'=>'','url'=>'trade','category'=>-1),0);
+						
 						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'FAQ page','description'=>'','link'=>'faq','content'=>'','url'=>'faq','category'=>0),0);
 						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'Deposit page','description'=>'','link'=>'deposit','content'=>'','url'=>'deposit','category'=>0),0);
 						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'Contact us page','description'=>'','link'=>'contact us','content'=>'','url'=>'contact-us','category'=>0),0);
+						$this->mdpages->insert_record(array('language'=>$lang_id,'title'=>'Partners page','description'=>'','link'=>'partners','content'=>'','url'=>'bussiness-partners','category'=>0),0);
 						$this->session->set_userdata('msgs','Base language added!');
 					endif;
 				else:

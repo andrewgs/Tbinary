@@ -38,24 +38,8 @@ class Users_interface extends MY_Controller{
 	}
 	
 	public function index(){
-		
-		$page_data = $this->mdpages->home_pages($this->language);
-		$pagevar = array(
-			'title'			=> (isset($page_data[0]['title']) && !empty($page_data[0]['title']))?$page_data[0]['title']:'Tbinary trading platform',
-			'description'	=> (isset($page_data[0]['description']) && !empty($page_data[0]['description']))?$page_data[0]['description']:'Tbinary trading platform',
-			'baseurl' 		=> base_url(),
-			'page'			=> (isset($page_data))?$page_data:array(),
-			'action_registration' => $this->mdsettings->read_field(1,'settings','link'),
-			'languages'		=> $this->mdlanguages->visible_languages(),
-			'main_menu'		=> $this->mdpages->read_top_menu($this->language),
-			'footer'		=> array('category'=>$this->mdcategory->read_records($this->language),'pages'=>$this->mdpages->read_records('id,title,link,url,category',$this->language)),
-			'msgs'			=> $this->session->userdata('msgs'),
-			'msgr'			=> $this->session->userdata('msgr')
-		);
-		$this->session->unset_userdata('msgs');
-		$this->session->unset_userdata('msgr');
-		
-		$this->load->view("users_interface/index",$pagevar);
+
+		$this->pages('');
 	}
 	
 	public function pages($page_url = ''){
@@ -84,6 +68,27 @@ class Users_interface extends MY_Controller{
 	
 	public function trade(){
 		
+		$page_data = $this->mdpages->trade_pages($this->language);
+		$pagevar = array(
+			'title'			=> (isset($page_data[0]['title']) && !empty($page_data[0]['title']))?$page_data[0]['title']:'Tbinary trading platform',
+			'description'	=> (isset($page_data[0]['description']) && !empty($page_data[0]['description']))?$page_data[0]['description']:'Tbinary trading platform',
+			'baseurl' 		=> base_url(),
+			'page'			=> (isset($page_data))?$page_data:array(),
+			'action_registration' => $this->mdsettings->read_field(1,'settings','link'),
+			'languages'		=> $this->mdlanguages->visible_languages(),
+			'main_menu'		=> $this->mdpages->read_top_menu($this->language),
+			'footer'		=> array('category'=>$this->mdcategory->read_records($this->language),'pages'=>$this->mdpages->read_records('id,title,link,url,category',$this->language)),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr')
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		$this->load->view("users_interface/trade",$pagevar);
+	}
+	
+	public function startTrade(){
+		
 		$page_data = $this->mdpages->read_fields_url('trade','*',$this->language);
 		
 		$pagevar = array(
@@ -106,7 +111,29 @@ class Users_interface extends MY_Controller{
 			$pagevar['client']['password'] = $this->encrypt->decode($pagevar['client']['trade_password']);
 		endif;
 		
-		$this->load->view("users_interface/trade",$pagevar);
+		$this->load->view("users_interface/start-trade",$pagevar);
+	}
+	
+	public function about(){
+		
+		$page_data = $this->mdpages->home_pages($this->language);
+		$pagevar = array(
+			'title'			=> (isset($page_data[0]['title']) && !empty($page_data[0]['title']))?$page_data[0]['title']:'Tbinary trading platform',
+			'description'	=> (isset($page_data[0]['description']) && !empty($page_data[0]['description']))?$page_data[0]['description']:'Tbinary trading platform',
+			'baseurl' 		=> base_url(),
+			'page'			=> (isset($page_data))?$page_data:array(),
+			'action_registration' => $this->mdsettings->read_field(1,'settings','link'),
+			'languages'		=> $this->mdlanguages->visible_languages(),
+			'main_menu'		=> $this->mdpages->read_top_menu($this->language),
+			'footer'		=> array('category'=>$this->mdcategory->read_records($this->language),'pages'=>$this->mdpages->read_records('id,title,link,url,category',$this->language)),
+			'msgs'			=> $this->session->userdata('msgs'),
+			'msgr'			=> $this->session->userdata('msgr')
+		);
+		$this->session->unset_userdata('msgs');
+		$this->session->unset_userdata('msgr');
+		
+		$this->load->view("users_interface/about",$pagevar);
+		
 	}
 	
 	public function get_chart_link(){
